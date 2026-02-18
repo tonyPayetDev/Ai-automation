@@ -106,7 +106,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
 
     // Step 2: Send to Webhook (with fallback)
     try {
-      await fetch('https://n8n.tonypayet.com/webhook-test/451ff7f3-b82a-4cce-9993-cf881a9970c0', {
+      await fetch('https://n8n.tonypayet.com/webhook/451ff7f3-b82a-4cce-9993-cf881a9970c0', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
