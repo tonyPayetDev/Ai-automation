@@ -17,6 +17,20 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    id: 'dsi-information',
+    role: 'Développeur Web & IA Automatisation',
+    company: 'DSI INFORMATION',
+    period: 'Sep 2022 - Présent',
+    type: '3 ans 8 mois',
+    technologies: ['React', 'Node.js', 'Python', 'n8n', 'IA / LLM', 'API REST', 'Automatisation'],
+    description: [
+      'Développement et maintenance d\'applications web full-stack',
+      'Mise en place de workflows d\'automatisation IA (n8n, LLM)',
+      'Intégration d\'APIs tierces et connecteurs intelligents',
+      'Optimisation des processus internes par l\'automatisation'
+    ]
+  },
+  {
     id: 'koytcha',
     role: 'Developer Web',
     company: 'GROUPE KOYTCHA',
