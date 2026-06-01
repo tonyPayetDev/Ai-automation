@@ -12,7 +12,6 @@ import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import AdminPanel from './components/AdminPanel';
 import SystemMonitor from './components/SystemMonitor';
-import RestaurateurPage from './components/RestaurateurPage';
 import { BoostOfferConfig } from './types';
 
 const DEFAULT_OFFER: BoostOfferConfig = {
@@ -55,11 +54,11 @@ const DEFAULT_OFFER: BoostOfferConfig = {
   }
 };
 
-function HomePage() {
+function App() {
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [heroMedia, setHeroMedia] = useState<{ type: 'image' | 'video', src: string }>({
     type: 'image',
-    src: '/tony-visage.jpg'
+    src: '/tony-visage-cyber.png'
   });
 
   const [activeOffer, setActiveOffer] = useState<BoostOfferConfig>(() => {
@@ -79,9 +78,9 @@ function HomePage() {
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-yellow-500 selection:text-black">
       <div className="scanline"></div>
-
+      
       <Navbar />
-
+      
       <main>
         <Hero media={heroMedia} />
         <SkillsMatrix />
@@ -92,26 +91,19 @@ function HomePage() {
         <Portfolio />
         <Pricing />
       </main>
-
+      
       <Footer onOpenAdmin={() => setIsAdminOpen(true)} />
       <ChatWidget />
-
-      <AdminPanel
-        isOpen={isAdminOpen}
-        onClose={() => setIsAdminOpen(false)}
+      
+      <AdminPanel 
+        isOpen={isAdminOpen} 
+        onClose={() => setIsAdminOpen(false)} 
         onUpdateHero={handleUpdateHero}
         activeOffer={activeOffer}
         onUpdateOffer={handleUpdateOffer}
       />
     </div>
   );
-}
-
-function App() {
-  if (window.location.pathname === '/restaurateur') {
-    return <RestaurateurPage />;
-  }
-  return <HomePage />;
 }
 
 export default App;
