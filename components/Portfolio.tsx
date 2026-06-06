@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { PortfolioItem } from '../types';
 import { SectionTitle } from './ui/CyberComponents';
 
@@ -16,11 +16,34 @@ const projects: PortfolioItem[] = [
 
 const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-24 bg-black relative scroll-mt-20">
-       <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none"></div>
+    <section id="portfolio" className="py-16 md:py-24 bg-black relative scroll-mt-20">
+      <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle title="Portfolio" subtitle="Réalisations & Projets" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Mobile carousel */}
+        <div className="carousel-x overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4 md:hidden">
+          <div className="flex gap-4 w-max">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="snap-start w-[80vw] max-w-[300px] flex-shrink-0 relative overflow-hidden border border-white/10 bg-zinc-900"
+              >
+                <div className="aspect-video relative">
+                  <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover opacity-70" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+                    <h3 className="text-sm font-bold text-white">{project.title}</h3>
+                    <span className="text-yellow-500 font-mono text-[10px]">[{project.category}]</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="text-center text-gray-600 text-xs mt-2 md:hidden">← glissez →</p>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -43,8 +66,9 @@ const Portfolio: React.FC = () => {
             </motion.div>
           ))}
         </div>
-        <div className="mt-12 text-center">
-            <motion.button whileHover={{ scale: 1.05 }} className="text-sm font-mono text-gray-500 hover:text-yellow-500 border-b border-transparent hover:border-yellow-500 transition-colors pb-1">VOIR TOUS LES PROJETS {'>'}</motion.button>
+
+        <div className="mt-8 md:mt-12 text-center">
+          <motion.button whileHover={{ scale: 1.05 }} className="text-sm font-mono text-gray-500 hover:text-yellow-500 border-b border-transparent hover:border-yellow-500 transition-colors pb-1">VOIR TOUS LES PROJETS {'>'}</motion.button>
         </div>
       </div>
     </section>

@@ -34,11 +34,33 @@ const services: ServiceItem[] = [
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 relative bg-zinc-950/50 scroll-mt-20">
+    <section id="services" className="py-16 md:py-24 relative bg-zinc-950/50 scroll-mt-20">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="Services" subtitle="Des prestations adaptées à vos besoins" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        {/* Mobile carousel */}
+        <div className="carousel-x overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4 md:hidden">
+          <div className="flex gap-4 w-max">
+            {services.map((service, index) => (
+              <div
+                key={service.id}
+                className="snap-start w-[78vw] max-w-[280px] flex-shrink-0 group relative bg-black border border-white/5 p-6 overflow-hidden hover:border-yellow-500/50 transition-colors duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10 w-12 h-12 mb-4 mx-auto flex items-center justify-center border border-white/10 rounded-lg bg-black/50 text-gray-300">
+                  <service.icon size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="relative z-10 text-base font-bold text-center text-white mb-3">{service.title}</h3>
+                <p className="relative z-10 text-gray-400 text-xs text-center leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="text-center text-gray-600 text-xs mt-2 md:hidden">← glissez →</p>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.id}

@@ -207,7 +207,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
             className="absolute -inset-6 border border-dashed border-pink-500/20 rounded-full opacity-60"
           ></motion.div>
 
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-b from-yellow-400 via-pink-500 to-cyan-500 shadow-[0_0_60px_rgba(234,179,8,0.15)]">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-b from-yellow-400 via-pink-500 to-cyan-500 shadow-[0_0_60px_rgba(234,179,8,0.15)]">
             <div 
                 ref={containerRef}
                 className="w-full h-full rounded-full bg-black overflow-hidden relative border-4 border-black/50 z-10 cursor-crosshair"
@@ -258,7 +258,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
             <motion.div 
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute -right-10 top-12 bg-black/90 border-l-2 border-yellow-500 p-2 pl-3 pr-4 rounded-r-lg shadow-lg backdrop-blur-md z-20"
+              className="absolute -right-10 top-12 bg-black/90 border-l-2 border-yellow-500 p-2 pl-3 pr-4 rounded-r-lg shadow-lg backdrop-blur-md z-20 hidden sm:block"
             >
               <div className="flex flex-col">
                 <div className="flex items-center gap-2 mb-1">
@@ -278,7 +278,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
             <motion.div 
                animate={{ y: [0, 5, 0] }}
                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-               className="absolute -left-10 bottom-20 bg-black/90 border-r-2 border-cyan-500 p-2 pr-3 pl-4 rounded-l-lg shadow-lg backdrop-blur-md z-20 text-right"
+               className="absolute -left-10 bottom-20 bg-black/90 border-r-2 border-cyan-500 p-2 pr-3 pl-4 rounded-l-lg shadow-lg backdrop-blur-md z-20 text-right hidden sm:block"
             >
               <div className="flex flex-col items-end">
                 <div className="flex items-center gap-2 mb-1">
