@@ -318,14 +318,14 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tighter mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tighter mb-6">
             <GlitchText text="AUTOMATISATION" /> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500">
               INTELLIGENCE
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Je construis des systèmes intelligents & des sites propulsés par l’IA.
             Optimisez votre succès en accélérant votre développement digital.
           </p>

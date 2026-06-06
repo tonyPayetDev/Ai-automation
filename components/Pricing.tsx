@@ -35,7 +35,7 @@ const Pricing: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-white text-center mb-2">{plan.name}</h3>
               <div className="text-center mb-6">
-                 <span className="text-4xl font-black text-yellow-500">{plan.price}</span>
+                 <span className="text-3xl sm:text-4xl font-black text-yellow-500">{plan.price}</span>
                  {index === 2 && <span className="text-sm text-gray-400 block mt-1">/ à partir de</span>}
               </div>
               <p className="text-gray-400 text-sm text-center mb-8 border-b border-gray-800 pb-8">{plan.description}</p>

@@ -46,7 +46,7 @@ export const SectionTitle: React.FC<{ title: string; subtitle?: string }> = ({ t
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="text-4xl md:text-6xl font-black text-white mb-4 uppercase tracking-tighter"
+      className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 uppercase tracking-tighter"
     >
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
         {title.charAt(0)}

@@ -241,7 +241,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                    <span className="text-[10px] bg-yellow-500 text-black px-1.5 py-0.5 font-bold rounded uppercase tracking-tighter">{config.pricing.label}</span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-6xl font-black text-white">{config.pricing.discountedPrice}</span>
+                  <span className="text-4xl sm:text-6xl font-black text-white">{config.pricing.discountedPrice}</span>
                   <span className="text-gray-500 font-mono">/ fixe</span>
                 </div>
               </div>
@@ -298,7 +298,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               <div className="p-6 md:p-10">
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="text-2xl font-black text-white font-orbitron tracking-tighter uppercase">DIAGNOSTIC_SYSTEM_V3</h3>
+                    <h3 className="text-base sm:text-2xl font-black text-white font-orbitron tracking-tighter uppercase">DIAGNOSTIC_SYSTEM_V3</h3>
                     <p className="text-gray-500 text-xs font-mono uppercase tracking-widest mt-1">Génération de votre plan d'automatisation personnalisé</p>
                   </div>
                   <button onClick={() => setIsModalOpen(false)} className="text-gray-500 hover:text-white p-1 transition-colors">
@@ -316,7 +316,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                       <Lightbulb className="text-yellow-500 w-8 h-8" />
                     </div>
                     
-                    <h4 className="text-white text-2xl font-black mb-6 font-orbitron uppercase">VOTRE PLAN D'ACTION</h4>
+                    <h4 className="text-white text-lg sm:text-2xl font-black mb-6 font-orbitron uppercase">VOTRE PLAN D'ACTION</h4>
 
                     {aiProposal ? (
                       <div className="w-full space-y-4">
@@ -324,7 +324,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                           <div className="p-4 bg-zinc-900/80 border border-white/10 rounded-lg">
                             <p className="text-[10px] text-gray-500 font-mono uppercase mb-1">Automatisation_Potentielle</p>
                             <div className="flex items-end gap-2">
-                                <span className="text-4xl font-black text-yellow-500">{aiProposal.score}%</span>
+                                <span className="text-2xl sm:text-4xl font-black text-yellow-500">{aiProposal.score}%</span>
                                 <div className="flex-1 h-2 bg-zinc-800 rounded-full mb-2 overflow-hidden">
                                     <motion.div initial={{ width: 0 }} animate={{ width: `${aiProposal.score}%` }} className="h-full bg-yellow-500" />
                                 </div>
@@ -334,7 +334,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                             <p className="text-[10px] text-gray-500 font-mono uppercase mb-1">Gain_Estimé</p>
                             <div className="flex items-center gap-2">
                                 <TrendingUp className="text-green-500 w-5 h-5" />
-                                <span className="text-2xl font-bold text-white">{aiProposal.expectedGain}</span>
+                                <span className="text-lg sm:text-2xl font-bold text-white">{aiProposal.expectedGain}</span>
                             </div>
                           </div>
                         </div>
