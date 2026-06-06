@@ -99,7 +99,7 @@ const SystemMonitor: React.FC = () => {
                         </span>
                     </div>
                     {task.details && task.details.map((detail, idx) => (
-                        <div key={idx} className="pl-24 text-gray-600 truncate before:content-['>_'] before:mr-2 before:text-gray-700">
+                        <div key={idx} className="pl-6 sm:pl-24 text-gray-600 truncate before:content-['>_'] before:mr-2 before:text-gray-700">
                             {detail}
                         </div>
                     ))}

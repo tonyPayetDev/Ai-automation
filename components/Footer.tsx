@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                     <Mail size={16} className="text-yellow-500" />
-                    <a href="mailto:tony.payet.professionnel@gmail.com" className="hover:text-yellow-500 transition-colors">tony.payet.professionnel@gmail.com</a>
+                    <a href="mailto:tony.payet.professionnel@gmail.com" className="hover:text-yellow-500 transition-colors break-all">tony.payet.professionnel@gmail.com</a>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                     <MapPin size={16} className="text-yellow-500" />

@@ -229,7 +229,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="relative p-10 bg-gradient-to-br from-zinc-900 to-black border-2 border-yellow-500/50 rounded-2xl shadow-[0_0_40px_rgba(234,179,8,0.1)] overflow-hidden sticky top-24"
+              className="relative p-6 md:p-10 bg-gradient-to-br from-zinc-900 to-black border-2 border-yellow-500/50 rounded-2xl shadow-[0_0_40px_rgba(234,179,8,0.1)] overflow-hidden sticky top-24"
             >
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <Rocket size={120} />

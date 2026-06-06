@@ -25,7 +25,7 @@ const Pricing: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className={`relative p-8 border backdrop-blur-sm flex flex-col h-full ${plan.recommended ? 'bg-gradient-to-b from-yellow-900/20 to-black border-yellow-500/50 shadow-2xl shadow-yellow-500/10 scale-105 z-10' : 'bg-black border-white/10 hover:border-white/30'}`}
+              className={`relative p-6 md:p-8 border backdrop-blur-sm flex flex-col h-full ${plan.recommended ? 'bg-gradient-to-b from-yellow-900/20 to-black border-yellow-500/50 shadow-2xl shadow-yellow-500/10 md:scale-105 z-10' : 'bg-black border-white/10 hover:border-white/30'}`}
             >
               {plan.recommended && <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-500 text-black font-bold text-xs px-4 py-1 rounded-full shadow-lg shadow-yellow-500/50">POPULAIRE</div>}
               <div className="mb-6 flex justify-center">
