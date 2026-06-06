@@ -8,26 +8,26 @@ import { SectionTitle } from './ui/CyberComponents';
 const services: ServiceItem[] = [
   {
     id: '1',
-    title: 'Automatisation & IA',
-    description: 'Make et IA pour une automatisation avancée. Nous combinons la puissance de la fabrication et de l\'intelligence artificielle pour optimiser vos processus.',
+    title: 'Automatisation des tâches',
+    description: 'Devis, relances, commandes, publications — j\'automatise ce qui vous vole du temps. Résultat : 10 à 20h récupérées chaque semaine, sans effort de votre part.',
     icon: Bot
   },
   {
     id: '2',
-    title: 'Développement Web',
-    description: 'Des solutions sur mesure pour votre activité ! Applications réactives et performantes construites avec les dernières technologies (React, Node, AI integrations).',
+    title: 'Site Web qui convertit',
+    description: 'Un site rapide, beau et optimisé qui transforme vos visiteurs en clients. Livré en quelques jours, pas en plusieurs mois.',
     icon: Code2
   },
   {
     id: '3',
-    title: 'SEO & SEA',
-    description: 'Boostez votre visibilité en ligne. Stratégies de référencement optimisées par l\'IA pour dominer les résultats de recherche et maximiser le ROI.',
+    title: 'Visibilité Google & Réseaux',
+    description: 'Vos clients vous trouvent avant vos concurrents. Référencement local, Google Business, publications automatiques — votre présence travaille pour vous 24h/24.',
     icon: LineChart
   },
   {
     id: '4',
-    title: 'Architecture Data',
-    description: 'Structurez vos données pour l\'ère de l\'IA. Création de pipelines de données robustes et sécurisés pour alimenter vos modèles.',
+    title: 'IA sur-mesure pour votre métier',
+    description: 'Chatbot pour votre restaurant, assistant pour vos devis, analyse de vos données — des outils IA adaptés à votre activité, pas des solutions génériques.',
     icon: Database
   }
 ];

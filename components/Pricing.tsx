@@ -6,9 +6,9 @@ import { PricingPlan } from '../types';
 import { SectionTitle, CyberButton } from './ui/CyberComponents';
 
 const plans: PricingPlan[] = [
-  { id: '1', name: 'SITE ECOM + SEO', price: '1499 €', description: 'Pour les entrepreneurs voulant dominer leur niche.', features: ['Développé sous WORDPRESS', 'Widget Elementor personnalisé', 'Formulaire de contact & Map', 'Mise en ligne du site', 'Seo Rank Math', 'Site responsive'] },
-  { id: '2', name: 'SITE WEB + IA', price: '1299 €', description: 'La puissance de l\'IA intégrée à votre présence web.', features: ['Développé sous WORDPRESS', 'Outil de gestion de contenu', 'Automatisation avec Make', 'Génération d\'article avec IA', 'Design Web Elementor', 'Site responsive'], recommended: true },
-  { id: '3', name: 'DEV SPÉCIFIQUE', price: '449 €', description: 'Développement sur mesure à la demande.', features: ['55 € / heure', 'Mes prix sont négociables', 'Audit technique complet', 'Code optimisé et propre', 'Documentation technique', 'Support prioritaire'] }
+  { id: '1', name: 'SITE VITRINE PRO', price: '799 €', description: 'Votre vitrine en ligne qui attire et convertit, livrée en 5 jours.', features: ['Design professionnel sur-mesure', 'Optimisé mobile & rapide', 'Formulaire de contact & carte', 'Référencement Google local', 'Hébergement 1 an inclus', 'Livraison en 5 jours'] },
+  { id: '2', name: 'SITE + AUTOMATISATION', price: '1299 €', description: 'Votre site web ET une automatisation qui vous fait gagner du temps chaque jour.', features: ['Tout le pack Site Vitrine', '1 automatisation sur-mesure', 'Connexion réseaux sociaux', 'Chatbot ou relance client auto', 'Formation 1h incluse', 'Support 30 jours offert'], recommended: true },
+  { id: '3', name: 'MISSION SPÉCIFIQUE', price: '55 €/h', description: 'Un problème précis à régler ? Je m\'en occupe à la mission.', features: ['Audit de vos process actuels', 'Devis gratuit sous 24h', 'Automatisation ciblée', 'Résultat garanti ou remboursé', 'Sans engagement', 'Disponible sous 48h'] }
 ];
 
 const Pricing: React.FC = () => {

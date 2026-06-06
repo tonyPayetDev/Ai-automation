@@ -19,38 +19,38 @@ const DEFAULT_OFFER: BoostOfferConfig = {
   active: true,
   name: 'Variante Alpha',
   title: "Automation Boost 48H",
-  subtitle: "Gagne 10 à 20 heures par semaine immédiatement",
+  subtitle: "Économisez 15h/semaine dès la première semaine — garanti ou remboursé",
   problems: [
-    "Tu perds des heures sur des tâches répétitives",
-    "Tu sais que l’automatisation existe, mais tu ne passes jamais à l’action",
-    "Tu testes des outils, mais rien n’est vraiment connecté",
-    "Ton business avance, mais trop lentement"
+    "Vous passez des heures sur des tâches répétitives (devis, relances, commandes, publications...)",
+    "Chaque heure perdue en admin = une heure de moins à servir vos clients ou développer votre activité",
+    "Vous savez qu’il existe des outils, mais vous n’avez pas le temps de les configurer",
+    "Votre concurrent automatisé avance 3x plus vite que vous"
   ],
   solution1: {
-    title: "Solution #1 : Système Sur-Mesure",
-    description: "Je mets en place UNE automatisation IA personnalisée, livrée en 48h.",
+    title: "Solution #1 : Automatisation Sur-Mesure",
+    description: "J’identifie la tâche qui vous coûte le plus de temps et je l’automatise complètement en 48h.",
     items: [
-      "Auto-publication SEO",
-      "Upload produits e-commerce",
-      "Ajout de produits automatique",
-      "Nettoyage IA (images / data)",
-      "Installation de chatbot et analyse concurrentielle"
+      "Réponses automatiques aux demandes de réservation (restaurants, prestataires)",
+      "Génération et envoi de devis automatique",
+      "Relances clients et suivi de paiement",
+      "Publication automatique sur vos réseaux sociaux",
+      "Traitement des commandes e-commerce sans intervention manuelle"
     ]
   },
   solution2: {
-    title: "Solution #2 : Content Factory IA",
-    description: "Automatise ta création + publication de contenu sans lever le petit doigt :",
+    title: "Solution #2 : Visibilité Automatique",
+    description: "Votre business tourne et se fait connaître même quand vous dormez :",
     steps: [
-      { title: "Trigger Shopify / Dropizi", desc: "Nouveau produit détecté automatiquement.", icon: "shopping-cart" },
-      { title: "Génération Vidéo Automatique", desc: "Création d'un format UGC / RS dynamique via IA.", icon: "video" },
-      { title: "Multi-Posting Instantané", desc: "TikTok, Instagram, Shorts & Reels publiés d'un coup.", icon: "share" }
+      { title: "Détection automatique des événements", desc: "Nouvelle commande, avis client, demande de contact — tout est capté.", icon: "shopping-cart" },
+      { title: "Contenu généré par IA", desc: "Posts, stories, réponses aux avis créés automatiquement à votre image.", icon: "video" },
+      { title: "Publication multi-canaux", desc: "Google, Instagram, Facebook, TikTok — mis à jour sans effort de votre part.", icon: "share" }
     ]
   },
   pricing: {
-    originalPrice: "999 €",
+    originalPrice: "1 500 €",
     discountedPrice: "900 €",
-    label: "REMISE_LIMITEE",
-    footerNote: "* Pas d’abonnement, pas de coûts cachés. Paiement en 2x450€ possible."
+    label: "-40%",
+    footerNote: "* Satisfait ou remboursé sous 7 jours. Paiement en 2x450€ possible. Sans abonnement."
   }
 };
 

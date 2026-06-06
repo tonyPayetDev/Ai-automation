@@ -314,29 +314,31 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
         >
           <div className="flex items-center justify-center gap-2 mb-6">
             <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-xs font-bold tracking-[0.2em] uppercase rounded-full">
-              System Online
+              Entrepreneurs · Freelancers · PME · Restaurateurs
             </span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tighter mb-6">
-            <GlitchText text="AUTOMATISATION" /> <br />
+            <GlitchText text="GAGNEZ DU TEMPS," /> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500">
-              INTELLIGENCE
+              FAITES x10
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Je construis des systèmes intelligents & des sites propulsés par l’IA.
-            Optimisez votre succès en accélérant votre développement digital.
+          <p className="text-sm sm:text-base md:text-xl text-gray-400 mb-4 max-w-2xl mx-auto leading-relaxed">
+            J’automatise les tâches répétitives de votre business pour que vous puissiez vous concentrer sur ce qui rapporte vraiment.
+          </p>
+          <p className="text-xs sm:text-sm text-gray-600 mb-10 max-w-xl mx-auto">
+            Restaurants · E-commerce · Agences · Indépendants — résultats livrés en 48h.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-             <CyberButton onClick={() => document.getElementById('portfolio')?.scrollIntoView()}>
-                Mes Projets
-             </CyberButton>
-             <CyberButton variant="secondary" onClick={() => document.getElementById('services')?.scrollIntoView()}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+             <CyberButton onClick={() => document.getElementById(‘boost’)?.scrollIntoView()}>
                 <Zap className="w-4 h-4" />
-                Mes Services
+                Démarrer mon diagnostic gratuit
+             </CyberButton>
+             <CyberButton variant="secondary" onClick={() => document.getElementById(‘portfolio’)?.scrollIntoView()}>
+                Voir mes réalisations
              </CyberButton>
           </div>
         </motion.div>
