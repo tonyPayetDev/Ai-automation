@@ -58,7 +58,7 @@ function App() {
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [heroMedia, setHeroMedia] = useState<{ type: 'image' | 'video', src: string }>({
     type: 'image',
-    src: '/tony-visage-cyber.png'
+    src: 'https://raw.githubusercontent.com/tonyPayetDev/Ai-automation/main/tony-visage.jpg'
   });
 
   const [activeOffer, setActiveOffer] = useState<BoostOfferConfig>(() => {

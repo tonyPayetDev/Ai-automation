@@ -227,7 +227,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
                  <motion.img 
                     src={media.src} 
                     onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=1000&auto=format&fit=crop";
+                    e.currentTarget.src = "https://raw.githubusercontent.com/tonyPayetDev/Ai-automation/main/tony-visage.jpg";
                     }}
                     alt="Tony Payet Face Scan" 
                     className="w-full h-full object-cover relative z-0"
