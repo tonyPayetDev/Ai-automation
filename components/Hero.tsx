@@ -314,7 +314,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
         >
           <div className="flex items-center justify-center gap-2 mb-6">
             <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-xs font-bold tracking-[0.2em] uppercase rounded-full">
-              Entrepreneurs · Freelancers · PME · Restaurateurs
+              Entrepreneurs — Freelancers — PME — Restaurateurs
             </span>
           </div>
 
@@ -329,16 +329,16 @@ const Hero: React.FC<HeroProps> = ({ media }) => {
             J’automatise les tâches répétitives de votre business pour que vous puissiez vous concentrer sur ce qui rapporte vraiment.
           </p>
           <p className="text-xs sm:text-sm text-gray-600 mb-10 max-w-xl mx-auto">
-            Restaurants · E-commerce · Agences · Indépendants — résultats livrés en 48h.
+            Restaurants, E-commerce, Agences, Indépendants — résultats livrés en 48h.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-             <CyberButton onClick={() => document.getElementById(‘boost’)?.scrollIntoView()}>
+             <CyberButton onClick={() => document.getElementById("boost")?.scrollIntoView()}>
                 <Zap className="w-4 h-4" />
-                Démarrer mon diagnostic gratuit
+                {"Démarrer mon diagnostic gratuit"}
              </CyberButton>
-             <CyberButton variant="secondary" onClick={() => document.getElementById(‘portfolio’)?.scrollIntoView()}>
-                Voir mes réalisations
+             <CyberButton variant="secondary" onClick={() => document.getElementById("portfolio")?.scrollIntoView()}>
+                {"Voir mes réalisations"}
              </CyberButton>
           </div>
         </motion.div>
