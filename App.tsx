@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,6 +7,7 @@ import Services from './components/Services';
 import AutomationBoost from './components/AutomationBoost';
 import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import AdminPanel from './components/AdminPanel';
@@ -23,12 +23,12 @@ const DEFAULT_OFFER: BoostOfferConfig = {
   problems: [
     "Vous passez des heures sur des tâches répétitives (devis, relances, commandes, publications...)",
     "Chaque heure perdue en admin = une heure de moins à servir vos clients ou développer votre activité",
-    "Vous savez qu’il existe des outils, mais vous n’avez pas le temps de les configurer",
+    "Vous savez qu'il existe des outils, mais vous n'avez pas le temps de les configurer",
     "Votre concurrent automatisé avance 3x plus vite que vous"
   ],
   solution1: {
     title: "Solution #1 : Automatisation Sur-Mesure",
-    description: "J’identifie la tâche qui vous coûte le plus de temps et je l’automatise complètement en 48h.",
+    description: "J'identifie la tâche qui vous coûte le plus de temps et je l'automatise complètement en 48h.",
     items: [
       "Réponses automatiques aux demandes de réservation (restaurants, prestataires)",
       "Génération et envoi de devis automatique",
@@ -90,6 +90,7 @@ function App() {
         <Services />
         <Portfolio />
         <Pricing />
+        <Contact />
       </main>
       
       <Footer onOpenAdmin={() => setIsAdminOpen(true)} />
