@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Send, User, Mail, Phone, Building2, Clock, Wallet, CheckSquare, MessageSquare, Zap } from 'lucide-react';
 import { SectionTitle } from './ui/CyberComponents';
 
-const WEBHOOK_URL = 'https://n7n.automatisationboost.com/webhook-test/Form-tony-ia';
+const WEBHOOK_URL = 'https://n7n.automatisationboost.com/webhook/Form-tony-ia';
 
 const TACHES = [
   'Réponses aux clients / emails',
