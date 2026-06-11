@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Cpu, ShoppingBag, Activity, Layers, Database, Video } from 'lucide-react';
@@ -112,7 +111,38 @@ const SkillsMatrix: React.FC = () => {
             <SectionTitle title="Compétences" subtitle="Matrice de Capacités Techniques" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mobile carousel */}
+        <div className="carousel-x overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4 md:hidden">
+          <div className="flex gap-4 w-max">
+            {skillCategories.map((cat) => (
+              <div
+                key={cat.id}
+                className={`snap-start w-[78vw] max-w-[280px] flex-shrink-0 relative p-5 rounded-lg border backdrop-blur-sm overflow-hidden ${cat.border} ${cat.bg}`}
+              >
+                <div className="flex items-center gap-3 mb-5 border-b border-white/10 pb-4">
+                  <div className={`p-2 rounded bg-black/50 border ${cat.border} ${cat.color}`}>
+                    <cat.icon size={18} />
+                  </div>
+                  <h3 className="font-orbitron font-bold text-white tracking-wider text-xs">{cat.title}</h3>
+                </div>
+                <ul className="space-y-2.5">
+                  {cat.items.map((item, idx) => (
+                    <li key={idx} className="flex items-start text-xs text-gray-400">
+                      <span className={`mr-2 mt-0.5 text-[10px] ${cat.color}`}>{'>'}</span>
+                      <span className="font-rajdhani font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className={`absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 ${cat.border} rounded-tr-lg opacity-50`}></div>
+                <div className={`absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 ${cat.border} rounded-bl-lg opacity-50`}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="text-center text-gray-600 text-xs mt-2 md:hidden">← glissez →</p>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((cat, index) => (
             <motion.div
               key={cat.id}
