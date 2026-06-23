@@ -15,76 +15,89 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   ];
 
   return (
-    <footer className="bg-black border-t border-white/10 pt-16 pb-8 relative scroll-mt-20" id="contact">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          
+    <footer className="bg-[#030303] border-t border-white/5 pt-16 pb-8 relative scroll-mt-20" id="contact">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
           <div className="col-span-1 md:col-span-2">
-            <span className="text-2xl font-bold tracking-widest text-white block mb-4">
-              TONY<span className="text-yellow-500">.AI</span>
+            <span
+              className="text-2xl font-light tracking-widest text-white block mb-4"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              Tony<span className="text-[#B8965A]">.</span>
             </span>
-            <p className="text-gray-400 max-w-sm mb-6">
-              Développeur web expert & Spécialiste IA. Je transforme vos idées en systèmes digitaux performants.
+            <p className="text-gray-500 text-sm max-w-sm mb-8 leading-relaxed">
+              Expert IA & Automatisation Business. Je transforme vos process manuels en systèmes automatisés qui travaillent pour vous 24h/24.
             </p>
-            
-            <div className="space-y-3 mb-6 font-mono text-sm">
-                <div className="flex items-center gap-3 text-gray-300">
-                    <Phone size={16} className="text-yellow-500" />
-                    <a href="tel:0692417749" className="hover:text-yellow-500 transition-colors">0692 41 77 49</a>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                    <Mail size={16} className="text-yellow-500" />
-                    <a href="mailto:tony.payet.professionnel@gmail.com" className="hover:text-yellow-500 transition-colors break-all">tony.payet.professionnel@gmail.com</a>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                    <MapPin size={16} className="text-yellow-500" />
-                    <span>Saint-Denis 97490, Réunion</span>
-                </div>
+
+            <div className="space-y-3 mb-8 text-sm">
+              <div className="flex items-center gap-3 text-gray-400">
+                <Phone size={14} className="text-[#B8965A]" />
+                <a href="tel:0692417749" className="hover:text-white transition-colors">0692 41 77 49</a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-400">
+                <Mail size={14} className="text-[#B8965A]" />
+                <a href="mailto:tony.payet.professionnel@gmail.com" className="hover:text-white transition-colors break-all">
+                  tony.payet.professionnel@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-400">
+                <MapPin size={14} className="text-[#B8965A]" />
+                <span>Saint-Denis 97490, La Réunion</span>
+              </div>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex gap-3">
               {[Github, Linkedin, Twitter].map((Icon, idx) => (
-                <a key={idx} href="#" className="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:bg-yellow-500 hover:text-black transition-all duration-300">
-                  <Icon size={18} />
+                <a
+                  key={idx}
+                  href="#"
+                  className="w-9 h-9 rounded-full border border-white/8 flex items-center justify-center text-gray-500 hover:text-white hover:border-[#B8965A]/40 transition-all duration-300"
+                >
+                  <Icon size={15} />
                 </a>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider mb-6">Liens Rapides</h4>
+            <h4 className="text-white text-xs font-medium uppercase tracking-[0.2em] mb-6">Navigation</h4>
             <ul className="space-y-3">
               {footerLinks.map((item) => (
                 <li key={item.name}>
-                  <a href={item.href} className="text-gray-500 hover:text-yellow-500 transition-colors">{item.name}</a>
+                  <a href={item.href} className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
+                    {item.name}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider mb-6">Legal</h4>
+            <h4 className="text-white text-xs font-medium uppercase tracking-[0.2em] mb-6">Légal</h4>
             <ul className="space-y-3">
-              {['Mentions Légales', 'Politique de Confidentialité', 'CGV'].map((item) => (
+              {['Mentions Légales', 'Confidentialité', 'CGV'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-gray-500 hover:text-yellow-500 transition-colors">{item}</a>
+                  <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors duration-200">
+                    {item}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
-          <p>© 2024 Tony Payet. All Rights Reserved.</p>
-          <div className="flex items-center gap-4 mt-2 md:mt-0 group">
-             <p className="font-mono">SYSTEM_STATUS: <span className="text-green-500">OPTIMAL</span></p>
-             <button 
-                onClick={onOpenAdmin} 
-                className="text-gray-600 hover:text-yellow-500 transition-all duration-300 p-2 rounded-full hover:bg-white/5"
-                title="Accès Admin"
-             >
-                <Lock size={14} />
-             </button>
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+          <p>© 2025 Tony Payet. Tous droits réservés.</p>
+          <div className="flex items-center gap-4">
+            <span className="text-[#B8965A]/50">Automatisation · IA · Web</span>
+            <button
+              onClick={onOpenAdmin}
+              className="text-gray-700 hover:text-[#B8965A] transition-colors p-1.5 rounded-full"
+              title="Accès Admin"
+            >
+              <Lock size={12} />
+            </button>
           </div>
         </div>
       </div>

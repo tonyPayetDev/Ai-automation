@@ -134,15 +134,16 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
   };
 
   return (
-    <section id="boost" className="py-24 relative overflow-hidden bg-black scroll-mt-20">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/10 blur-[150px] pointer-events-none rounded-full"></div>
+    <section id="boost" className="py-24 md:py-32 relative overflow-hidden bg-[#050505] scroll-mt-20">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B8965A]/20 to-transparent"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B8965A]/[0.04] blur-[150px] pointer-events-none rounded-full"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center mb-16">
-          <motion.div 
+          <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-500 text-sm font-bold tracking-widest uppercase mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#B8965A]/40 bg-[#B8965A]/8 text-[#B8965A] text-xs font-medium tracking-widest uppercase mb-6"
           >
             <Rocket className="w-4 h-4" /> Offre Limitée
           </motion.div>
@@ -157,7 +158,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-zinc-900/50 border-l-4 border-red-500 p-8 rounded-r-lg"
+              className="bg-[#0a0a0a] border border-white/5 border-l-2 border-l-red-500/60 p-8 rounded-2xl"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                 <AlertCircle className="text-red-500" /> Le Problème
@@ -176,7 +177,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-zinc-900/50 border-l-4 border-green-500 p-8 rounded-r-lg"
+              className="bg-[#0a0a0a] border border-white/5 border-l-2 border-l-[#B8965A]/50 p-8 rounded-2xl"
             >
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="text-green-500" /> {config.solution1.title}
@@ -198,7 +199,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-zinc-900/50 border-l-4 border-cyan-500 p-8 rounded-r-lg group"
+              className="bg-[#0a0a0a] border border-white/5 border-l-2 border-l-blue-500/40 p-8 rounded-2xl group"
             >
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Video className="text-cyan-500" /> {config.solution2.title}
@@ -229,19 +230,19 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="relative p-6 md:p-10 bg-gradient-to-br from-zinc-900 to-black border-2 border-yellow-500/50 rounded-2xl shadow-[0_0_40px_rgba(234,179,8,0.1)] overflow-hidden sticky top-24"
+              className="relative p-6 md:p-10 bg-[#0d0d0d] border border-[#B8965A]/30 rounded-2xl shadow-[0_0_40px_rgba(184,150,90,0.08)] overflow-hidden sticky top-24"
             >
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <Rocket size={120} />
               </div>
-              <h4 className="text-yellow-500 font-orbitron font-black text-2xl mb-2 tracking-tighter">BOOST_OFFER</h4>
+              <h4 className="text-[#B8965A] text-lg font-medium tracking-widest mb-2 uppercase" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Boost 48H</h4>
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-1">
                    <span className="text-xl text-gray-500 line-through font-mono">{config.pricing.originalPrice}</span>
                    <span className="text-[10px] bg-yellow-500 text-black px-1.5 py-0.5 font-bold rounded uppercase tracking-tighter">{config.pricing.label}</span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl sm:text-6xl font-black text-white">{config.pricing.discountedPrice}</span>
+                  <span className="text-4xl sm:text-6xl font-light text-white" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{config.pricing.discountedPrice}</span>
                   <span className="text-gray-500 font-mono">/ fixe</span>
                 </div>
               </div>
@@ -265,9 +266,9 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <button 
+                <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full py-4 bg-yellow-500 text-black font-black uppercase tracking-widest rounded hover:bg-yellow-400 transition-all transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(234,179,8,0.3)]"
+                  className="w-full py-4 bg-[#B8965A] text-[#050505] font-medium uppercase tracking-widest rounded hover:bg-[#D4AF70] transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(184,150,90,0.2)]"
                 >
                   Démarrer le Diagnostic <ArrowRight size={18} />
                 </button>

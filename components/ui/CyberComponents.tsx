@@ -1,69 +1,63 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export const GlitchText: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => {
-  return (
-    <div className={`relative inline-block group ${className}`}>
-      <span className="relative z-10">{text}</span>
-      <span className="absolute top-0 left-0 -z-10 w-full h-full text-yellow-500 opacity-0 group-hover:opacity-70 group-hover:animate-pulse group-hover:translate-x-[2px]">
-        {text}
-      </span>
-      <span className="absolute top-0 left-0 -z-10 w-full h-full text-cyan-500 opacity-0 group-hover:opacity-70 group-hover:animate-pulse group-hover:-translate-x-[2px]">
-        {text}
-      </span>
-    </div>
-  );
-};
+const GOLD = '#B8965A';
+
+export const GlitchText: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => (
+  <span className={`relative inline-block ${className}`}>
+    {text}
+  </span>
+);
 
 export const CyberButton: React.FC<{ children: React.ReactNode; onClick?: () => void; variant?: 'primary' | 'secondary' }> = ({ children, onClick, variant = 'primary' }) => {
   const isPrimary = variant === 'primary';
-  
   return (
     <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       onClick={onClick}
       className={`
-        relative px-8 py-3 font-bold tracking-wider uppercase
-        overflow-hidden transition-all duration-300
-        clip-path-polygon
-        ${isPrimary 
-          ? 'bg-yellow-500 text-black hover:bg-yellow-400' 
-          : 'bg-transparent border border-yellow-500 text-yellow-500 hover:bg-yellow-500/10'}
+        relative px-8 py-3.5 text-sm font-medium tracking-widest uppercase
+        transition-all duration-500 overflow-hidden group
+        ${isPrimary
+          ? 'bg-[#B8965A] text-[#050505] hover:bg-[#D4AF70]'
+          : 'bg-transparent border border-[#B8965A]/50 text-[#B8965A] hover:border-[#B8965A] hover:bg-[#B8965A]/5'}
       `}
-      style={{
-        clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)'
-      }}
     >
       <span className="relative z-10 flex items-center gap-2">{children}</span>
+      {isPrimary && (
+        <span className="absolute inset-0 bg-gradient-to-r from-[#D4AF70] to-[#B8965A] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      )}
     </motion.button>
   );
 };
 
 export const SectionTitle: React.FC<{ title: string; subtitle?: string }> = ({ title, subtitle }) => (
-  <div className="text-center mb-16 relative">
-    <motion.h2 
+  <div className="mb-20">
+    <motion.p
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-[#B8965A] text-xs font-medium tracking-[0.25em] uppercase mb-4"
+    >
+      {subtitle}
+    </motion.p>
+    <motion.h2
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 uppercase tracking-tighter"
+      transition={{ duration: 0.7, delay: 0.1 }}
+      className="text-4xl sm:text-5xl md:text-6xl font-light text-white leading-tight"
     >
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-        {title.charAt(0)}
-      </span>
-      {title.slice(1)}
+      {title}
     </motion.h2>
-    {subtitle && (
-      <motion.p 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="text-gray-400 tracking-widest text-sm md:text-base uppercase"
-      >
-        // {subtitle}
-      </motion.p>
-    )}
-    <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-24 h-1 bg-yellow-500/50 blur-sm mt-4"></div>
+    <motion.div
+      initial={{ scaleX: 0 }}
+      whileInView={{ scaleX: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="mt-6 h-px w-16 bg-[#B8965A] origin-left"
+    />
   </div>
 );

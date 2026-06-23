@@ -2,93 +2,106 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Bot, LineChart, Code2, Database } from 'lucide-react';
-import { ServiceItem } from '../types';
 import { SectionTitle } from './ui/CyberComponents';
 
-const services: ServiceItem[] = [
+const services = [
   {
     id: '1',
     title: 'Automatisation des tâches',
     description: 'Devis, relances, commandes, publications — j\'automatise ce qui vous vole du temps. Résultat : 10 à 20h récupérées chaque semaine, sans effort de votre part.',
-    icon: Bot
+    icon: Bot,
+    number: '01',
   },
   {
     id: '2',
     title: 'Site Web qui convertit',
     description: 'Un site rapide, beau et optimisé qui transforme vos visiteurs en clients. Livré en quelques jours, pas en plusieurs mois.',
-    icon: Code2
+    icon: Code2,
+    number: '02',
   },
   {
     id: '3',
     title: 'Visibilité Google & Réseaux',
     description: 'Vos clients vous trouvent avant vos concurrents. Référencement local, Google Business, publications automatiques — votre présence travaille pour vous 24h/24.',
-    icon: LineChart
+    icon: LineChart,
+    number: '03',
   },
   {
     id: '4',
     title: 'IA sur-mesure pour votre métier',
     description: 'Chatbot pour votre restaurant, assistant pour vos devis, analyse de vos données — des outils IA adaptés à votre activité, pas des solutions génériques.',
-    icon: Database
-  }
+    icon: Database,
+    number: '04',
+  },
 ];
 
-const Services: React.FC = () => {
-  return (
-    <section id="services" className="py-16 md:py-24 relative bg-zinc-950/50 scroll-mt-20">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="Services" subtitle="Des prestations adaptées à vos besoins" />
+const Services: React.FC = () => (
+  <section id="services" className="py-24 md:py-32 relative scroll-mt-20">
+    {/* Top separator */}
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B8965A]/20 to-transparent" />
 
-        {/* Mobile carousel */}
-        <div className="carousel-x overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 pb-4 md:hidden">
-          <div className="flex gap-4 w-max">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                className="snap-start w-[78vw] max-w-[280px] flex-shrink-0 group relative bg-black border border-white/5 p-6 overflow-hidden hover:border-yellow-500/50 transition-colors duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 w-12 h-12 mb-4 mx-auto flex items-center justify-center border border-white/10 rounded-lg bg-black/50 text-gray-300">
-                  <service.icon size={24} strokeWidth={1.5} />
-                </div>
-                <h3 className="relative z-10 text-base font-bold text-center text-white mb-3">{service.title}</h3>
-                <p className="relative z-10 text-gray-400 text-xs text-center leading-relaxed">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <p className="text-center text-gray-600 text-xs mt-2 md:hidden">← glissez →</p>
+    <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <SectionTitle title="Services" subtitle="Ce que je fais pour vous" />
 
-        {/* Desktop grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <motion.div
+      {/* Mobile carousel */}
+      <div className="carousel-x overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-6 px-6 pb-4 md:hidden">
+        <div className="flex gap-4 w-max">
+          {services.map((service) => (
+            <div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group relative bg-black border border-white/5 p-8 overflow-hidden hover:border-yellow-500/50 transition-colors duration-300"
+              className="snap-start w-[78vw] max-w-[300px] flex-shrink-0 bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 hover:border-[#B8965A]/30 transition-colors duration-500"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10 w-14 h-14 mb-6 mx-auto flex items-center justify-center border border-white/10 rounded-lg bg-black/50 group-hover:border-yellow-500 text-gray-300 group-hover:text-yellow-500 transition-all duration-300">
-                <service.icon size={28} strokeWidth={1.5} />
+              <span className="text-[#B8965A]/40 text-xs font-medium tracking-[0.2em] mb-4 block">{service.number}</span>
+              <div className="w-10 h-10 mb-5 flex items-center justify-center text-[#B8965A]/70">
+                <service.icon size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="relative z-10 text-xl font-bold text-center text-white mb-4 group-hover:text-yellow-400 transition-colors">
-                {service.title}
-              </h3>
-              <p className="relative z-10 text-gray-400 text-sm text-center leading-relaxed">
-                {service.description}
-              </p>
-              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-yellow-500 transition-colors"></div>
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-yellow-500 transition-colors"></div>
-            </motion.div>
+              <h3 className="text-white text-base font-medium mb-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem' }}>{service.title}</h3>
+              <p className="text-gray-500 text-xs leading-relaxed">{service.description}</p>
+            </div>
           ))}
         </div>
       </div>
-    </section>
-  );
-};
+      <p className="text-center text-gray-700 text-xs mt-3 md:hidden tracking-widest">← glissez →</p>
+
+      {/* Desktop grid */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+        {services.map((service, index) => (
+          <motion.div
+            key={service.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            className="group relative bg-[#050505] p-8 hover:bg-[#0a0a0a] transition-colors duration-500 cursor-default"
+          >
+            {/* Number */}
+            <span className="text-[#B8965A]/30 text-xs font-medium tracking-[0.2em] mb-6 block group-hover:text-[#B8965A]/60 transition-colors duration-300">
+              {service.number}
+            </span>
+
+            {/* Icon */}
+            <div className="w-12 h-12 mb-6 flex items-center justify-center border border-white/5 rounded-xl bg-[#0a0a0a] text-gray-600 group-hover:text-[#B8965A] group-hover:border-[#B8965A]/20 transition-all duration-500">
+              <service.icon size={22} strokeWidth={1.5} />
+            </div>
+
+            {/* Content */}
+            <h3
+              className="text-white text-xl font-light mb-4 group-hover:text-[#B8965A] transition-colors duration-300"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              {service.title}
+            </h3>
+            <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-400 transition-colors duration-300">
+              {service.description}
+            </p>
+
+            {/* Bottom line reveal */}
+            <div className="absolute bottom-0 left-0 w-0 h-px bg-[#B8965A]/50 group-hover:w-full transition-all duration-700 ease-out" />
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default Services;

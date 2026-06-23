@@ -76,9 +76,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-black text-white selection:bg-yellow-500 selection:text-black">
-      <div className="scanline"></div>
-      
+    <div className="relative min-h-screen bg-[#050505] text-white selection:bg-[#B8965A]/30 selection:text-white">
       <Navbar />
       
       <main>
