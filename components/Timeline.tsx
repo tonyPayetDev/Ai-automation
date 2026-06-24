@@ -80,13 +80,13 @@ const experiences: Experience[] = [
 
 const Timeline: React.FC = () => (
   <section id="experience" className="py-24 md:py-32 relative scroll-mt-20">
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B8965A]/20 to-transparent" />
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f05a28]/20 to-transparent" />
     <div className="max-w-4xl mx-auto px-6 lg:px-12">
       <SectionTitle title="Expérience" subtitle="Parcours professionnel" />
 
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#B8965A]/30 via-[#B8965A]/10 to-transparent md:-translate-x-px" />
+        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#f05a28]/30 via-[#f05a28]/10 to-transparent md:-translate-x-px" />
 
         <div className="space-y-10">
           {experiences.map((exp, index) => (
@@ -99,18 +99,18 @@ const Timeline: React.FC = () => (
               className={`flex flex-col md:flex-row gap-8 relative ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
               {/* Dot */}
-              <div className="absolute left-0 md:left-1/2 w-3 h-3 bg-[#050505] border border-[#B8965A]/60 rounded-full md:-translate-x-1.5 mt-2 z-10" />
+              <div className="absolute left-0 md:left-1/2 w-3 h-3 bg-[#050505] border border-[#f05a28]/60 rounded-full md:-translate-x-1.5 mt-2 z-10" />
 
               <div className="pl-8 md:pl-0 md:w-1/2">
-                <div className={`bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 hover:border-[#B8965A]/20 transition-all duration-500 ${index % 2 === 0 ? 'md:mr-10' : 'md:ml-10'}`}>
+                <div className={`bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 hover:border-[#f05a28]/20 transition-all duration-500 ${index % 2 === 0 ? 'md:mr-10' : 'md:ml-10'}`}>
                   <div className="mb-4">
                     <h3
                       className="text-white text-xl font-light mb-1"
-                      style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                      style={{ fontFamily: "'Plus Jakarta Sans', serif" }}
                     >
                       {exp.role}
                     </h3>
-                    <div className="text-[#B8965A] text-sm font-medium mb-2">{exp.company}</div>
+                    <div className="text-[#f05a28] text-sm font-medium mb-2">{exp.company}</div>
                     <div className="flex items-center gap-2 text-gray-600 text-xs">
                       <Calendar size={11} />
                       <span>{exp.period}</span>
@@ -125,7 +125,7 @@ const Timeline: React.FC = () => (
                   <ul className="space-y-1.5 mb-4">
                     {exp.description.map((desc, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-gray-500">
-                        <span className="text-[#B8965A]/40 mt-1.5 flex-shrink-0 text-[8px]">◆</span>
+                        <span className="text-[#f05a28]/40 mt-1.5 flex-shrink-0 text-[8px]">◆</span>
                         {desc}
                       </li>
                     ))}

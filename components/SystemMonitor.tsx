@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, TrendingUp, Users, Zap, AlertCircle, CheckCircle2, Star, ChevronRight } from 'lucide-react';
 
 const stats = [
-  { icon: Clock, value: '15h', label: 'économisées par semaine en moyenne', color: 'text-yellow-500', border: 'border-yellow-500/30', bg: 'bg-yellow-950/10' },
+  { icon: Clock, value: '15h', label: 'économisées par semaine en moyenne', color: 'text-[#f05a28]', border: 'border-[#f05a28]/30', bg: 'bg-[#f05a28]/5' },
   { icon: Users, value: '50+', label: 'entrepreneurs & PME automatisés', color: 'text-cyan-500', border: 'border-cyan-500/30', bg: 'bg-cyan-950/10' },
   { icon: TrendingUp, value: 'x3', label: 'de productivité gagnée en moyenne', color: 'text-green-500', border: 'border-green-500/30', bg: 'bg-green-950/10' },
   { icon: Zap, value: '48h', label: 'délai de livraison garanti', color: 'text-pink-500', border: 'border-pink-500/30', bg: 'bg-pink-950/10' },
@@ -68,7 +68,7 @@ const profiles = [
 
 const colorMap: Record<string, { tab: string; border: string; bg: string; badge: string; dot: string }> = {
   cyan:   { tab: 'border-cyan-500 text-cyan-400',   border: 'border-cyan-500/40',   bg: 'bg-cyan-950/10',   badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',   dot: 'bg-cyan-500' },
-  yellow: { tab: 'border-yellow-500 text-yellow-400', border: 'border-yellow-500/40', bg: 'bg-yellow-950/10', badge: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30', dot: 'bg-yellow-500' },
+  yellow: { tab: 'border-[#f05a28] text-[#ff6b3d]', border: 'border-[#f05a28]/40', bg: 'bg-[#f05a28]/5', badge: 'bg-[#f05a28]/10 text-[#ff6b3d] border-[#f05a28]/30', dot: 'bg-[#f05a28]' },
   pink:   { tab: 'border-pink-500 text-pink-400',   border: 'border-pink-500/40',   bg: 'bg-pink-950/10',   badge: 'bg-pink-500/10 text-pink-400 border-pink-500/30',   dot: 'bg-pink-500' },
 };
 
@@ -192,16 +192,16 @@ const SystemMonitor: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-zinc-900/60 border border-white/10 rounded-lg p-6 hover:border-yellow-500/30 transition-colors"
+              className="bg-zinc-900/60 border border-white/10 rounded-lg p-6 hover:border-[#f05a28]/30 transition-colors"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.stars }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                  <Star key={j} className="w-4 h-4 text-[#f05a28] fill-[#f05a28]" />
                 ))}
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-4 italic">"{t.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-500 font-bold text-sm">
+                <div className="w-9 h-9 rounded-full bg-[#f05a28]/20 border border-[#f05a28]/40 flex items-center justify-center text-[#f05a28] font-bold text-sm">
                   {t.name[0]}
                 </div>
                 <div>

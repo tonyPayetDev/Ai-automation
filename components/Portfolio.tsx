@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { SectionTitle } from './ui/CyberComponents';
 
 const projects = [
@@ -15,9 +15,9 @@ const projects = [
 
 const Portfolio: React.FC = () => (
   <section id="portfolio" className="py-24 md:py-32 relative scroll-mt-20">
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B8965A]/20 to-transparent" />
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f05a28]/20 to-transparent" />
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
-      <SectionTitle title="Portfolio" subtitle="Réalisations & projets" />
+      <SectionTitle title="Réalisations & projets" subtitle="Portfolio" />
 
       {/* Mobile carousel */}
       <div className="carousel-x overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-6 px-6 pb-4 md:hidden">
@@ -25,14 +25,14 @@ const Portfolio: React.FC = () => (
           {projects.map((project) => (
             <div
               key={project.id}
-              className="snap-start w-[80vw] max-w-[300px] flex-shrink-0 relative overflow-hidden rounded-2xl border border-white/5 bg-[#0a0a0a]"
+              className="snap-start w-[80vw] max-w-[300px] flex-shrink-0 relative overflow-hidden rounded-2xl border border-white/5 bg-[#111]"
             >
               <div className="aspect-video relative">
                 <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-sm font-medium text-white mb-0.5">{project.title}</h3>
-                  <span className="text-[#B8965A] text-xs">{project.category}</span>
+                  <h3 className="text-sm font-semibold text-white mb-0.5">{project.title}</h3>
+                  <span className="text-[#f05a28] text-xs font-medium">{project.category}</span>
                 </div>
               </div>
             </div>
@@ -46,37 +46,35 @@ const Portfolio: React.FC = () => (
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-            className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#0a0a0a] cursor-pointer hover:border-[#B8965A]/20 transition-all duration-500"
+            className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#111] cursor-pointer hover:border-[#f05a28]/20 transition-all duration-500"
           >
             <div className="aspect-video overflow-hidden">
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-full object-cover opacity-60 transition-all duration-700 group-hover:scale-105 group-hover:opacity-40"
+                className="w-full h-full object-cover opacity-55 transition-all duration-700 group-hover:scale-105 group-hover:opacity-35"
               />
             </div>
 
-            {/* Hover overlay */}
             <div className="absolute inset-0 flex flex-col justify-end p-6">
-              <div className="translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                <h3
-                  className="text-xl font-light text-white mb-1"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
+              <div className="translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="text-lg font-bold text-white mb-1">
                   {project.title}
                 </h3>
-                <span className="text-[#B8965A] text-xs tracking-wider">{project.category}</span>
+                <span className="text-[#f05a28] text-xs font-semibold tracking-wider">{project.category}</span>
               </div>
             </div>
 
-            {/* Top-right arrow */}
-            <div className="absolute top-4 right-4 w-8 h-8 bg-[#B8965A]/0 rounded-full flex items-center justify-center text-transparent group-hover:bg-[#B8965A]/10 group-hover:text-[#B8965A] transition-all duration-300">
+            <div className="absolute top-4 right-4 w-9 h-9 bg-[#f05a28]/0 rounded-full flex items-center justify-center text-transparent group-hover:bg-[#f05a28]/15 group-hover:text-[#f05a28] transition-all duration-300">
               <ArrowUpRight size={16} />
             </div>
+
+            {/* Bottom accent line */}
+            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#f05a28] group-hover:w-full transition-all duration-600 ease-out" />
           </motion.div>
         ))}
       </div>
@@ -87,7 +85,7 @@ const Portfolio: React.FC = () => (
         viewport={{ once: true }}
         className="mt-10 text-center"
       >
-        <button className="text-sm text-gray-600 hover:text-[#B8965A] border-b border-transparent hover:border-[#B8965A]/50 transition-all duration-300 pb-1 tracking-wider">
+        <button className="text-sm text-gray-600 hover:text-[#f05a28] border-b border-transparent hover:border-[#f05a28]/50 transition-all duration-300 pb-1 tracking-wider font-medium">
           Voir tous les projets →
         </button>
       </motion.div>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Zap, Clock, TrendingUp } from 'lucide-react';
 import { CyberButton } from './ui/CyberComponents';
 
 interface HeroProps {
@@ -11,16 +11,38 @@ interface HeroProps {
   };
 }
 
+const words = ['vos', 'tâches,', 'votre', 'business', 'décolle.'];
+
+const wordVariants = {
+  hidden: { opacity: 0, y: 40, skewY: 3 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    skewY: 0,
+    transition: {
+      duration: 0.6,
+      delay: 0.3 + i * 0.1,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  }),
+};
+
 const stagger = {
   container: {
     hidden: {},
-    show: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
+    show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
   },
   item: {
-    hidden: { opacity: 0, y: 32 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } },
   },
 };
+
+const stats = [
+  { value: '48h', label: 'Délai de livraison', icon: Clock },
+  { value: '15h', label: 'Gagnées / semaine', icon: TrendingUp },
+  { value: '100+', label: 'Sites déployés', icon: Zap },
+];
 
 const Hero: React.FC<HeroProps> = ({ media }) => (
   <section
@@ -28,13 +50,13 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
     className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
   >
     {/* Ambient glow */}
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#B8965A]/[0.04] rounded-full blur-[180px]" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8965A]/[0.03] rounded-full blur-[120px]" />
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-[#f05a28]/[0.05] rounded-full blur-[180px]" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#f05a28]/[0.04] rounded-full blur-[120px]" />
     </div>
 
-    <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full py-20">
-      <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full py-16">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         {/* Left: text */}
         <motion.div
@@ -43,31 +65,44 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
           animate="show"
           className="order-2 lg:order-1"
         >
+          {/* Tag */}
           <motion.div variants={stagger.item} className="flex items-center gap-3 mb-8">
-            <span className="inline-block w-8 h-px bg-[#B8965A]" />
-            <span className="text-[#B8965A] text-xs font-medium tracking-[0.25em] uppercase">
+            <span className="inline-block w-8 h-px bg-[#f05a28]" />
+            <span className="text-[#f05a28] text-xs font-semibold tracking-[0.22em] uppercase">
               Architecte IA & Automatisation
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={stagger.item}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[0.95] tracking-tight mb-8"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            Gagnez du
-            <br />
-            <em className="not-italic text-[#B8965A]">temps,</em>
-            <br />
-            faites ×10.
-          </motion.h1>
+          {/* Headline with word-reveal */}
+          <div className="mb-8 overflow-hidden">
+            <motion.p
+              variants={stagger.item}
+              className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.0] tracking-tight"
+            >
+              J'automatise
+            </motion.p>
+            <div className="flex flex-wrap gap-x-4 text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.1] tracking-tight mt-1">
+              {words.map((word, i) => (
+                <motion.span
+                  key={i}
+                  custom={i}
+                  variants={wordVariants}
+                  initial="hidden"
+                  animate="show"
+                  className={word.includes('décolle') ? 'text-[#f05a28]' : 'text-white'}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </div>
+          </div>
 
           <motion.p variants={stagger.item} className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg mb-3">
-            J'automatise les tâches répétitives de votre business pour que vous vous concentriez sur ce qui rapporte vraiment.
+            Les devis, relances, publications, commandes — je les automatise pour que vous vous concentriez sur ce qui rapporte vraiment.
           </motion.p>
 
-          <motion.p variants={stagger.item} className="text-gray-600 text-sm mb-10">
-            Restaurants · E-commerce · Agences · Indépendants — livraison 48h
+          <motion.p variants={stagger.item} className="text-[#6b6560] text-sm mb-10">
+            Restaurants · E-commerce · Agences · Indépendants — livraison garantie en 48h
           </motion.p>
 
           <motion.div variants={stagger.item} className="flex flex-col sm:flex-row gap-4">
@@ -86,14 +121,15 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
 
           {/* Stats row */}
           <motion.div variants={stagger.item} className="mt-14 flex items-center gap-8 pt-8 border-t border-white/5">
-            {[
-              { value: '48h', label: 'Délai livraison' },
-              { value: '15h', label: 'Gagnées / semaine' },
-              { value: '100+', label: 'Sites déployés' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-2xl font-light text-white" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{stat.value}</div>
-                <div className="text-gray-600 text-xs mt-0.5 tracking-wide">{stat.label}</div>
+            {stats.map(({ value, label, icon: Icon }) => (
+              <div key={label} className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#f05a28]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Icon className="w-3.5 h-3.5 text-[#f05a28]" />
+                </div>
+                <div>
+                  <div className="text-xl font-bold text-white leading-none">{value}</div>
+                  <div className="text-gray-600 text-xs mt-1 leading-snug">{label}</div>
+                </div>
               </div>
             ))}
           </motion.div>
@@ -101,27 +137,30 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
 
         {/* Right: portrait */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
+          initial={{ opacity: 0, scale: 0.96, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1], delay: 0.15 }}
           className="order-1 lg:order-2 flex justify-center lg:justify-end"
         >
           <div className="relative">
-            {/* Gold accent frames */}
-            <div className="absolute -inset-4 border border-[#B8965A]/15 rounded-2xl" />
-            <div className="absolute -inset-8 border border-[#B8965A]/6 rounded-3xl" />
+            {/* Accent frames */}
+            <div className="absolute -inset-4 border border-[#f05a28]/12 rounded-2xl" />
+            <div className="absolute -inset-8 border border-[#f05a28]/5 rounded-3xl" />
+
+            {/* Ambient glow behind portrait */}
+            <div className="absolute inset-0 bg-[#f05a28]/[0.07] rounded-2xl blur-3xl scale-110 -z-10" />
 
             {/* Availability badge */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-5 -right-5 bg-[#B8965A] text-[#050505] px-4 py-2 rounded-full text-xs font-semibold tracking-wider shadow-lg shadow-[#B8965A]/20 z-20"
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -top-5 -right-4 bg-[#f05a28] text-white px-4 py-2 rounded-full text-xs font-semibold tracking-wider shadow-lg shadow-[#f05a28]/30 z-20"
             >
               Disponible ✓
             </motion.div>
 
             {/* Portrait */}
-            <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[480px] rounded-2xl overflow-hidden bg-[#0d0d0d]">
+            <div className="relative w-60 h-72 sm:w-72 sm:h-88 lg:w-88 lg:h-[440px] rounded-2xl overflow-hidden bg-[#111]">
               {media.type === 'video' ? (
                 <video
                   src={media.src}
@@ -138,27 +177,36 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
                   className="w-full h-full object-cover"
                 />
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/70 via-transparent to-transparent" />
 
               {/* Name card */}
-              <div className="absolute bottom-5 left-5 right-5">
-                <div className="bg-[#050505]/80 backdrop-blur-md border border-white/8 rounded-xl px-4 py-3">
-                  <p className="text-white font-medium text-sm">Tony Payet</p>
-                  <p className="text-[#B8965A] text-xs mt-0.5">Expert IA · La Réunion</p>
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-[#080808]/85 backdrop-blur-md border border-white/8 rounded-xl px-4 py-3">
+                  <p className="text-white font-semibold text-sm">Tony Payet</p>
+                  <p className="text-[#f05a28] text-xs mt-0.5 font-medium">Expert IA · La Réunion</p>
                 </div>
               </div>
             </div>
 
             {/* Floating stat card */}
             <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute -bottom-6 -left-6 bg-[#0d0d0d] border border-white/8 rounded-xl p-4 shadow-xl z-20"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+              className="absolute -bottom-6 -left-6 bg-[#111] border border-white/8 rounded-2xl p-4 shadow-2xl z-20"
             >
-              <p className="text-gray-500 text-xs tracking-wider mb-1">Temps récupéré</p>
-              <p className="text-2xl text-white font-light" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                15h <span className="text-[#B8965A] text-sm">/semaine</span>
+              <p className="text-[#6b6560] text-xs tracking-wide mb-1">Temps récupéré</p>
+              <p className="text-2xl font-bold text-white">
+                15h <span className="text-[#f05a28] text-sm font-medium">/semaine</span>
               </p>
+            </motion.div>
+
+            {/* Top left floating badge */}
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+              className="absolute -top-3 -left-6 bg-[#111] border border-[#f05a28]/30 rounded-xl px-3 py-2 shadow-xl z-20"
+            >
+              <p className="text-[#f05a28] text-xs font-semibold">🚀 Livré en 48h</p>
             </motion.div>
           </div>
         </motion.div>
@@ -169,14 +217,14 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 1.5 }}
+      transition={{ delay: 1.8 }}
       className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
     >
-      <span className="text-gray-600 text-xs tracking-[0.2em] uppercase">Défiler</span>
+      <span className="text-[#6b6560] text-xs tracking-[0.2em] uppercase">Défiler</span>
       <motion.div
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        className="w-px h-10 bg-gradient-to-b from-[#B8965A]/50 to-transparent"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 1.6, repeat: Infinity }}
+        className="w-px h-10 bg-gradient-to-b from-[#f05a28]/60 to-transparent"
       />
     </motion.div>
   </section>

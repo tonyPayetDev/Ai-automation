@@ -92,24 +92,24 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
     <AnimatePresence>
       {isOpen && (
         <motion.div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-            <motion.div initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} className="w-full max-w-5xl bg-black border border-yellow-500/30 rounded-lg shadow-[0_0_50px_rgba(234,179,8,0.1)] overflow-hidden flex flex-col max-h-[90vh]">
-                <div className="flex items-center justify-between p-4 border-b border-yellow-500/20 bg-zinc-900/50">
+            <motion.div initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} className="w-full max-w-5xl bg-black border border-[#f05a28]/30 rounded-lg shadow-[0_0_50px_rgba(234,179,8,0.1)] overflow-hidden flex flex-col max-h-[90vh]">
+                <div className="flex items-center justify-between p-4 border-b border-[#f05a28]/20 bg-zinc-900/50">
                     <div className="flex items-center gap-3">
-                        <Lock className="w-5 h-5 text-yellow-500" />
-                        <h2 className="text-xl font-bold text-white font-orbitron tracking-wider">ADMIN_CONSOLE // <span className="text-yellow-500">SYSTEM_MANAGER</span></h2>
+                        <Lock className="w-5 h-5 text-[#f05a28]" />
+                        <h2 className="text-xl font-bold text-white font-orbitron tracking-wider">ADMIN_CONSOLE // <span className="text-[#f05a28]">SYSTEM_MANAGER</span></h2>
                     </div>
                     <button onClick={onClose} className="p-2 hover:bg-white/10 rounded-full transition-colors text-gray-400 hover:text-white"><X size={24} /></button>
                 </div>
 
                 <div className="flex flex-1 overflow-hidden">
                     <div className="w-64 border-r border-white/10 bg-black/50 p-4 hidden md:flex flex-col gap-2">
-                        <button onClick={() => setActiveTab('offers')} className={`flex items-center gap-3 p-3 rounded text-left transition-all ${activeTab === 'offers' ? 'bg-yellow-500 text-black font-bold' : 'text-gray-400 hover:bg-white/5'}`}>
+                        <button onClick={() => setActiveTab('offers')} className={`flex items-center gap-3 p-3 rounded text-left transition-all ${activeTab === 'offers' ? 'bg-[#f05a28] text-black font-bold' : 'text-gray-400 hover:bg-white/5'}`}>
                             <Layout size={18} /> OFFER_MANAGER
                         </button>
-                        <button onClick={() => setActiveTab('upload')} className={`flex items-center gap-3 p-3 rounded text-left transition-all ${activeTab === 'upload' ? 'bg-yellow-500 text-black font-bold' : 'text-gray-400 hover:bg-white/5'}`}>
+                        <button onClick={() => setActiveTab('upload')} className={`flex items-center gap-3 p-3 rounded text-left transition-all ${activeTab === 'upload' ? 'bg-[#f05a28] text-black font-bold' : 'text-gray-400 hover:bg-white/5'}`}>
                             <Upload size={18} /> UPLOAD_HERO
                         </button>
-                        <button onClick={() => setActiveTab('generate')} disabled={!selectedImage} className={`flex items-center gap-3 p-3 rounded text-left transition-all ${activeTab === 'generate' ? 'bg-yellow-500 text-black font-bold' : 'text-gray-400 hover:bg-white/5'} ${!selectedImage ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                        <button onClick={() => setActiveTab('generate')} disabled={!selectedImage} className={`flex items-center gap-3 p-3 rounded text-left transition-all ${activeTab === 'generate' ? 'bg-[#f05a28] text-black font-bold' : 'text-gray-400 hover:bg-white/5'} ${!selectedImage ? 'opacity-50 cursor-not-allowed' : ''}`}>
                             <Film size={18} /> VEO_GEN
                         </button>
                     </div>
@@ -123,7 +123,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
                         {activeTab === 'offers' && (
                           <div className="space-y-8 pb-12">
                             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                              <h3 className="text-white font-bold flex items-center gap-2"><Settings size={18} className="text-yellow-500"/> CONFIGURATION_ACTIVE: {localOffer.name}</h3>
+                              <h3 className="text-white font-bold flex items-center gap-2"><Settings size={18} className="text-[#f05a28]"/> CONFIGURATION_ACTIVE: {localOffer.name}</h3>
                               <CyberButton onClick={handleSaveOffer}><Save size={16} /> DÉPLOYER_OFFRE</CyberButton>
                             </div>
 
@@ -133,12 +133,12 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
                                 <input 
                                   value={localOffer.title} 
                                   onChange={e => setLocalOffer({...localOffer, title: e.target.value})}
-                                  className="w-full bg-black border border-white/10 p-3 rounded text-white font-mono text-sm focus:border-yellow-500 outline-none" 
+                                  className="w-full bg-black border border-white/10 p-3 rounded text-white font-mono text-sm focus:border-[#f05a28] outline-none" 
                                 />
                                 <input 
                                   value={localOffer.subtitle} 
                                   onChange={e => setLocalOffer({...localOffer, subtitle: e.target.value})}
-                                  className="w-full bg-black border border-white/10 p-3 rounded text-gray-400 font-mono text-sm focus:border-yellow-500 outline-none" 
+                                  className="w-full bg-black border border-white/10 p-3 rounded text-gray-400 font-mono text-sm focus:border-[#f05a28] outline-none" 
                                 />
                               </div>
                               <div className="space-y-4">
@@ -154,7 +154,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
                                     placeholder="Prix Boost" 
                                     value={localOffer.pricing.discountedPrice} 
                                     onChange={e => setLocalOffer({...localOffer, pricing: {...localOffer.pricing, discountedPrice: e.target.value}})}
-                                    className="bg-black border border-yellow-500/30 p-3 rounded text-yellow-500 font-mono text-sm" 
+                                    className="bg-black border border-[#f05a28]/30 p-3 rounded text-[#f05a28] font-mono text-sm" 
                                   />
                                 </div>
                                 <input 
@@ -183,7 +183,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
                                   <button onClick={() => setLocalOffer({...localOffer, problems: localOffer.problems.filter((_, idx) => idx !== i)})} className="p-2 text-red-500 hover:bg-red-500/10 rounded"><Trash2 size={16}/></button>
                                 </div>
                               ))}
-                              <button onClick={() => setLocalOffer({...localOffer, problems: [...localOffer.problems, "Nouveau problème"]})} className="text-xs text-yellow-500 flex items-center gap-1 hover:underline"><Plus size={12}/> Ajouter un point</button>
+                              <button onClick={() => setLocalOffer({...localOffer, problems: [...localOffer.problems, "Nouveau problème"]})} className="text-xs text-[#f05a28] flex items-center gap-1 hover:underline"><Plus size={12}/> Ajouter un point</button>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -246,11 +246,11 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
                         )}
 
                         {activeTab === 'upload' && (
-                            <div className="h-full flex flex-col items-center justify-center border-2 border-dashed border-white/20 rounded-lg hover:border-yellow-500/50 transition-colors bg-white/5 py-12">
+                            <div className="h-full flex flex-col items-center justify-center border-2 border-dashed border-white/20 rounded-lg hover:border-[#f05a28]/50 transition-colors bg-white/5 py-12">
                                 <input type="file" ref={fileInputRef} className="hidden" accept="image/*" onChange={handleFileChange} />
                                 {selectedImage ? (
                                     <div className="text-center">
-                                        <img src={selectedImage} alt="Selected" className="max-h-64 rounded shadow-lg border border-yellow-500/30 mb-4" />
+                                        <img src={selectedImage} alt="Selected" className="max-h-64 rounded shadow-lg border border-[#f05a28]/30 mb-4" />
                                         <CyberButton onClick={() => fileInputRef.current?.click()}>CHANGE IMAGE</CyberButton>
                                     </div>
                                 ) : (
@@ -267,7 +267,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
                             <div className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-xs text-yellow-500 font-mono">SOURCE_INPUT</label>
+                                        <label className="text-xs text-[#f05a28] font-mono">SOURCE_INPUT</label>
                                         <div className="aspect-[9/16] bg-black rounded border border-white/10 overflow-hidden relative">
                                             <img src={selectedImage!} alt="Source" className="w-full h-full object-cover opacity-60" />
                                         </div>
@@ -290,7 +290,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, onUpdateHero, 
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs text-gray-400 font-mono">PROMPT_CONFIGURATION</label>
-                                    <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} className="w-full bg-black border border-white/20 rounded p-3 text-sm text-gray-300 focus:border-yellow-500 focus:outline-none font-mono h-24" />
+                                    <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} className="w-full bg-black border border-white/20 rounded p-3 text-sm text-gray-300 focus:border-[#f05a28] focus:outline-none font-mono h-24" />
                                 </div>
                                 <div className="flex gap-4 pt-4 border-t border-white/10">
                                     <CyberButton onClick={generateVideo}>{isGenerating ? 'PROCESSING...' : 'EXECUTE SIMULATION (VEO)'}</CyberButton>

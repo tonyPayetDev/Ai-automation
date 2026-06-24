@@ -65,20 +65,20 @@ const Contact: React.FC = () => {
     }
   };
 
-  const inputCls = 'w-full bg-black/60 border border-white/10 text-white placeholder-gray-600 px-4 py-3 text-sm focus:outline-none focus:border-yellow-500/60 transition-colors rounded-none';
-  const labelCls = 'block text-xs font-mono text-gray-500 uppercase tracking-widest mb-2';
+  const inputCls = 'w-full bg-[#111]/80 border border-white/8 text-white placeholder-[#6b6560] px-4 py-3.5 text-sm focus:outline-none focus:border-[#f05a28]/50 transition-colors rounded-xl';
+  const labelCls = 'block text-xs font-semibold text-[#6b6560] uppercase tracking-widest mb-2';
   const selectCls = inputCls + ' cursor-pointer appearance-none';
 
   if (status === 'success') {
     return (
-      <section id="contact" className="py-24 bg-black relative scroll-mt-20">
-        <div className="max-w-2xl mx-auto px-4 text-center">
+      <section id="contact" className="py-24 relative scroll-mt-20">
+        <div className="max-w-2xl mx-auto px-6 text-center">
           <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
-            <div className="w-20 h-20 mx-auto mb-6 bg-yellow-500/20 border-2 border-yellow-500/50 rounded-full flex items-center justify-center">
-              <Zap className="w-10 h-10 text-yellow-500" />
+            <div className="w-20 h-20 mx-auto mb-6 bg-[#f05a28]/15 border-2 border-[#f05a28]/40 rounded-full flex items-center justify-center">
+              <Zap className="w-10 h-10 text-[#f05a28]" />
             </div>
-            <h2 className="text-2xl font-black text-white mb-4" style={{ fontFamily: 'Orbitron' }}>MESSAGE REÇU !</h2>
-            <p className="text-gray-400 mb-2">Je vous réponds sous <span className="text-yellow-500 font-bold">24h</span> avec un plan d'action personnalisé.</p>
+            <h2 className="text-2xl font-bold text-white mb-4">Message reçu !</h2>
+            <p className="text-gray-400 mb-2">Je vous réponds sous <span className="text-[#f05a28] font-semibold">24h</span> avec un plan d'action personnalisé.</p>
             <p className="text-gray-600 text-sm">Vérifiez aussi vos spams 😉</p>
           </motion.div>
         </div>
@@ -87,20 +87,22 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-24 bg-black relative scroll-mt-20">
-      <div className="absolute inset-0 cyber-grid opacity-10 pointer-events-none"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent"></div>
+    <section id="contact" className="py-24 relative scroll-mt-20">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f05a28]/20 to-transparent" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <SectionTitle title="Contact" subtitle="Décrivez votre projet — réponse sous 24h" />
+      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+        <SectionTitle title="Décrivez votre projet" subtitle="Contact" />
+        <p className="text-gray-500 text-sm mb-12 -mt-8">Réponse garantie sous 24h · Aucun engagement</p>
 
-        <form onSubmit={handleSubmit} className="space-y-10">
+        <form onSubmit={handleSubmit} className="space-y-6">
 
           {/* BLOC 1 — Identité */}
-          <div className="border border-white/5 bg-zinc-950/50 p-6 md:p-8">
+          <div className="border border-white/6 bg-[#0d0d0d] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <User className="w-4 h-4 text-yellow-500" />
-              <span className="text-xs font-mono text-yellow-500 uppercase tracking-widest">01 / Votre identité</span>
+              <div className="w-6 h-6 rounded-full bg-[#f05a28]/15 flex items-center justify-center">
+                <User className="w-3 h-3 text-[#f05a28]" />
+              </div>
+              <span className="text-xs font-semibold text-[#f05a28] uppercase tracking-widest">01 / Votre identité</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -112,21 +114,23 @@ const Contact: React.FC = () => {
                 <input className={inputCls} placeholder="Payet" value={form.nom} onChange={e => set('nom', e.target.value)} />
               </div>
               <div>
-                <label className={labelCls}><Mail className="inline w-3 h-3 mr-1" />Email *</label>
+                <label className={labelCls}>Email *</label>
                 <input required type="email" className={inputCls} placeholder="tony@monentreprise.fr" value={form.email} onChange={e => set('email', e.target.value)} />
               </div>
               <div>
-                <label className={labelCls}><Phone className="inline w-3 h-3 mr-1" />Téléphone / WhatsApp</label>
+                <label className={labelCls}>Téléphone / WhatsApp</label>
                 <input type="tel" className={inputCls} placeholder="+262 692 XX XX XX" value={form.telephone} onChange={e => set('telephone', e.target.value)} />
               </div>
             </div>
           </div>
 
           {/* BLOC 2 — Business */}
-          <div className="border border-white/5 bg-zinc-950/50 p-6 md:p-8">
+          <div className="border border-white/6 bg-[#0d0d0d] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <Building2 className="w-4 h-4 text-cyan-500" />
-              <span className="text-xs font-mono text-cyan-500 uppercase tracking-widest">02 / Votre business</span>
+              <div className="w-6 h-6 rounded-full bg-[#f05a28]/15 flex items-center justify-center">
+                <Building2 className="w-3 h-3 text-[#f05a28]" />
+              </div>
+              <span className="text-xs font-semibold text-[#f05a28] uppercase tracking-widest">02 / Votre business</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -156,10 +160,12 @@ const Contact: React.FC = () => {
           </div>
 
           {/* BLOC 3 — Besoin */}
-          <div className="border border-white/5 bg-zinc-950/50 p-6 md:p-8">
+          <div className="border border-white/6 bg-[#0d0d0d] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <CheckSquare className="w-4 h-4 text-pink-500" />
-              <span className="text-xs font-mono text-pink-500 uppercase tracking-widest">03 / Votre besoin</span>
+              <div className="w-6 h-6 rounded-full bg-[#f05a28]/15 flex items-center justify-center">
+                <CheckSquare className="w-3 h-3 text-[#f05a28]" />
+              </div>
+              <span className="text-xs font-semibold text-[#f05a28] uppercase tracking-widest">03 / Votre besoin</span>
             </div>
 
             <div className="mb-6">
@@ -170,13 +176,13 @@ const Contact: React.FC = () => {
                     type="button"
                     key={t}
                     onClick={() => toggleTache(t)}
-                    className={`text-left px-4 py-3 text-xs border transition-all ${
+                    className={`text-left px-4 py-3 text-xs border rounded-xl transition-all ${
                       form.taches.includes(t)
-                        ? 'border-yellow-500/60 bg-yellow-500/10 text-yellow-400'
-                        : 'border-white/5 bg-black/40 text-gray-500 hover:border-white/20 hover:text-gray-300'
+                        ? 'border-[#f05a28]/50 bg-[#f05a28]/10 text-[#f05a28]'
+                        : 'border-white/6 bg-[#111]/60 text-gray-500 hover:border-white/15 hover:text-gray-300'
                     }`}
                   >
-                    <span className={`mr-2 ${form.taches.includes(t) ? 'text-yellow-500' : 'text-gray-700'}`}>
+                    <span className={`mr-2 ${form.taches.includes(t) ? 'text-[#f05a28]' : 'text-gray-700'}`}>
                       {form.taches.includes(t) ? '■' : '□'}
                     </span>
                     {t}
@@ -200,14 +206,16 @@ const Contact: React.FC = () => {
           </div>
 
           {/* BLOC 4 — Timing & Budget */}
-          <div className="border border-white/5 bg-zinc-950/50 p-6 md:p-8">
+          <div className="border border-white/6 bg-[#0d0d0d] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <Clock className="w-4 h-4 text-green-500" />
-              <span className="text-xs font-mono text-green-500 uppercase tracking-widest">04 / Timing & budget</span>
+              <div className="w-6 h-6 rounded-full bg-[#f05a28]/15 flex items-center justify-center">
+                <Clock className="w-3 h-3 text-[#f05a28]" />
+              </div>
+              <span className="text-xs font-semibold text-[#f05a28] uppercase tracking-widest">04 / Timing & budget</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className={labelCls}><Wallet className="inline w-3 h-3 mr-1" />Budget approximatif</label>
+                <label className={labelCls}>Budget approximatif</label>
                 <select className={selectCls} value={form.budget} onChange={e => set('budget', e.target.value)}>
                   <option value="">— Choisir —</option>
                   <option>Moins de 500 €</option>
@@ -243,10 +251,12 @@ const Contact: React.FC = () => {
           </div>
 
           {/* BLOC 5 — Message libre */}
-          <div className="border border-white/5 bg-zinc-950/50 p-6 md:p-8">
+          <div className="border border-white/6 bg-[#0d0d0d] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <MessageSquare className="w-4 h-4 text-blue-500" />
-              <span className="text-xs font-mono text-blue-500 uppercase tracking-widest">05 / Décrivez votre projet</span>
+              <div className="w-6 h-6 rounded-full bg-[#f05a28]/15 flex items-center justify-center">
+                <MessageSquare className="w-3 h-3 text-[#f05a28]" />
+              </div>
+              <span className="text-xs font-semibold text-[#f05a28] uppercase tracking-widest">05 / Décrivez votre projet</span>
             </div>
             <textarea
               className={inputCls + ' h-32 resize-none'}
@@ -257,18 +267,20 @@ const Contact: React.FC = () => {
           </div>
 
           {/* SUBMIT */}
-          <div className="text-center pt-2">
+          <div className="text-center pt-4">
             {status === 'error' && (
-              <p className="text-red-400 text-sm mb-4 font-mono">Erreur d'envoi — réessayez ou contactez tony.payet.professionnel@gmail.com</p>
+              <p className="text-red-400 text-sm mb-4">Erreur d'envoi — réessayez ou contactez tony.payet.professionnel@gmail.com</p>
             )}
-            <button
+            <motion.button
               type="submit"
               disabled={status === 'loading'}
-              className="inline-flex items-center gap-3 px-10 py-4 bg-yellow-500 text-black font-black uppercase tracking-widest text-sm hover:bg-yellow-400 transition-all transform hover:scale-[1.02] active:scale-95 disabled:opacity-50 shadow-[0_0_30px_rgba(234,179,8,0.3)]"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-3 px-10 py-4 bg-[#f05a28] text-white font-semibold text-sm rounded-full hover:bg-[#d94e20] transition-all shadow-xl shadow-[#f05a28]/25 disabled:opacity-50"
             >
               {status === 'loading' ? (
                 <>
-                  <span className="animate-spin w-4 h-4 border-2 border-black border-t-transparent rounded-full"></span>
+                  <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span>
                   Envoi en cours…
                 </>
               ) : (
@@ -277,8 +289,8 @@ const Contact: React.FC = () => {
                   Envoyer ma demande
                 </>
               )}
-            </button>
-            <p className="text-gray-600 text-xs mt-4 font-mono">Réponse garantie sous 24h · Aucun engagement</p>
+            </motion.button>
+            <p className="text-gray-600 text-xs mt-4">Réponse garantie sous 24h · Aucun engagement</p>
           </div>
 
         </form>

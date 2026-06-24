@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SkillsMatrix from './components/SkillsMatrix';
@@ -76,9 +76,9 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#050505] text-white selection:bg-[#B8965A]/30 selection:text-white">
+    <div className="relative min-h-screen bg-[#080808] text-[#f0ece4]">
       <Navbar />
-      
+
       <main>
         <Hero media={heroMedia} />
         <SkillsMatrix />
@@ -90,13 +90,13 @@ function App() {
         <Pricing />
         <Contact />
       </main>
-      
+
       <Footer onOpenAdmin={() => setIsAdminOpen(true)} />
       <ChatWidget />
-      
-      <AdminPanel 
-        isOpen={isAdminOpen} 
-        onClose={() => setIsAdminOpen(false)} 
+
+      <AdminPanel
+        isOpen={isAdminOpen}
+        onClose={() => setIsAdminOpen(false)}
         onUpdateHero={handleUpdateHero}
         activeOffer={activeOffer}
         onUpdateOffer={handleUpdateOffer}

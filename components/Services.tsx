@@ -37,11 +37,10 @@ const services = [
 
 const Services: React.FC = () => (
   <section id="services" className="py-24 md:py-32 relative scroll-mt-20">
-    {/* Top separator */}
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B8965A]/20 to-transparent" />
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f05a28]/20 to-transparent" />
 
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
-      <SectionTitle title="Services" subtitle="Ce que je fais pour vous" />
+      <SectionTitle title="Ce que je fais pour vous" subtitle="Services" />
 
       {/* Mobile carousel */}
       <div className="carousel-x overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-6 px-6 pb-4 md:hidden">
@@ -49,13 +48,13 @@ const Services: React.FC = () => (
           {services.map((service) => (
             <div
               key={service.id}
-              className="snap-start w-[78vw] max-w-[300px] flex-shrink-0 bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 hover:border-[#B8965A]/30 transition-colors duration-500"
+              className="snap-start w-[78vw] max-w-[300px] flex-shrink-0 bg-[#111] border border-white/5 rounded-2xl p-6 hover:border-[#f05a28]/25 transition-colors duration-400"
             >
-              <span className="text-[#B8965A]/40 text-xs font-medium tracking-[0.2em] mb-4 block">{service.number}</span>
-              <div className="w-10 h-10 mb-5 flex items-center justify-center text-[#B8965A]/70">
+              <span className="text-[#f05a28]/50 text-xs font-semibold tracking-[0.2em] mb-4 block">{service.number}</span>
+              <div className="w-10 h-10 mb-5 flex items-center justify-center text-[#f05a28]/70">
                 <service.icon size={22} strokeWidth={1.5} />
               </div>
-              <h3 className="text-white text-base font-medium mb-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem' }}>{service.title}</h3>
+              <h3 className="text-white text-base font-semibold mb-3">{service.title}</h3>
               <p className="text-gray-500 text-xs leading-relaxed">{service.description}</p>
             </div>
           ))}
@@ -72,31 +71,24 @@ const Services: React.FC = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            className="group relative bg-[#050505] p-8 hover:bg-[#0a0a0a] transition-colors duration-500 cursor-default"
+            className="group relative bg-[#080808] p-8 hover:bg-[#0e0e0e] transition-colors duration-500 cursor-default"
           >
-            {/* Number */}
-            <span className="text-[#B8965A]/30 text-xs font-medium tracking-[0.2em] mb-6 block group-hover:text-[#B8965A]/60 transition-colors duration-300">
+            <span className="text-[#f05a28]/30 text-xs font-semibold tracking-[0.2em] mb-6 block group-hover:text-[#f05a28]/70 transition-colors duration-300">
               {service.number}
             </span>
 
-            {/* Icon */}
-            <div className="w-12 h-12 mb-6 flex items-center justify-center border border-white/5 rounded-xl bg-[#0a0a0a] text-gray-600 group-hover:text-[#B8965A] group-hover:border-[#B8965A]/20 transition-all duration-500">
+            <div className="w-12 h-12 mb-6 flex items-center justify-center border border-white/5 rounded-xl bg-[#111] text-gray-600 group-hover:text-[#f05a28] group-hover:border-[#f05a28]/20 transition-all duration-400">
               <service.icon size={22} strokeWidth={1.5} />
             </div>
 
-            {/* Content */}
-            <h3
-              className="text-white text-xl font-light mb-4 group-hover:text-[#B8965A] transition-colors duration-300"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
+            <h3 className="text-white text-lg font-semibold mb-4 group-hover:text-[#f05a28] transition-colors duration-300">
               {service.title}
             </h3>
             <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-400 transition-colors duration-300">
               {service.description}
             </p>
 
-            {/* Bottom line reveal */}
-            <div className="absolute bottom-0 left-0 w-0 h-px bg-[#B8965A]/50 group-hover:w-full transition-all duration-700 ease-out" />
+            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#f05a28]/60 group-hover:w-full transition-all duration-700 ease-out" />
           </motion.div>
         ))}
       </div>

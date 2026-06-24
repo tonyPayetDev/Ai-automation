@@ -34,11 +34,11 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -10 }}
+      initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`fixed w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#050505]/90 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
+        scrolled ? 'bg-[#080808]/92 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -48,8 +48,8 @@ const Navbar: React.FC = () => {
             onClick={(e) => handleLinkClick(e, '#home')}
             className="flex-shrink-0 group"
           >
-            <span className="font-['Cormorant_Garamond',serif] text-2xl font-light tracking-widest text-white">
-              Tony<span className="text-[#B8965A]">.</span>
+            <span className="font-['Plus_Jakarta_Sans',sans-serif] text-xl font-bold tracking-tight text-white">
+              Tony<span className="text-[#f05a28]">.</span>
             </span>
           </a>
 
@@ -60,18 +60,25 @@ const Navbar: React.FC = () => {
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`
-                  relative text-sm font-light tracking-wider transition-colors duration-300 group
+                  relative text-sm font-medium tracking-wide transition-colors duration-300 group
                   ${link.special
-                    ? 'text-[#B8965A] font-medium'
+                    ? 'text-[#f05a28]'
                     : 'text-gray-400 hover:text-white'}
                 `}
               >
                 {link.name}
                 <span className={`absolute -bottom-0.5 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${
-                  link.special ? 'bg-[#B8965A]' : 'bg-white/40'
+                  link.special ? 'bg-[#f05a28]' : 'bg-white/40'
                 }`} />
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={(e) => handleLinkClick(e, '#contact')}
+              className="ml-2 px-5 py-2.5 bg-[#f05a28] text-white text-sm font-semibold rounded-full hover:bg-[#d94e20] transition-all duration-300 shadow-md shadow-[#f05a28]/20"
+            >
+              Démarrer →
+            </a>
           </div>
 
           <button
@@ -91,7 +98,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#050505]/98 backdrop-blur-xl border-b border-white/5"
+            className="md:hidden bg-[#080808]/98 backdrop-blur-xl border-b border-white/5"
           >
             <div className="px-6 py-6 space-y-1">
               {navLinks.map((link, i) => (
@@ -102,13 +109,22 @@ const Navbar: React.FC = () => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
-                  className={`block py-3.5 text-base font-light border-b border-white/5 last:border-0 transition-colors ${
-                    link.special ? 'text-[#B8965A]' : 'text-gray-300 hover:text-white'
+                  className={`block py-3.5 text-base font-medium border-b border-white/5 last:border-0 transition-colors ${
+                    link.special ? 'text-[#f05a28]' : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {link.name}
                 </motion.a>
               ))}
+              <div className="pt-4">
+                <a
+                  href="#contact"
+                  onClick={(e) => handleLinkClick(e, '#contact')}
+                  className="block text-center py-3 bg-[#f05a28] text-white text-sm font-semibold rounded-full hover:bg-[#d94e20] transition-all"
+                >
+                  Démarrer →
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

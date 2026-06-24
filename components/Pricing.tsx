@@ -51,13 +51,13 @@ const plans = [
 
 const Pricing: React.FC = () => (
   <section id="pricing" className="py-24 md:py-32 relative scroll-mt-20">
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#B8965A]/20 to-transparent" />
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f05a28]/20 to-transparent" />
     <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#B8965A]/[0.03] rounded-full blur-[150px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#f05a28]/[0.04] rounded-full blur-[160px]" />
     </div>
 
     <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <SectionTitle title="Tarifs" subtitle="Investissement transparent" />
+      <SectionTitle title="Investissement transparent" subtitle="Tarifs" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
         {plans.map((plan, index) => (
@@ -70,37 +70,32 @@ const Pricing: React.FC = () => (
             className={`
               relative flex flex-col rounded-2xl p-8 border transition-all duration-500
               ${plan.recommended
-                ? 'bg-[#0d0d0d] border-[#B8965A]/40 shadow-2xl shadow-[#B8965A]/5'
+                ? 'bg-[#0e0e0e] border-[#f05a28]/35 shadow-2xl shadow-[#f05a28]/6'
                 : 'bg-[#080808] border-white/5 hover:border-white/10'}
             `}
           >
             {plan.recommended && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#B8965A] text-[#050505] text-xs font-semibold px-5 py-1 rounded-full tracking-wider">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#f05a28] text-white text-xs font-semibold px-5 py-1 rounded-full tracking-wider shadow-lg shadow-[#f05a28]/30">
                 Populaire
               </div>
             )}
 
-            {/* Header */}
             <div className="mb-8">
-              <p className={`text-xs font-medium tracking-[0.2em] uppercase mb-3 ${plan.recommended ? 'text-[#B8965A]' : 'text-gray-600'}`}>
+              <p className={`text-xs font-semibold tracking-[0.2em] uppercase mb-3 ${plan.recommended ? 'text-[#f05a28]' : 'text-gray-600'}`}>
                 {plan.name}
               </p>
               <div className="flex items-baseline gap-1 mb-3">
-                <span
-                  className="text-4xl font-light text-white"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
+                <span className="text-4xl font-bold text-white">
                   {plan.price}
                 </span>
               </div>
               <p className="text-gray-500 text-sm leading-relaxed">{plan.description}</p>
             </div>
 
-            {/* Features */}
             <ul className="space-y-3 mb-8 flex-grow">
               {plan.features.map((feature, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-sm text-gray-400">
-                  <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${plan.recommended ? 'text-[#B8965A]' : 'text-gray-600'}`} strokeWidth={2} />
+                  <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${plan.recommended ? 'text-[#f05a28]' : 'text-gray-600'}`} strokeWidth={2} />
                   {feature}
                 </li>
               ))}

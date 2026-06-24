@@ -15,16 +15,13 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   ];
 
   return (
-    <footer className="bg-[#030303] border-t border-white/5 pt-16 pb-8 relative scroll-mt-20" id="contact">
+    <footer className="bg-[#050505] border-t border-white/5 pt-16 pb-8 relative scroll-mt-20" id="contact-footer">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
           <div className="col-span-1 md:col-span-2">
-            <span
-              className="text-2xl font-light tracking-widest text-white block mb-4"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              Tony<span className="text-[#B8965A]">.</span>
+            <span className="text-xl font-bold tracking-tight text-white block mb-4">
+              Tony<span className="text-[#f05a28]">.</span>
             </span>
             <p className="text-gray-500 text-sm max-w-sm mb-8 leading-relaxed">
               Expert IA & Automatisation Business. Je transforme vos process manuels en systèmes automatisés qui travaillent pour vous 24h/24.
@@ -32,17 +29,17 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
 
             <div className="space-y-3 mb-8 text-sm">
               <div className="flex items-center gap-3 text-gray-400">
-                <Phone size={14} className="text-[#B8965A]" />
+                <Phone size={14} className="text-[#f05a28]" />
                 <a href="tel:0692417749" className="hover:text-white transition-colors">0692 41 77 49</a>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <Mail size={14} className="text-[#B8965A]" />
+                <Mail size={14} className="text-[#f05a28]" />
                 <a href="mailto:tony.payet.professionnel@gmail.com" className="hover:text-white transition-colors break-all">
                   tony.payet.professionnel@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin size={14} className="text-[#B8965A]" />
+                <MapPin size={14} className="text-[#f05a28]" />
                 <span>Saint-Denis 97490, La Réunion</span>
               </div>
             </div>
@@ -52,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
                 <a
                   key={idx}
                   href="#"
-                  className="w-9 h-9 rounded-full border border-white/8 flex items-center justify-center text-gray-500 hover:text-white hover:border-[#B8965A]/40 transition-all duration-300"
+                  className="w-9 h-9 rounded-full border border-white/8 flex items-center justify-center text-gray-500 hover:text-white hover:border-[#f05a28]/40 hover:bg-[#f05a28]/8 transition-all duration-300"
                 >
                   <Icon size={15} />
                 </a>
@@ -61,7 +58,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
           </div>
 
           <div>
-            <h4 className="text-white text-xs font-medium uppercase tracking-[0.2em] mb-6">Navigation</h4>
+            <h4 className="text-white text-xs font-semibold uppercase tracking-[0.2em] mb-6">Navigation</h4>
             <ul className="space-y-3">
               {footerLinks.map((item) => (
                 <li key={item.name}>
@@ -74,7 +71,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
           </div>
 
           <div>
-            <h4 className="text-white text-xs font-medium uppercase tracking-[0.2em] mb-6">Légal</h4>
+            <h4 className="text-white text-xs font-semibold uppercase tracking-[0.2em] mb-6">Légal</h4>
             <ul className="space-y-3">
               {['Mentions Légales', 'Confidentialité', 'CGV'].map((item) => (
                 <li key={item}>
@@ -90,10 +87,10 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
           <p>© 2025 Tony Payet. Tous droits réservés.</p>
           <div className="flex items-center gap-4">
-            <span className="text-[#B8965A]/50">Automatisation · IA · Web</span>
+            <span className="text-[#f05a28]/40 font-medium">Automatisation · IA · Web</span>
             <button
               onClick={onOpenAdmin}
-              className="text-gray-700 hover:text-[#B8965A] transition-colors p-1.5 rounded-full"
+              className="text-gray-700 hover:text-[#f05a28] transition-colors p-1.5 rounded-full"
               title="Accès Admin"
             >
               <Lock size={12} />
