@@ -5,12 +5,12 @@ import { ArrowUpRight } from 'lucide-react';
 import { SectionTitle } from './ui/CyberComponents';
 
 const projects = [
-  { id: 'ozeroz', title: 'Ozeroz', category: 'Cadeaux Personnalisés Luxe', imageUrl: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=800&auto=format&fit=crop' },
-  { id: 'koytcha', title: 'Koytcha Immo', category: 'Immobilier — React', imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop' },
-  { id: 'fusionia', title: 'Fusionia', category: 'Jeu & IA', imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop' },
-  { id: 'cnjoi', title: 'Cnjoi.fr', category: 'Plateforme Événementielle', imageUrl: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop' },
-  { id: 'inosys', title: 'Inosys', category: 'E-commerce', imageUrl: 'https://images.unsplash.com/photo-1558326567-98ae2405596b?q=80&w=800&auto=format&fit=crop' },
-  { id: 'bestrun', title: 'Bestrun.fr', category: 'Association & Blog', imageUrl: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?q=80&w=800&auto=format&fit=crop' },
+  { id: 'ozeroz', title: 'Ozeroz', category: 'Cadeaux Personnalisés Luxe', imageUrl: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=800&auto=format&fit=crop', url: null },
+  { id: 'koytcha', title: 'Koytcha Immo', category: 'Immobilier — React', imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop', url: null },
+  { id: 'fusionia', title: 'Fusionia', category: 'Jeu & IA', imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop', url: null },
+  { id: 'cnjoi', title: 'Cnjoi.fr', category: 'Plateforme Événementielle', imageUrl: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop', url: 'https://cnjoi.fr' },
+  { id: 'inosys', title: 'Inosys', category: 'E-commerce', imageUrl: 'https://images.unsplash.com/photo-1558326567-98ae2405596b?q=80&w=800&auto=format&fit=crop', url: null },
+  { id: 'bestrun', title: 'Bestrun.fr', category: 'Association & Blog', imageUrl: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?q=80&w=800&auto=format&fit=crop', url: 'https://bestrun.fr' },
 ];
 
 const Portfolio: React.FC = () => (
@@ -50,7 +50,9 @@ const Portfolio: React.FC = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-            className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#171726] cursor-pointer hover:border-[#3DC4C2]/20 transition-all duration-500"
+            className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#171726] hover:border-[#3DC4C2]/20 transition-all duration-500"
+            onClick={() => project.url && window.open(project.url, '_blank', 'noopener noreferrer')}
+            style={{ cursor: project.url ? 'pointer' : 'default' }}
           >
             <div className="aspect-video overflow-hidden">
               <img
@@ -69,9 +71,11 @@ const Portfolio: React.FC = () => (
               </div>
             </div>
 
-            <div className="absolute top-4 right-4 w-9 h-9 bg-[#3DC4C2]/0 rounded-full flex items-center justify-center text-transparent group-hover:bg-[#3DC4C2]/15 group-hover:text-[#3DC4C2] transition-all duration-300">
-              <ArrowUpRight size={16} />
-            </div>
+            {project.url && (
+              <div className="absolute top-4 right-4 w-9 h-9 bg-[#3DC4C2]/0 rounded-full flex items-center justify-center text-transparent group-hover:bg-[#3DC4C2]/15 group-hover:text-[#3DC4C2] transition-all duration-300">
+                <ArrowUpRight size={16} />
+              </div>
+            )}
 
             {/* Bottom accent line */}
             <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3DC4C2] group-hover:w-full transition-all duration-600 ease-out" />

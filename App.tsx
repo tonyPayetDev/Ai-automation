@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SkillsMatrix from './components/SkillsMatrix';
-import Timeline from './components/Timeline';
+import Process from './components/Timeline';
+import FAQ from './components/FAQ';
 import Services from './components/Services';
 import AutomationBoost from './components/AutomationBoost';
 import Portfolio from './components/Portfolio';
@@ -84,10 +85,11 @@ function App() {
         <SkillsMatrix />
         <AutomationBoost config={activeOffer} />
         <SystemMonitor />
-        <Timeline />
+        <Process />
         <Services />
         <Portfolio />
         <Pricing />
+        <FAQ />
         <Contact />
       </main>
 

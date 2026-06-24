@@ -73,9 +73,27 @@ const colorMap: Record<string, { tab: string; border: string; bg: string; badge:
 };
 
 const testimonials = [
-  { name: 'Malik D.', role: 'Restaurateur, Saint-Denis', text: 'Mes réservations sont maintenant gérées automatiquement. Je gagne facilement 2h par jour que je réinvestis en cuisine.', stars: 5 },
-  { name: 'Sophie L.', role: 'Freelance e-commerce', text: 'Tony a automatisé mes publications et mes relances clients en 48h. Mon CA a augmenté de 30% le mois suivant.', stars: 5 },
-  { name: 'Romain V.', role: 'Gérant PME BTP', text: "Les devis partent maintenant tout seuls dès qu'un client remplit le formulaire. Un gain de temps énorme.", stars: 5 },
+  {
+    name: 'Malik D.',
+    role: 'Restaurateur · Saint-Denis Réunion',
+    text: "Avant, je passais 1h30 par soir à répondre aux réservations et messages. Tony a mis en place un système en 48h : confirmations automatiques, rappels J-1, et même les réponses aux avis Google. J'ai récupéré mes soirées.",
+    detail: '~10h/semaine récupérées',
+    stars: 5,
+  },
+  {
+    name: 'Sophie L.',
+    role: 'Consultante e-commerce · Freelance',
+    text: "J'envoyais mes propositions commerciales à la main, une par une. Tony a tout automatisé : devis généré en 2 min, relance à J+3, facture à la signature. Résultat : 4 nouveaux clients en 6 semaines sans effort supplémentaire.",
+    detail: '+4 clients en 6 semaines',
+    stars: 5,
+  },
+  {
+    name: 'Romain V.',
+    role: 'Gérant BTP · 8 salariés',
+    text: "On perdait des chantiers parce qu'on répondait trop tard aux demandes. Maintenant le prospect reçoit un devis pré-rempli dans l'heure. Taux de transformation passé de 20% à 38% en deux mois.",
+    detail: 'Conversion +18pts en 2 mois',
+    stars: 5,
+  },
 ];
 
 const SystemMonitor: React.FC = () => {
@@ -200,14 +218,21 @@ const SystemMonitor: React.FC = () => {
                 ))}
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-4 italic">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#3DC4C2]/20 border border-[#3DC4C2]/40 flex items-center justify-center text-[#3DC4C2] font-bold text-sm">
-                  {t.name[0]}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[#3DC4C2]/20 border border-[#3DC4C2]/40 flex items-center justify-center text-[#3DC4C2] font-bold text-sm">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-sm">{t.name}</p>
+                    <p className="text-gray-500 text-xs">{t.role}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-bold text-sm">{t.name}</p>
-                  <p className="text-gray-500 text-xs">{t.role}</p>
-                </div>
+                {'detail' in t && (
+                  <span className="text-[#3DC4C2] text-xs font-semibold bg-[#3DC4C2]/10 px-2.5 py-1 rounded-full border border-[#3DC4C2]/20 whitespace-nowrap ml-2">
+                    {(t as any).detail}
+                  </span>
+                )}
               </div>
             </motion.div>
           ))}
