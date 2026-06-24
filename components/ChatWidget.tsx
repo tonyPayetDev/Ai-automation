@@ -119,23 +119,23 @@ const ChatWidget: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="mb-4 w-[320px] md:w-[380px] h-[450px] md:h-[500px] bg-black/90 backdrop-blur-xl border border-[#f05a28]/30 rounded-lg shadow-2xl flex flex-col overflow-hidden"
+            className="mb-4 w-[320px] md:w-[380px] h-[450px] md:h-[500px] bg-[#1F1C1A]/90 backdrop-blur-xl border border-[#46DCC0]/30 rounded-lg shadow-2xl flex flex-col overflow-hidden"
             style={{ boxShadow: '0 0 30px rgba(234, 179, 8, 0.1)' }}
           >
             {/* Header */}
-            <div className="p-3 md:p-4 border-b border-[#f05a28]/20 bg-gradient-to-r from-[#f05a28]/10 to-transparent flex items-center justify-between">
+            <div className="p-3 md:p-4 border-b border-[#46DCC0]/20 bg-gradient-to-r from-[#46DCC0]/10 to-transparent flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className={`w-2 h-2 ${isLoading ? 'bg-[#f05a28]' : 'bg-green-500'} rounded-full animate-pulse absolute -right-0.5 -bottom-0.5 z-10 box-content border border-black`}></div>
-                  <div className="w-8 h-8 rounded bg-[#f05a28]/10 border border-[#f05a28]/50 flex items-center justify-center overflow-hidden">
-                    <Cpu size={18} className="text-[#f05a28]" />
+                  <div className={`w-2 h-2 ${isLoading ? 'bg-[#46DCC0]' : 'bg-green-500'} rounded-full animate-pulse absolute -right-0.5 -bottom-0.5 z-10 box-content border border-black`}></div>
+                  <div className="w-8 h-8 rounded bg-[#46DCC0]/10 border border-[#46DCC0]/50 flex items-center justify-center overflow-hidden">
+                    <Cpu size={18} className="text-[#46DCC0]" />
                   </div>
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-sm tracking-wider font-orbitron">TONY_AI_AGENT</h3>
                   <div className="flex items-center gap-1.5">
-                    <div className={`w-1 h-1 ${isLoading ? 'bg-[#f05a28]' : 'bg-green-500'} rounded-full`}></div>
-                    <span className={`text-[10px] ${isLoading ? 'text-[#f05a28]' : 'text-green-500'} font-mono tracking-wide`}>
+                    <div className={`w-1 h-1 ${isLoading ? 'bg-[#46DCC0]' : 'bg-green-500'} rounded-full`}></div>
+                    <span className={`text-[10px] ${isLoading ? 'text-[#46DCC0]' : 'text-green-500'} font-mono tracking-wide`}>
                         {isLoading ? 'PROCESSING_DATA...' : 'SYSTEM ONLINE'}
                     </span>
                   </div>
@@ -162,7 +162,7 @@ const ChatWidget: React.FC = () => {
                      className={`
                        max-w-[85%] p-3 text-sm rounded-lg relative group
                        ${msg.sender === 'user' 
-                         ? 'bg-[#f05a28]/10 border border-[#f05a28]/30 text-gray-200 rounded-tr-none ml-4' 
+                         ? 'bg-[#46DCC0]/10 border border-[#46DCC0]/30 text-gray-200 rounded-tr-none ml-4' 
                          : 'bg-zinc-800/80 border border-white/10 text-gray-300 rounded-tl-none mr-4'}
                      `}
                    >
@@ -174,7 +174,7 @@ const ChatWidget: React.FC = () => {
                      {/* Decorative corner accents */}
                      <div className={`absolute top-0 w-2 h-2 border-t 
                         ${msg.sender === 'user' 
-                            ? 'right-0 border-r border-[#f05a28]' 
+                            ? 'right-0 border-r border-[#46DCC0]' 
                             : 'left-0 border-l border-cyan-500'}
                      `}></div>
                    </div>
@@ -183,7 +183,7 @@ const ChatWidget: React.FC = () => {
                {isLoading && (
                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
                        <div className="bg-zinc-800/80 border border-white/10 text-gray-300 rounded-lg rounded-tl-none p-3 flex items-center gap-2">
-                           <Loader2 size={14} className="animate-spin text-[#f05a28]" />
+                           <Loader2 size={14} className="animate-spin text-[#46DCC0]" />
                            <span className="text-xs font-mono animate-pulse">Thinking...</span>
                        </div>
                    </motion.div>
@@ -192,20 +192,20 @@ const ChatWidget: React.FC = () => {
             </div>
 
             {/* Input Area */}
-            <form onSubmit={handleSendMessage} className="p-3 md:p-4 border-t border-white/10 bg-black/60 relative">
+            <form onSubmit={handleSendMessage} className="p-3 md:p-4 border-t border-white/10 bg-[#1F1C1A]/60 relative">
               <div className="relative flex items-center">
                 <input
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Posez une question à mon IA..."
-                  className="w-full bg-zinc-900/50 border border-white/10 text-white text-sm rounded pl-4 pr-12 py-3 focus:outline-none focus:border-[#f05a28]/50 transition-all placeholder:text-gray-600 font-rajdhani"
+                  className="w-full bg-zinc-900/50 border border-white/10 text-white text-sm rounded pl-4 pr-12 py-3 focus:outline-none focus:border-[#46DCC0]/50 transition-all placeholder:text-gray-600 font-rajdhani"
                   disabled={isLoading}
                 />
                 <button 
                   type="submit"
                   disabled={!inputValue.trim() || isLoading}
-                  className="absolute right-2 p-1.5 bg-[#f05a28] rounded text-black hover:bg-[#ff6b3d] disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-105 active:scale-95"
+                  className="absolute right-2 p-1.5 bg-[#46DCC0] rounded text-black hover:bg-[#35B8A4] disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-105 active:scale-95"
                 >
                   <Send size={16} />
                 </button>
@@ -226,14 +226,14 @@ const ChatWidget: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={`
             w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm transition-all duration-300 relative group z-50
-            ${isOpen ? 'bg-zinc-900 text-white border border-white/20' : 'bg-[#f05a28] text-black border border-yellow-400 shadow-[0_0_20px_rgba(234,179,8,0.4)]'}
+            ${isOpen ? 'bg-zinc-900 text-white border border-white/20' : 'bg-[#46DCC0] text-black border border-yellow-400 shadow-[0_0_20px_rgba(234,179,8,0.4)]'}
         `}
       >
         {/* Pulse Effect */}
         {!isOpen && (
           <>
             <span className="absolute inline-flex h-full w-full rounded-full bg-[#ff6b3d] opacity-20 animate-ping duration-[2s]"></span>
-            <span className="absolute -inset-1 border border-[#f05a28]/30 rounded-full animate-spin-slow" style={{ animationDuration: '3s' }}></span>
+            <span className="absolute -inset-1 border border-[#46DCC0]/30 rounded-full animate-spin-slow" style={{ animationDuration: '3s' }}></span>
           </>
         )}
         
@@ -244,10 +244,10 @@ const ChatWidget: React.FC = () => {
              <motion.div 
                initial={{ opacity: 0, x: 10 }}
                whileHover={{ opacity: 1, x: 0 }}
-               className="absolute right-20 bg-black/90 text-[#f05a28] text-xs px-3 py-1.5 rounded border border-[#f05a28]/30 whitespace-nowrap backdrop-blur-md hidden md:block"
+               className="absolute right-20 bg-[#1F1C1A]/90 text-[#46DCC0] text-xs px-3 py-1.5 rounded border border-[#46DCC0]/30 whitespace-nowrap backdrop-blur-md hidden md:block"
              >
                  <span className="font-bold">PARLER À L'IA</span>
-                 <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-black border-t border-r border-[#f05a28]/30 rotate-45"></div>
+                 <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-[#1F1C1A] border-t border-r border-[#46DCC0]/30 rotate-45"></div>
              </motion.div>
         )}
       </motion.button>

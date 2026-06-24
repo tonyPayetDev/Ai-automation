@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const ACCENT = '#f05a28';
+const ACCENT = '#46DCC0';
 
 export const GlitchText: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => (
   <span className={`relative inline-block ${className}`}>
@@ -20,13 +20,13 @@ export const CyberButton: React.FC<{ children: React.ReactNode; onClick?: () => 
         relative px-7 py-3.5 text-sm font-semibold tracking-wide rounded-full
         transition-all duration-300 overflow-hidden group flex items-center gap-2
         ${isPrimary
-          ? 'bg-[#f05a28] text-white hover:bg-[#d94e20] shadow-lg shadow-[#f05a28]/20'
-          : 'bg-transparent border border-[#f05a28]/50 text-[#f05a28] hover:border-[#f05a28] hover:bg-[#f05a28]/8'}
+          ? 'bg-[#46DCC0] text-white hover:bg-[#35B8A4] shadow-lg shadow-[#46DCC0]/20'
+          : 'bg-transparent border border-[#46DCC0]/50 text-[#46DCC0] hover:border-[#46DCC0] hover:bg-[#46DCC0]/8'}
       `}
     >
       <span className="relative z-10 flex items-center gap-2">{children}</span>
       {isPrimary && (
-        <span className="absolute inset-0 bg-gradient-to-r from-[#ff6b3d] to-[#f05a28] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+        <span className="absolute inset-0 bg-gradient-to-r from-[#C39B4F] to-[#46DCC0] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
       )}
     </motion.button>
   );
@@ -40,10 +40,10 @@ export const SectionTitle: React.FC<{ title: string; subtitle?: string; align?: 
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-[#f05a28] text-xs font-semibold tracking-[0.25em] uppercase mb-4 flex items-center gap-3"
+        className="text-[#46DCC0] text-xs font-semibold tracking-[0.25em] uppercase mb-4 flex items-center gap-3"
         style={{ justifyContent: align === 'center' ? 'center' : undefined }}
       >
-        {align !== 'center' && <span className="inline-block w-6 h-px bg-[#f05a28]" />}
+        {align !== 'center' && <span className="inline-block w-6 h-px bg-[#46DCC0]" />}
         {subtitle}
       </motion.p>
     )}
@@ -52,7 +52,7 @@ export const SectionTitle: React.FC<{ title: string; subtitle?: string; align?: 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
+      className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#EDE8E3] leading-tight"
     >
       {title}
     </motion.h2>
@@ -61,7 +61,7 @@ export const SectionTitle: React.FC<{ title: string; subtitle?: string; align?: 
       whileInView={{ scaleX: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: 0.25 }}
-      className={`mt-5 h-0.5 w-12 bg-[#f05a28] ${align === 'center' ? 'mx-auto' : 'origin-left'}`}
+      className={`mt-5 h-0.5 w-12 bg-[#46DCC0] ${align === 'center' ? 'mx-auto' : 'origin-left'}`}
     />
   </div>
 );

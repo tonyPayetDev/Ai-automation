@@ -51,9 +51,9 @@ const plans = [
 
 const Pricing: React.FC = () => (
   <section id="pricing" className="py-24 md:py-32 relative scroll-mt-20">
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#f05a28]/20 to-transparent" />
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#46DCC0]/20 to-transparent" />
     <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#f05a28]/[0.04] rounded-full blur-[160px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#46DCC0]/[0.04] rounded-full blur-[160px]" />
     </div>
 
     <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -70,18 +70,18 @@ const Pricing: React.FC = () => (
             className={`
               relative flex flex-col rounded-2xl p-8 border transition-all duration-500
               ${plan.recommended
-                ? 'bg-[#0e0e0e] border-[#f05a28]/35 shadow-2xl shadow-[#f05a28]/6'
-                : 'bg-[#080808] border-white/5 hover:border-white/10'}
+                ? 'bg-[#0B4C3D] border-[#46DCC0]/35 shadow-2xl shadow-[#46DCC0]/6'
+                : 'bg-[#1F1C1A] border-white/5 hover:border-white/10'}
             `}
           >
             {plan.recommended && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#f05a28] text-white text-xs font-semibold px-5 py-1 rounded-full tracking-wider shadow-lg shadow-[#f05a28]/30">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C39B4F] text-[#1F1C1A] text-xs font-semibold px-5 py-1 rounded-full tracking-wider shadow-lg shadow-[#C39B4F]/30">
                 Populaire
               </div>
             )}
 
             <div className="mb-8">
-              <p className={`text-xs font-semibold tracking-[0.2em] uppercase mb-3 ${plan.recommended ? 'text-[#f05a28]' : 'text-gray-600'}`}>
+              <p className={`text-xs font-semibold tracking-[0.2em] uppercase mb-3 ${plan.recommended ? 'text-[#46DCC0]' : 'text-gray-600'}`}>
                 {plan.name}
               </p>
               <div className="flex items-baseline gap-1 mb-3">
@@ -95,7 +95,7 @@ const Pricing: React.FC = () => (
             <ul className="space-y-3 mb-8 flex-grow">
               {plan.features.map((feature, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-sm text-gray-400">
-                  <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${plan.recommended ? 'text-[#f05a28]' : 'text-gray-600'}`} strokeWidth={2} />
+                  <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${plan.recommended ? 'text-[#46DCC0]' : 'text-gray-600'}`} strokeWidth={2} />
                   {feature}
                 </li>
               ))}

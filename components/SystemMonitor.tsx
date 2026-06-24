@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, TrendingUp, Users, Zap, AlertCircle, CheckCircle2, Star, ChevronRight } from 'lucide-react';
 
 const stats = [
-  { icon: Clock, value: '15h', label: 'économisées par semaine en moyenne', color: 'text-[#f05a28]', border: 'border-[#f05a28]/30', bg: 'bg-[#f05a28]/5' },
+  { icon: Clock, value: '15h', label: 'économisées par semaine en moyenne', color: 'text-[#46DCC0]', border: 'border-[#46DCC0]/30', bg: 'bg-[#46DCC0]/5' },
   { icon: Users, value: '50+', label: 'entrepreneurs & PME automatisés', color: 'text-cyan-500', border: 'border-cyan-500/30', bg: 'bg-cyan-950/10' },
   { icon: TrendingUp, value: 'x3', label: 'de productivité gagnée en moyenne', color: 'text-green-500', border: 'border-green-500/30', bg: 'bg-green-950/10' },
   { icon: Zap, value: '48h', label: 'délai de livraison garanti', color: 'text-pink-500', border: 'border-pink-500/30', bg: 'bg-pink-950/10' },
@@ -68,7 +68,7 @@ const profiles = [
 
 const colorMap: Record<string, { tab: string; border: string; bg: string; badge: string; dot: string }> = {
   cyan:   { tab: 'border-cyan-500 text-cyan-400',   border: 'border-cyan-500/40',   bg: 'bg-cyan-950/10',   badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',   dot: 'bg-cyan-500' },
-  yellow: { tab: 'border-[#f05a28] text-[#ff6b3d]', border: 'border-[#f05a28]/40', bg: 'bg-[#f05a28]/5', badge: 'bg-[#f05a28]/10 text-[#ff6b3d] border-[#f05a28]/30', dot: 'bg-[#f05a28]' },
+  yellow: { tab: 'border-[#46DCC0] text-[#ff6b3d]', border: 'border-[#46DCC0]/40', bg: 'bg-[#46DCC0]/5', badge: 'bg-[#46DCC0]/10 text-[#ff6b3d] border-[#46DCC0]/30', dot: 'bg-[#46DCC0]' },
   pink:   { tab: 'border-pink-500 text-pink-400',   border: 'border-pink-500/40',   bg: 'bg-pink-950/10',   badge: 'bg-pink-500/10 text-pink-400 border-pink-500/30',   dot: 'bg-pink-500' },
 };
 
@@ -84,7 +84,7 @@ const SystemMonitor: React.FC = () => {
   const c = colorMap[active.color];
 
   return (
-    <section className="py-20 bg-black relative border-b border-white/10">
+    <section className="py-20 bg-[#1F1C1A] relative border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Stats */}
@@ -192,16 +192,16 @@ const SystemMonitor: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-zinc-900/60 border border-white/10 rounded-lg p-6 hover:border-[#f05a28]/30 transition-colors"
+              className="bg-zinc-900/60 border border-white/10 rounded-lg p-6 hover:border-[#46DCC0]/30 transition-colors"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.stars }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 text-[#f05a28] fill-[#f05a28]" />
+                  <Star key={j} className="w-4 h-4 text-[#46DCC0] fill-[#46DCC0]" />
                 ))}
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-4 italic">"{t.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#f05a28]/20 border border-[#f05a28]/40 flex items-center justify-center text-[#f05a28] font-bold text-sm">
+                <div className="w-9 h-9 rounded-full bg-[#46DCC0]/20 border border-[#46DCC0]/40 flex items-center justify-center text-[#46DCC0] font-bold text-sm">
                   {t.name[0]}
                 </div>
                 <div>

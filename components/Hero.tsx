@@ -51,8 +51,8 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
   >
     {/* Ambient glow */}
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-[#f05a28]/[0.05] rounded-full blur-[180px]" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#f05a28]/[0.04] rounded-full blur-[120px]" />
+      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-[#46DCC0]/[0.05] rounded-full blur-[180px]" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#46DCC0]/[0.04] rounded-full blur-[120px]" />
     </div>
 
     <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full py-16">
@@ -67,8 +67,8 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
         >
           {/* Tag */}
           <motion.div variants={stagger.item} className="flex items-center gap-3 mb-8">
-            <span className="inline-block w-8 h-px bg-[#f05a28]" />
-            <span className="text-[#f05a28] text-xs font-semibold tracking-[0.22em] uppercase">
+            <span className="inline-block w-8 h-px bg-[#46DCC0]" />
+            <span className="text-[#46DCC0] text-xs font-semibold tracking-[0.22em] uppercase">
               Architecte IA & Automatisation
             </span>
           </motion.div>
@@ -89,7 +89,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
                   variants={wordVariants}
                   initial="hidden"
                   animate="show"
-                  className={word.includes('décolle') ? 'text-[#f05a28]' : 'text-white'}
+                  className={word.includes('décolle') ? 'text-[#46DCC0]' : 'text-[#EDE8E3]'}
                 >
                   {word}
                 </motion.span>
@@ -123,8 +123,8 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
           <motion.div variants={stagger.item} className="mt-14 flex items-center gap-8 pt-8 border-t border-white/5">
             {stats.map(({ value, label, icon: Icon }) => (
               <div key={label} className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#f05a28]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Icon className="w-3.5 h-3.5 text-[#f05a28]" />
+                <div className="w-8 h-8 rounded-lg bg-[#46DCC0]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Icon className="w-3.5 h-3.5 text-[#46DCC0]" />
                 </div>
                 <div>
                   <div className="text-xl font-bold text-white leading-none">{value}</div>
@@ -144,23 +144,23 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
         >
           <div className="relative">
             {/* Accent frames */}
-            <div className="absolute -inset-4 border border-[#f05a28]/12 rounded-2xl" />
-            <div className="absolute -inset-8 border border-[#f05a28]/5 rounded-3xl" />
+            <div className="absolute -inset-4 border border-[#46DCC0]/12 rounded-2xl" />
+            <div className="absolute -inset-8 border border-[#46DCC0]/5 rounded-3xl" />
 
             {/* Ambient glow behind portrait */}
-            <div className="absolute inset-0 bg-[#f05a28]/[0.07] rounded-2xl blur-3xl scale-110 -z-10" />
+            <div className="absolute inset-0 bg-[#46DCC0]/[0.07] rounded-2xl blur-3xl scale-110 -z-10" />
 
             {/* Availability badge */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-5 -right-4 bg-[#f05a28] text-white px-4 py-2 rounded-full text-xs font-semibold tracking-wider shadow-lg shadow-[#f05a28]/30 z-20"
+              className="absolute -top-5 -right-4 bg-[#46DCC0] text-white px-4 py-2 rounded-full text-xs font-semibold tracking-wider shadow-lg shadow-[#46DCC0]/30 z-20"
             >
               Disponible ✓
             </motion.div>
 
             {/* Portrait */}
-            <div className="relative w-60 h-72 sm:w-72 sm:h-88 lg:w-88 lg:h-[440px] rounded-2xl overflow-hidden bg-[#111]">
+            <div className="relative w-60 h-72 sm:w-72 sm:h-88 lg:w-88 lg:h-[440px] rounded-2xl overflow-hidden bg-[#082E22]">
               {media.type === 'video' ? (
                 <video
                   src={media.src}
@@ -177,13 +177,13 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
                   className="w-full h-full object-cover"
                 />
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1F1C1A]/70 via-transparent to-transparent" />
 
               {/* Name card */}
               <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-[#080808]/85 backdrop-blur-md border border-white/8 rounded-xl px-4 py-3">
+                <div className="bg-[#1F1C1A]/85 backdrop-blur-md border border-white/8 rounded-xl px-4 py-3">
                   <p className="text-white font-semibold text-sm">Tony Payet</p>
-                  <p className="text-[#f05a28] text-xs mt-0.5 font-medium">Expert IA · La Réunion</p>
+                  <p className="text-[#46DCC0] text-xs mt-0.5 font-medium">Expert IA · La Réunion</p>
                 </div>
               </div>
             </div>
@@ -192,11 +192,11 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
-              className="absolute -bottom-6 -left-6 bg-[#111] border border-white/8 rounded-2xl p-4 shadow-2xl z-20"
+              className="absolute -bottom-6 -left-6 bg-[#082E22] border border-white/8 rounded-2xl p-4 shadow-2xl z-20"
             >
               <p className="text-[#6b6560] text-xs tracking-wide mb-1">Temps récupéré</p>
               <p className="text-2xl font-bold text-white">
-                15h <span className="text-[#f05a28] text-sm font-medium">/semaine</span>
+                15h <span className="text-[#46DCC0] text-sm font-medium">/semaine</span>
               </p>
             </motion.div>
 
@@ -204,9 +204,9 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
-              className="absolute -top-3 -left-6 bg-[#111] border border-[#f05a28]/30 rounded-xl px-3 py-2 shadow-xl z-20"
+              className="absolute -top-3 -left-6 bg-[#082E22] border border-[#46DCC0]/30 rounded-xl px-3 py-2 shadow-xl z-20"
             >
-              <p className="text-[#f05a28] text-xs font-semibold">🚀 Livré en 48h</p>
+              <p className="text-[#46DCC0] text-xs font-semibold">🚀 Livré en 48h</p>
             </motion.div>
           </div>
         </motion.div>
@@ -224,7 +224,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.6, repeat: Infinity }}
-        className="w-px h-10 bg-gradient-to-b from-[#f05a28]/60 to-transparent"
+        className="w-px h-10 bg-gradient-to-b from-[#46DCC0]/60 to-transparent"
       />
     </motion.div>
   </section>
