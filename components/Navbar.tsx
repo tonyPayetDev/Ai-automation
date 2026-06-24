@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`fixed w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#1F1C1A]/92 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
+        scrolled ? 'bg-[#0C0D18]/92 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
             className="flex-shrink-0 group"
           >
             <span className="font-['Plus_Jakarta_Sans',sans-serif] text-xl font-bold tracking-tight text-white">
-              Tony<span className="text-[#46DCC0]">.</span>
+              Tony<span className="text-[#3DC4C2]">.</span>
             </span>
           </a>
 
@@ -62,20 +62,20 @@ const Navbar: React.FC = () => {
                 className={`
                   relative text-sm font-medium tracking-wide transition-colors duration-300 group
                   ${link.special
-                    ? 'text-[#46DCC0]'
+                    ? 'text-[#3DC4C2]'
                     : 'text-gray-400 hover:text-white'}
                 `}
               >
                 {link.name}
                 <span className={`absolute -bottom-0.5 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${
-                  link.special ? 'bg-[#46DCC0]' : 'bg-white/40'
+                  link.special ? 'bg-[#3DC4C2]' : 'bg-white/40'
                 }`} />
               </a>
             ))}
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="ml-2 px-5 py-2.5 bg-[#46DCC0] text-white text-sm font-semibold rounded-full hover:bg-[#35B8A4] transition-all duration-300 shadow-md shadow-[#46DCC0]/20"
+              className="ml-2 px-5 py-2.5 bg-[#3DC4C2] text-white text-sm font-semibold rounded-full hover:bg-[#26729F] transition-all duration-300 shadow-md shadow-[#3DC4C2]/20"
             >
               Démarrer →
             </a>
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#1F1C1A]/98 backdrop-blur-xl border-b border-white/5"
+            className="md:hidden bg-[#0C0D18]/98 backdrop-blur-xl border-b border-white/5"
           >
             <div className="px-6 py-6 space-y-1">
               {navLinks.map((link, i) => (
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
                   className={`block py-3.5 text-base font-medium border-b border-white/5 last:border-0 transition-colors ${
-                    link.special ? 'text-[#46DCC0]' : 'text-gray-300 hover:text-white'
+                    link.special ? 'text-[#3DC4C2]' : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {link.name}
@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
                 <a
                   href="#contact"
                   onClick={(e) => handleLinkClick(e, '#contact')}
-                  className="block text-center py-3 bg-[#46DCC0] text-white text-sm font-semibold rounded-full hover:bg-[#35B8A4] transition-all"
+                  className="block text-center py-3 bg-[#3DC4C2] text-white text-sm font-semibold rounded-full hover:bg-[#26729F] transition-all"
                 >
                   Démarrer →
                 </a>

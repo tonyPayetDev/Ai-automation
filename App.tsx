@@ -76,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#1F1C1A] text-[#EDE8E3]">
+    <div className="relative min-h-screen bg-[#0C0D18] text-[#D1C5E0]">
       <Navbar />
 
       <main>

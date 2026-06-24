@@ -15,13 +15,13 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   ];
 
   return (
-    <footer className="bg-[#06201A] border-t border-white/5 pt-16 pb-8 relative scroll-mt-20" id="contact-footer">
+    <footer className="bg-[#0C0D18] border-t border-white/5 pt-16 pb-8 relative scroll-mt-20" id="contact-footer">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
           <div className="col-span-1 md:col-span-2">
             <span className="text-xl font-bold tracking-tight text-white block mb-4">
-              Tony<span className="text-[#46DCC0]">.</span>
+              Tony<span className="text-[#3DC4C2]">.</span>
             </span>
             <p className="text-gray-500 text-sm max-w-sm mb-8 leading-relaxed">
               Expert IA & Automatisation Business. Je transforme vos process manuels en systèmes automatisés qui travaillent pour vous 24h/24.
@@ -29,17 +29,17 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
 
             <div className="space-y-3 mb-8 text-sm">
               <div className="flex items-center gap-3 text-gray-400">
-                <Phone size={14} className="text-[#46DCC0]" />
+                <Phone size={14} className="text-[#3DC4C2]" />
                 <a href="tel:0692417749" className="hover:text-white transition-colors">0692 41 77 49</a>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <Mail size={14} className="text-[#46DCC0]" />
+                <Mail size={14} className="text-[#3DC4C2]" />
                 <a href="mailto:tony.payet.professionnel@gmail.com" className="hover:text-white transition-colors break-all">
                   tony.payet.professionnel@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin size={14} className="text-[#46DCC0]" />
+                <MapPin size={14} className="text-[#3DC4C2]" />
                 <span>Saint-Denis 97490, La Réunion</span>
               </div>
             </div>
@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
                 <a
                   key={idx}
                   href="#"
-                  className="w-9 h-9 rounded-full border border-white/8 flex items-center justify-center text-gray-500 hover:text-white hover:border-[#46DCC0]/40 hover:bg-[#46DCC0]/8 transition-all duration-300"
+                  className="w-9 h-9 rounded-full border border-white/8 flex items-center justify-center text-gray-500 hover:text-white hover:border-[#3DC4C2]/40 hover:bg-[#3DC4C2]/8 transition-all duration-300"
                 >
                   <Icon size={15} />
                 </a>
@@ -87,10 +87,10 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
           <p>© 2025 Tony Payet. Tous droits réservés.</p>
           <div className="flex items-center gap-4">
-            <span className="text-[#46DCC0]/40 font-medium">Automatisation · IA · Web</span>
+            <span className="text-[#3DC4C2]/40 font-medium">Automatisation · IA · Web</span>
             <button
               onClick={onOpenAdmin}
-              className="text-gray-700 hover:text-[#46DCC0] transition-colors p-1.5 rounded-full"
+              className="text-gray-700 hover:text-[#3DC4C2] transition-colors p-1.5 rounded-full"
               title="Accès Admin"
             >
               <Lock size={12} />

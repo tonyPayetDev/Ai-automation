@@ -80,7 +80,7 @@ const skillCategories = [
 
 const SkillsMatrix: React.FC = () => (
   <section id="skills" className="py-24 md:py-32 relative scroll-mt-20">
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#46DCC0]/20 to-transparent" />
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3DC4C2]/20 to-transparent" />
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <SectionTitle title="Compétences" subtitle="Matrice de capacités" />
 
@@ -90,16 +90,16 @@ const SkillsMatrix: React.FC = () => (
           {skillCategories.map((cat) => (
             <div
               key={cat.id}
-              className="snap-start w-[78vw] max-w-[300px] flex-shrink-0 bg-[#082E22] border border-white/5 rounded-2xl p-6 hover:border-[#46DCC0]/25 transition-colors duration-500"
+              className="snap-start w-[78vw] max-w-[300px] flex-shrink-0 bg-[#171726] border border-white/5 rounded-2xl p-6 hover:border-[#3DC4C2]/25 transition-colors duration-500"
             >
               <div className="flex items-center gap-3 mb-5">
-                <cat.icon size={18} className="text-[#46DCC0]/70" strokeWidth={1.5} />
+                <cat.icon size={18} className="text-[#3DC4C2]/70" strokeWidth={1.5} />
                 <h3 className="text-white text-sm font-medium">{cat.title}</h3>
               </div>
               <ul className="space-y-2">
                 {cat.items.map((item, idx) => (
                   <li key={idx} className="text-xs text-gray-500 flex items-start gap-2">
-                    <span className="text-[#46DCC0]/50 mt-0.5">—</span>
+                    <span className="text-[#3DC4C2]/50 mt-0.5">—</span>
                     {item}
                   </li>
                 ))}
@@ -119,10 +119,10 @@ const SkillsMatrix: React.FC = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-            className="group bg-[#082E22] border border-white/5 rounded-2xl p-7 hover:border-[#46DCC0]/25 transition-all duration-500 hover:bg-[#043629]"
+            className="group bg-[#171726] border border-white/5 rounded-2xl p-7 hover:border-[#3DC4C2]/25 transition-all duration-500 hover:bg-[#171726]"
           >
             <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/5">
-              <div className="w-9 h-9 rounded-xl bg-[#06201A] border border-white/5 flex items-center justify-center text-[#46DCC0]/60 group-hover:text-[#46DCC0] group-hover:border-[#46DCC0]/20 transition-all duration-400">
+              <div className="w-9 h-9 rounded-xl bg-[#0C0D18] border border-white/5 flex items-center justify-center text-[#3DC4C2]/60 group-hover:text-[#3DC4C2] group-hover:border-[#3DC4C2]/20 transition-all duration-400">
                 <cat.icon size={17} strokeWidth={1.5} />
               </div>
               <h3 className="text-white text-sm font-medium">{cat.title}</h3>
@@ -130,7 +130,7 @@ const SkillsMatrix: React.FC = () => (
             <ul className="space-y-2.5">
               {cat.items.map((item, idx) => (
                 <li key={idx} className="text-sm text-gray-500 flex items-start gap-2.5 group-hover:text-gray-400 transition-colors duration-300">
-                  <span className="text-[#46DCC0]/40 mt-0.5 flex-shrink-0">—</span>
+                  <span className="text-[#3DC4C2]/40 mt-0.5 flex-shrink-0">—</span>
                   {item}
                 </li>
               ))}

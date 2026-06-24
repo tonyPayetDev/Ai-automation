@@ -15,7 +15,7 @@ const projects = [
 
 const Portfolio: React.FC = () => (
   <section id="portfolio" className="py-24 md:py-32 relative scroll-mt-20">
-    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#46DCC0]/20 to-transparent" />
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3DC4C2]/20 to-transparent" />
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <SectionTitle title="Réalisations & projets" subtitle="Portfolio" />
 
@@ -25,14 +25,14 @@ const Portfolio: React.FC = () => (
           {projects.map((project) => (
             <div
               key={project.id}
-              className="snap-start w-[80vw] max-w-[300px] flex-shrink-0 relative overflow-hidden rounded-2xl border border-white/5 bg-[#082E22]"
+              className="snap-start w-[80vw] max-w-[300px] flex-shrink-0 relative overflow-hidden rounded-2xl border border-white/5 bg-[#171726]"
             >
               <div className="aspect-video relative">
                 <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1C1A]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C0D18]/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3 className="text-sm font-semibold text-white mb-0.5">{project.title}</h3>
-                  <span className="text-[#46DCC0] text-xs font-medium">{project.category}</span>
+                  <span className="text-[#3DC4C2] text-xs font-medium">{project.category}</span>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@ const Portfolio: React.FC = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-            className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#082E22] cursor-pointer hover:border-[#46DCC0]/20 transition-all duration-500"
+            className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#171726] cursor-pointer hover:border-[#3DC4C2]/20 transition-all duration-500"
           >
             <div className="aspect-video overflow-hidden">
               <img
@@ -65,16 +65,16 @@ const Portfolio: React.FC = () => (
                 <h3 className="text-lg font-bold text-white mb-1">
                   {project.title}
                 </h3>
-                <span className="text-[#46DCC0] text-xs font-semibold tracking-wider">{project.category}</span>
+                <span className="text-[#3DC4C2] text-xs font-semibold tracking-wider">{project.category}</span>
               </div>
             </div>
 
-            <div className="absolute top-4 right-4 w-9 h-9 bg-[#46DCC0]/0 rounded-full flex items-center justify-center text-transparent group-hover:bg-[#46DCC0]/15 group-hover:text-[#46DCC0] transition-all duration-300">
+            <div className="absolute top-4 right-4 w-9 h-9 bg-[#3DC4C2]/0 rounded-full flex items-center justify-center text-transparent group-hover:bg-[#3DC4C2]/15 group-hover:text-[#3DC4C2] transition-all duration-300">
               <ArrowUpRight size={16} />
             </div>
 
             {/* Bottom accent line */}
-            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#46DCC0] group-hover:w-full transition-all duration-600 ease-out" />
+            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3DC4C2] group-hover:w-full transition-all duration-600 ease-out" />
           </motion.div>
         ))}
       </div>
@@ -85,7 +85,7 @@ const Portfolio: React.FC = () => (
         viewport={{ once: true }}
         className="mt-10 text-center"
       >
-        <button className="text-sm text-gray-600 hover:text-[#46DCC0] border-b border-transparent hover:border-[#46DCC0]/50 transition-all duration-300 pb-1 tracking-wider font-medium">
+        <button className="text-sm text-gray-600 hover:text-[#3DC4C2] border-b border-transparent hover:border-[#3DC4C2]/50 transition-all duration-300 pb-1 tracking-wider font-medium">
           Voir tous les projets →
         </button>
       </motion.div>

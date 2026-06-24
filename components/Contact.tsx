@@ -65,8 +65,8 @@ const Contact: React.FC = () => {
     }
   };
 
-  const inputCls = 'w-full bg-[#082E22]/90 border border-white/8 text-white placeholder-[#6b6560] px-4 py-3.5 text-sm focus:outline-none focus:border-[#46DCC0]/50 transition-colors rounded-xl';
-  const labelCls = 'block text-xs font-semibold text-[#6b6560] uppercase tracking-widest mb-2';
+  const inputCls = 'w-full bg-[#171726]/90 border border-white/8 text-white placeholder-[#7A6B8E] px-4 py-3.5 text-sm focus:outline-none focus:border-[#3DC4C2]/50 transition-colors rounded-xl';
+  const labelCls = 'block text-xs font-semibold text-[#7A6B8E] uppercase tracking-widest mb-2';
   const selectCls = inputCls + ' cursor-pointer appearance-none';
 
   if (status === 'success') {
@@ -74,11 +74,11 @@ const Contact: React.FC = () => {
       <section id="contact" className="py-24 relative scroll-mt-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
-            <div className="w-20 h-20 mx-auto mb-6 bg-[#46DCC0]/15 border-2 border-[#46DCC0]/40 rounded-full flex items-center justify-center">
-              <Zap className="w-10 h-10 text-[#46DCC0]" />
+            <div className="w-20 h-20 mx-auto mb-6 bg-[#3DC4C2]/15 border-2 border-[#3DC4C2]/40 rounded-full flex items-center justify-center">
+              <Zap className="w-10 h-10 text-[#3DC4C2]" />
             </div>
             <h2 className="text-2xl font-bold text-white mb-4">Message reçu !</h2>
-            <p className="text-gray-400 mb-2">Je vous réponds sous <span className="text-[#46DCC0] font-semibold">24h</span> avec un plan d'action personnalisé.</p>
+            <p className="text-gray-400 mb-2">Je vous réponds sous <span className="text-[#3DC4C2] font-semibold">24h</span> avec un plan d'action personnalisé.</p>
             <p className="text-gray-600 text-sm">Vérifiez aussi vos spams 😉</p>
           </motion.div>
         </div>
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-24 relative scroll-mt-20">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#46DCC0]/20 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3DC4C2]/20 to-transparent" />
 
       <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
         <SectionTitle title="Décrivez votre projet" subtitle="Contact" />
@@ -97,12 +97,12 @@ const Contact: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
 
           {/* BLOC 1 — Identité */}
-          <div className="border border-white/6 bg-[#043629] p-6 md:p-8 rounded-2xl">
+          <div className="border border-white/6 bg-[#171726] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <div className="w-6 h-6 rounded-full bg-[#46DCC0]/15 flex items-center justify-center">
-                <User className="w-3 h-3 text-[#46DCC0]" />
+              <div className="w-6 h-6 rounded-full bg-[#3DC4C2]/15 flex items-center justify-center">
+                <User className="w-3 h-3 text-[#3DC4C2]" />
               </div>
-              <span className="text-xs font-semibold text-[#46DCC0] uppercase tracking-widest">01 / Votre identité</span>
+              <span className="text-xs font-semibold text-[#3DC4C2] uppercase tracking-widest">01 / Votre identité</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -125,12 +125,12 @@ const Contact: React.FC = () => {
           </div>
 
           {/* BLOC 2 — Business */}
-          <div className="border border-white/6 bg-[#043629] p-6 md:p-8 rounded-2xl">
+          <div className="border border-white/6 bg-[#171726] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <div className="w-6 h-6 rounded-full bg-[#46DCC0]/15 flex items-center justify-center">
-                <Building2 className="w-3 h-3 text-[#46DCC0]" />
+              <div className="w-6 h-6 rounded-full bg-[#3DC4C2]/15 flex items-center justify-center">
+                <Building2 className="w-3 h-3 text-[#3DC4C2]" />
               </div>
-              <span className="text-xs font-semibold text-[#46DCC0] uppercase tracking-widest">02 / Votre business</span>
+              <span className="text-xs font-semibold text-[#3DC4C2] uppercase tracking-widest">02 / Votre business</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -160,12 +160,12 @@ const Contact: React.FC = () => {
           </div>
 
           {/* BLOC 3 — Besoin */}
-          <div className="border border-white/6 bg-[#043629] p-6 md:p-8 rounded-2xl">
+          <div className="border border-white/6 bg-[#171726] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <div className="w-6 h-6 rounded-full bg-[#46DCC0]/15 flex items-center justify-center">
-                <CheckSquare className="w-3 h-3 text-[#46DCC0]" />
+              <div className="w-6 h-6 rounded-full bg-[#3DC4C2]/15 flex items-center justify-center">
+                <CheckSquare className="w-3 h-3 text-[#3DC4C2]" />
               </div>
-              <span className="text-xs font-semibold text-[#46DCC0] uppercase tracking-widest">03 / Votre besoin</span>
+              <span className="text-xs font-semibold text-[#3DC4C2] uppercase tracking-widest">03 / Votre besoin</span>
             </div>
 
             <div className="mb-6">
@@ -178,11 +178,11 @@ const Contact: React.FC = () => {
                     onClick={() => toggleTache(t)}
                     className={`text-left px-4 py-3 text-xs border rounded-xl transition-all ${
                       form.taches.includes(t)
-                        ? 'border-[#46DCC0]/50 bg-[#46DCC0]/10 text-[#46DCC0]'
-                        : 'border-white/6 bg-[#082E22]/60 text-gray-500 hover:border-white/15 hover:text-gray-300'
+                        ? 'border-[#3DC4C2]/50 bg-[#3DC4C2]/10 text-[#3DC4C2]'
+                        : 'border-white/6 bg-[#171726]/60 text-gray-500 hover:border-white/15 hover:text-gray-300'
                     }`}
                   >
-                    <span className={`mr-2 ${form.taches.includes(t) ? 'text-[#46DCC0]' : 'text-gray-700'}`}>
+                    <span className={`mr-2 ${form.taches.includes(t) ? 'text-[#3DC4C2]' : 'text-gray-700'}`}>
                       {form.taches.includes(t) ? '■' : '□'}
                     </span>
                     {t}
@@ -206,12 +206,12 @@ const Contact: React.FC = () => {
           </div>
 
           {/* BLOC 4 — Timing & Budget */}
-          <div className="border border-white/6 bg-[#043629] p-6 md:p-8 rounded-2xl">
+          <div className="border border-white/6 bg-[#171726] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <div className="w-6 h-6 rounded-full bg-[#46DCC0]/15 flex items-center justify-center">
-                <Clock className="w-3 h-3 text-[#46DCC0]" />
+              <div className="w-6 h-6 rounded-full bg-[#3DC4C2]/15 flex items-center justify-center">
+                <Clock className="w-3 h-3 text-[#3DC4C2]" />
               </div>
-              <span className="text-xs font-semibold text-[#46DCC0] uppercase tracking-widest">04 / Timing & budget</span>
+              <span className="text-xs font-semibold text-[#3DC4C2] uppercase tracking-widest">04 / Timing & budget</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -251,12 +251,12 @@ const Contact: React.FC = () => {
           </div>
 
           {/* BLOC 5 — Message libre */}
-          <div className="border border-white/6 bg-[#043629] p-6 md:p-8 rounded-2xl">
+          <div className="border border-white/6 bg-[#171726] p-6 md:p-8 rounded-2xl">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/5">
-              <div className="w-6 h-6 rounded-full bg-[#46DCC0]/15 flex items-center justify-center">
-                <MessageSquare className="w-3 h-3 text-[#46DCC0]" />
+              <div className="w-6 h-6 rounded-full bg-[#3DC4C2]/15 flex items-center justify-center">
+                <MessageSquare className="w-3 h-3 text-[#3DC4C2]" />
               </div>
-              <span className="text-xs font-semibold text-[#46DCC0] uppercase tracking-widest">05 / Décrivez votre projet</span>
+              <span className="text-xs font-semibold text-[#3DC4C2] uppercase tracking-widest">05 / Décrivez votre projet</span>
             </div>
             <textarea
               className={inputCls + ' h-32 resize-none'}
@@ -276,7 +276,7 @@ const Contact: React.FC = () => {
               disabled={status === 'loading'}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 px-10 py-4 bg-[#46DCC0] text-white font-semibold text-sm rounded-full hover:bg-[#35B8A4] transition-all shadow-xl shadow-[#46DCC0]/25 disabled:opacity-50"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-[#3DC4C2] text-white font-semibold text-sm rounded-full hover:bg-[#26729F] transition-all shadow-xl shadow-[#3DC4C2]/25 disabled:opacity-50"
             >
               {status === 'loading' ? (
                 <>

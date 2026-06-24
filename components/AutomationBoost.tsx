@@ -134,16 +134,16 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
   };
 
   return (
-    <section id="boost" className="py-24 md:py-32 relative overflow-hidden bg-[#06201A] scroll-mt-20">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#46DCC0]/20 to-transparent"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#46DCC0]/[0.04] blur-[150px] pointer-events-none rounded-full"></div>
+    <section id="boost" className="py-24 md:py-32 relative overflow-hidden bg-[#0C0D18] scroll-mt-20">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3DC4C2]/20 to-transparent"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#3DC4C2]/[0.04] blur-[150px] pointer-events-none rounded-full"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center mb-16">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#46DCC0]/40 bg-[#46DCC0]/8 text-[#46DCC0] text-xs font-medium tracking-widest uppercase mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#3DC4C2]/40 bg-[#3DC4C2]/8 text-[#3DC4C2] text-xs font-medium tracking-widest uppercase mb-6"
           >
             <Rocket className="w-4 h-4" /> Offre Limitée
           </motion.div>
@@ -158,7 +158,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-[#082E22] border border-white/5 border-l-2 border-l-red-400/60 p-8 rounded-2xl"
+              className="bg-[#171726] border border-white/5 border-l-2 border-l-red-400/60 p-8 rounded-2xl"
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                 <AlertCircle className="text-red-500" /> Le Problème
@@ -177,7 +177,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-[#082E22] border border-white/5 border-l-2 border-l-[#46DCC0]/50 p-8 rounded-2xl"
+              className="bg-[#171726] border border-white/5 border-l-2 border-l-[#3DC4C2]/50 p-8 rounded-2xl"
             >
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="text-green-500" /> {config.solution1.title}
@@ -188,7 +188,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 {config.solution1.items.map((item, i) => (
                   <div key={i} className="flex items-center gap-2 text-gray-400">
-                    <div className="w-1 h-1 bg-[#46DCC0] rounded-full"></div>
+                    <div className="w-1 h-1 bg-[#3DC4C2] rounded-full"></div>
                     {item}
                   </div>
                 ))}
@@ -199,7 +199,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-[#082E22] border border-white/5 border-l-2 border-l-blue-500/40 p-8 rounded-2xl group"
+              className="bg-[#171726] border border-white/5 border-l-2 border-l-blue-500/40 p-8 rounded-2xl group"
             >
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Video className="text-cyan-500" /> {config.solution2.title}
@@ -211,8 +211,8 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                 
                 <div className="grid grid-cols-1 gap-3">
                   {config.solution2.steps.map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-3 bg-[#1F1C1A]/40 rounded border border-white/5 group-hover:border-cyan-500/30 transition-colors">
-                      <div className={`p-2 rounded bg-[#1F1C1A]/50`}>
+                    <div key={idx} className="flex items-start gap-4 p-3 bg-[#0C0D18]/40 rounded border border-white/5 group-hover:border-cyan-500/30 transition-colors">
+                      <div className={`p-2 rounded bg-[#0C0D18]/50`}>
                         {getIcon(step.icon)}
                       </div>
                       <div>
@@ -230,16 +230,16 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="relative p-6 md:p-10 bg-[#043629] border border-[#46DCC0]/30 rounded-2xl shadow-[0_0_40px_rgba(184,150,90,0.08)] overflow-hidden sticky top-24"
+              className="relative p-6 md:p-10 bg-[#171726] border border-[#3DC4C2]/30 rounded-2xl shadow-[0_0_40px_rgba(184,150,90,0.08)] overflow-hidden sticky top-24"
             >
               <div className="absolute top-0 right-0 p-4 opacity-10">
                 <Rocket size={120} />
               </div>
-              <h4 className="text-[#46DCC0] text-lg font-medium tracking-widest mb-2 uppercase" style={{ fontFamily: "'Plus Jakarta Sans', serif" }}>Boost 48H</h4>
+              <h4 className="text-[#3DC4C2] text-lg font-medium tracking-widest mb-2 uppercase" style={{ fontFamily: "'Plus Jakarta Sans', serif" }}>Boost 48H</h4>
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-1">
                    <span className="text-xl text-gray-500 line-through font-mono">{config.pricing.originalPrice}</span>
-                   <span className="text-[10px] bg-[#46DCC0] text-black px-1.5 py-0.5 font-bold rounded uppercase tracking-tighter">{config.pricing.label}</span>
+                   <span className="text-[10px] bg-[#3DC4C2] text-black px-1.5 py-0.5 font-bold rounded uppercase tracking-tighter">{config.pricing.label}</span>
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl sm:text-6xl font-light text-white" style={{ fontFamily: "'Plus Jakarta Sans', serif" }}>{config.pricing.discountedPrice}</span>
@@ -248,7 +248,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               </div>
               <div className="space-y-6 mb-10">
                 <div className="flex items-center gap-3 text-white font-bold">
-                  <Clock className="text-[#46DCC0] w-5 h-5" />
+                  <Clock className="text-[#3DC4C2] w-5 h-5" />
                   Livré en 48 heures chrono
                 </div>
                 <div className="text-gray-400 text-sm italic">
@@ -260,7 +260,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                     <motion.div 
                       initial={{ width: 0 }}
                       whileInView={{ width: '60%' }}
-                      className="h-full bg-[#46DCC0]"
+                      className="h-full bg-[#3DC4C2]"
                     ></motion.div>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
               <div className="flex flex-col gap-4">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full py-4 bg-[#46DCC0] text-[#06201A] font-medium uppercase tracking-widest rounded hover:bg-[#35B8A4] transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(184,150,90,0.2)]"
+                  className="w-full py-4 bg-[#3DC4C2] text-[#0C0D18] font-medium uppercase tracking-widest rounded hover:bg-[#26729F] transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(184,150,90,0.2)]"
                 >
                   Démarrer le Diagnostic <ArrowRight size={18} />
                 </button>
@@ -285,16 +285,16 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#1F1C1A]/90 backdrop-blur-md overflow-y-auto"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#0C0D18]/90 backdrop-blur-md overflow-y-auto"
           >
             <motion.div 
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="relative w-full max-w-3xl my-8 bg-[#1F1C1A] border border-[#46DCC0]/30 rounded-lg shadow-[0_0_50px_rgba(234,179,8,0.1)] overflow-hidden"
+              className="relative w-full max-w-3xl my-8 bg-[#0C0D18] border border-[#3DC4C2]/30 rounded-lg shadow-[0_0_50px_rgba(234,179,8,0.1)] overflow-hidden"
               style={{ clipPath: 'polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px)' }}
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-[#46DCC0]"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#3DC4C2]"></div>
               
               <div className="p-6 md:p-10">
                 <div className="flex justify-between items-start mb-8">
@@ -313,8 +313,8 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex flex-col items-center py-4"
                   >
-                    <div className="w-16 h-16 bg-[#46DCC0]/20 border border-[#46DCC0]/50 rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(234,179,8,0.3)]">
-                      <Lightbulb className="text-[#46DCC0] w-8 h-8" />
+                    <div className="w-16 h-16 bg-[#3DC4C2]/20 border border-[#3DC4C2]/50 rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(234,179,8,0.3)]">
+                      <Lightbulb className="text-[#3DC4C2] w-8 h-8" />
                     </div>
                     
                     <h4 className="text-white text-lg sm:text-2xl font-black mb-6 font-orbitron uppercase">VOTRE PLAN D'ACTION</h4>
@@ -325,9 +325,9 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                           <div className="p-4 bg-zinc-900/80 border border-white/10 rounded-lg">
                             <p className="text-[10px] text-gray-500 font-mono uppercase mb-1">Automatisation_Potentielle</p>
                             <div className="flex items-end gap-2">
-                                <span className="text-2xl sm:text-4xl font-black text-[#46DCC0]">{aiProposal.score}%</span>
+                                <span className="text-2xl sm:text-4xl font-black text-[#3DC4C2]">{aiProposal.score}%</span>
                                 <div className="flex-1 h-2 bg-zinc-800 rounded-full mb-2 overflow-hidden">
-                                    <motion.div initial={{ width: 0 }} animate={{ width: `${aiProposal.score}%` }} className="h-full bg-[#46DCC0]" />
+                                    <motion.div initial={{ width: 0 }} animate={{ width: `${aiProposal.score}%` }} className="h-full bg-[#3DC4C2]" />
                                 </div>
                             </div>
                           </div>
@@ -340,9 +340,9 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                           </div>
                         </div>
 
-                        <div className="p-6 bg-[#46DCC0]/5 border border-[#46DCC0]/20 rounded-lg space-y-4">
+                        <div className="p-6 bg-[#3DC4C2]/5 border border-[#3DC4C2]/20 rounded-lg space-y-4">
                           <div>
-                            <h5 className="text-[#46DCC0] text-xs font-mono uppercase flex items-center gap-2 mb-2">
+                            <h5 className="text-[#3DC4C2] text-xs font-mono uppercase flex items-center gap-2 mb-2">
                                 <Activity size={14} /> Priorité_Stratégique
                             </h5>
                             <p className="text-gray-200 text-sm font-medium leading-relaxed">{aiProposal.priority}</p>
@@ -381,28 +381,28 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                         <label className="text-[10px] text-gray-500 font-mono uppercase">Full_Name</label>
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-                          <input required type="text" placeholder="Nom Prénom" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani" />
+                          <input required type="text" placeholder="Nom Prénom" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani" />
                         </div>
                       </div>
                       <div className="space-y-1.5">
                         <label className="text-[10px] text-gray-500 font-mono uppercase">Work_Email</label>
                         <div className="relative">
                           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-                          <input required type="email" placeholder="email@pro.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani" />
+                          <input required type="email" placeholder="email@pro.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani" />
                         </div>
                       </div>
                       <div className="space-y-1.5">
                         <label className="text-[10px] text-gray-500 font-mono uppercase">Direct_Line</label>
                         <div className="relative">
                           <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-                          <input required type="tel" placeholder="06 XX XX XX XX" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani" />
+                          <input required type="tel" placeholder="06 XX XX XX XX" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani" />
                         </div>
                       </div>
                       <div className="space-y-1.5">
                         <label className="text-[10px] text-gray-500 font-mono uppercase">Website_URL</label>
                         <div className="relative">
                           <Globe className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-                          <input required type="url" placeholder="https://..." value={formData.website} onChange={e => setFormData({...formData, website: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani" />
+                          <input required type="url" placeholder="https://..." value={formData.website} onChange={e => setFormData({...formData, website: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani" />
                         </div>
                       </div>
                     </div>
@@ -412,7 +412,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="space-y-1.5">
                           <label className="text-[10px] text-gray-500 font-mono uppercase">Business_Type</label>
-                          <select value={formData.businessType} onChange={e => setFormData({...formData, businessType: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani appearance-none">
+                          <select value={formData.businessType} onChange={e => setFormData({...formData, businessType: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani appearance-none">
                             <option value="ecommerce">E-commerce</option>
                             <option value="agency">Agence / Service</option>
                             <option value="saas">SaaS / Software</option>
@@ -424,7 +424,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                           <label className="text-[10px] text-gray-500 font-mono uppercase">Team_Size</label>
                           <div className="relative">
                             <Users className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4" />
-                            <select value={formData.teamSize} onChange={e => setFormData({...formData, teamSize: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani appearance-none">
+                            <select value={formData.teamSize} onChange={e => setFormData({...formData, teamSize: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 pl-10 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani appearance-none">
                               <option value="1">Solo (1)</option>
                               <option value="2-5">2-5 pers.</option>
                               <option value="6-15">6-15 pers.</option>
@@ -434,7 +434,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
                         </div>
                         <div className="space-y-1.5">
                           <label className="text-[10px] text-gray-500 font-mono uppercase">Est. Revenue</label>
-                          <select value={formData.revenue} onChange={e => setFormData({...formData, revenue: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani appearance-none">
+                          <select value={formData.revenue} onChange={e => setFormData({...formData, revenue: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani appearance-none">
                             <option value="0-5k">0 - 5k€ / mois</option>
                             <option value="5k-20k">5k - 20k€ / mois</option>
                             <option value="20k-100k">20k - 100k€ / mois</option>
@@ -445,22 +445,22 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
 
                       <div className="space-y-1.5">
                         <label className="text-[10px] text-gray-500 font-mono uppercase">Main_Bottleneck (Qu'est-ce qui vous freine ?)</label>
-                        <input required type="text" placeholder="Ex: Saisie manuelle de commandes, Gestion client..." value={formData.bottleneck} onChange={e => setFormData({...formData, bottleneck: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 text-white text-sm focus:border-[#46DCC0]/50 outline-none font-rajdhani" />
+                        <input required type="text" placeholder="Ex: Saisie manuelle de commandes, Gestion client..." value={formData.bottleneck} onChange={e => setFormData({...formData, bottleneck: e.target.value})} className="w-full bg-zinc-900/50 border border-white/10 rounded p-3 text-white text-sm focus:border-[#3DC4C2]/50 outline-none font-rajdhani" />
                       </div>
 
                       <div className="space-y-3">
                          <div className="flex justify-between items-center">
                             <label className="text-[10px] text-gray-500 font-mono uppercase">Time_Waste (hours/week)</label>
-                            <span className="text-[#46DCC0] font-bold font-mono text-sm">{formData.hoursLost}h</span>
+                            <span className="text-[#3DC4C2] font-bold font-mono text-sm">{formData.hoursLost}h</span>
                          </div>
-                         <input type="range" min="1" max="60" step="1" value={formData.hoursLost} onChange={e => setFormData({...formData, hoursLost: e.target.value})} className="w-full h-1.5 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#46DCC0]" />
+                         <input type="range" min="1" max="60" step="1" value={formData.hoursLost} onChange={e => setFormData({...formData, hoursLost: e.target.value})} className="w-full h-1.5 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#3DC4C2]" />
                       </div>
                     </div>
 
                     <div className="pt-4">
                       <button 
                         disabled={isSubmitting}
-                        className="w-full py-4 bg-[#46DCC0] text-black font-black uppercase tracking-widest rounded hover:bg-[#35B8A4] transition-all transform active:scale-95 flex items-center justify-center gap-3 disabled:opacity-50 shadow-[0_0_20px_rgba(234,179,8,0.3)]"
+                        className="w-full py-4 bg-[#3DC4C2] text-black font-black uppercase tracking-widest rounded hover:bg-[#26729F] transition-all transform active:scale-95 flex items-center justify-center gap-3 disabled:opacity-50 shadow-[0_0_20px_rgba(234,179,8,0.3)]"
                       >
                         {isSubmitting ? (
                           <>
