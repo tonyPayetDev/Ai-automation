@@ -127,7 +127,7 @@ const AutomationBoost: React.FC<AutomationBoostProps> = ({ config }) => {
   const getIcon = (name: string) => {
     switch(name) {
       case 'shopping-cart': return <ShoppingCart className="w-4 h-4 text-cyan-400" />;
-      case 'video': return <Video className="w-4 h-4 text-purple-400" />;
+      case 'video': return <Video className="w-4 h-4 text-[#3DC4C2]" />;
       case 'share': return <Share2 className="w-4 h-4 text-[#ff6b3d]" />;
       default: return <Zap className="w-4 h-4 text-gray-400" />;
     }

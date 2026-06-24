@@ -26,7 +26,7 @@ export const CyberButton: React.FC<{ children: React.ReactNode; onClick?: () => 
     >
       <span className="relative z-10 flex items-center gap-2">{children}</span>
       {isPrimary && (
-        <span className="absolute inset-0 bg-gradient-to-r from-[#AD7AA4] to-[#3DC4C2] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+        <span className="absolute inset-0 bg-gradient-to-r from-[#26729F] to-[#3DC4C2] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
       )}
     </motion.button>
   );

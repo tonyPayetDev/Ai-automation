@@ -31,7 +31,7 @@ const steps = [
     duration: '30 min',
     description: 'On fait un appel de livraison ensemble. Je vous montre comment ça fonctionne, je réponds à toutes vos questions. L\'automatisation tourne, vous récupérez vos heures.',
     detail: 'Support inclus 30 jours. Satisfait ou remboursé sous 7 jours.',
-    color: '#AD7AA4',
+    color: '#3DC4C2',
   },
 ];
 
@@ -44,7 +44,7 @@ const Process: React.FC = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 relative">
         {/* Connector line desktop */}
-        <div className="hidden md:block absolute top-14 left-1/6 right-1/6 h-px" style={{ background: 'linear-gradient(to right, #3DC4C2, #26729F, #AD7AA4)', opacity: 0.2 }} />
+        <div className="hidden md:block absolute top-14 left-1/6 right-1/6 h-px" style={{ background: 'linear-gradient(to right, #3DC4C2, #26729F, #3DC4C2)', opacity: 0.2 }} />
 
         {steps.map((step, i) => (
           <motion.div

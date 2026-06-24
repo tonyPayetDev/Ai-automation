@@ -101,7 +101,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
             Les devis, relances, publications, commandes — je les automatise pour que vous vous concentriez sur ce qui rapporte vraiment.
           </motion.p>
 
-          <motion.p variants={stagger.item} className="text-[#7A6B8E] text-sm mb-10">
+          <motion.p variants={stagger.item} className="text-[#4E7080] text-sm mb-10">
             Restaurants · E-commerce · Agences · Indépendants — livraison garantie en 48h
           </motion.p>
 
@@ -204,7 +204,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
               className="absolute -bottom-6 -left-6 bg-[#171726] border border-white/8 rounded-2xl p-4 shadow-2xl z-20"
             >
-              <p className="text-[#7A6B8E] text-xs tracking-wide mb-1">Temps récupéré</p>
+              <p className="text-[#4E7080] text-xs tracking-wide mb-1">Temps récupéré</p>
               <p className="text-2xl font-bold text-white">
                 15h <span className="text-[#3DC4C2] text-sm font-medium">/semaine</span>
               </p>
@@ -235,7 +235,7 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
       transition={{ delay: 1.8 }}
       className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
     >
-      <span className="text-[#7A6B8E] text-xs tracking-[0.2em] uppercase">Défiler</span>
+      <span className="text-[#4E7080] text-xs tracking-[0.2em] uppercase">Défiler</span>
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.6, repeat: Infinity }}

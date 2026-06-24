@@ -200,11 +200,11 @@ const ChatWidget: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="relative w-9 h-9 rounded-full flex items-center justify-center" style={{ background: 'rgba(61,196,194,0.12)', border: '1px solid rgba(61,196,194,0.25)' }}>
                   <Bot size={17} style={{ color: '#3DC4C2' }} />
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full border-2" style={{ background: isLoading ? '#AD7AA4' : '#3DC4C2', borderColor: '#171726' }} />
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full border-2" style={{ background: isLoading ? '#3DC4C2' : '#3DC4C2', borderColor: '#171726' }} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">Tony AI</p>
-                  <p className="text-[10px]" style={{ color: isLoading ? '#AD7AA4' : '#3DC4C2' }}>
+                  <p className="text-[10px]" style={{ color: isLoading ? '#3DC4C2' : '#3DC4C2' }}>
                     {isLoading ? 'En train de répondre…' : '● En ligne — répond rapidement'}
                   </p>
                 </div>
@@ -291,7 +291,7 @@ const ChatWidget: React.FC = () => {
         className="relative w-14 h-14 rounded-full flex items-center justify-center shadow-xl"
         style={isOpen
           ? { background: '#171726', border: '1px solid rgba(255,255,255,0.1)' }
-          : { background: 'linear-gradient(135deg, #3DC4C2 0%, #26729F 60%, #6C438A 100%)' }
+          : { background: 'linear-gradient(135deg, #3DC4C2 0%, #26729F 60%, #26729F 100%)' }
         }
       >
         {!isOpen && (

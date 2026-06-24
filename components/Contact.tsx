@@ -65,8 +65,8 @@ const Contact: React.FC = () => {
     }
   };
 
-  const inputCls = 'w-full bg-[#171726]/90 border border-white/8 text-white placeholder-[#7A6B8E] px-4 py-3.5 text-sm focus:outline-none focus:border-[#3DC4C2]/50 transition-colors rounded-xl';
-  const labelCls = 'block text-xs font-semibold text-[#7A6B8E] uppercase tracking-widest mb-2';
+  const inputCls = 'w-full bg-[#171726]/90 border border-white/8 text-white placeholder-[#4E7080] px-4 py-3.5 text-sm focus:outline-none focus:border-[#3DC4C2]/50 transition-colors rounded-xl';
+  const labelCls = 'block text-xs font-semibold text-[#4E7080] uppercase tracking-widest mb-2';
   const selectCls = inputCls + ' cursor-pointer appearance-none';
 
   if (status === 'success') {

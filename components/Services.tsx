@@ -71,7 +71,7 @@ const Services: React.FC = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            className="group relative bg-[#0C0D18] p-8 hover:bg-[#1E1B35] transition-colors duration-500 cursor-default"
+            className="group relative bg-[#0C0D18] p-8 hover:bg-[#0F1E2E] transition-colors duration-500 cursor-default"
           >
             <span className="text-[#3DC4C2]/30 text-xs font-semibold tracking-[0.2em] mb-6 block group-hover:text-[#3DC4C2]/70 transition-colors duration-300">
               {service.number}

@@ -78,12 +78,12 @@ const Pricing: React.FC = () => (
             className={`
               relative flex flex-col rounded-2xl p-8 border transition-all duration-500
               ${plan.recommended
-                ? 'bg-[#1E1B35] border-[#3DC4C2]/35 shadow-2xl shadow-[#3DC4C2]/6'
+                ? 'bg-[#0F1E2E] border-[#3DC4C2]/35 shadow-2xl shadow-[#3DC4C2]/6'
                 : 'bg-[#0C0D18] border-white/5 hover:border-white/10'}
             `}
           >
             {plan.recommended && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#AD7AA4] text-[#0C0D18] text-xs font-semibold px-5 py-1 rounded-full tracking-wider shadow-lg shadow-[#AD7AA4]/30">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#3DC4C2] text-[#0C0D18] text-xs font-semibold px-5 py-1 rounded-full tracking-wider shadow-lg shadow-[#3DC4C2]/30">
                 Populaire
               </div>
             )}
@@ -97,7 +97,7 @@ const Pricing: React.FC = () => (
                   {plan.price}
                 </span>
               </div>
-              <p className="text-xs text-[#AD7AA4] font-medium mb-2">Pour : {(plan as any).forWho}</p>
+              <p className="text-xs text-[#3DC4C2] font-medium mb-2">Pour : {(plan as any).forWho}</p>
               <p className="text-gray-500 text-sm leading-relaxed">{plan.description}</p>
             </div>
 
