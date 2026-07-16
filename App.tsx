@@ -58,8 +58,8 @@ const DEFAULT_OFFER: BoostOfferConfig = {
 function App() {
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [heroMedia, setHeroMedia] = useState<{ type: 'image' | 'video', src: string }>({
-    type: 'image',
-    src: 'https://raw.githubusercontent.com/tonyPayetDev/Ai-automation/main/tony-visage.jpg'
+    type: 'video',
+    src: '/videos/tony-portrait.mp4'
   });
 
   const [activeOffer, setActiveOffer] = useState<BoostOfferConfig>(() => {
