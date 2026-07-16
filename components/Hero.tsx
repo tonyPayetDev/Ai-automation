@@ -174,7 +174,8 @@ const Hero: React.FC<HeroProps> = ({ media }) => (
               {media.type === 'video' ? (
                 <video
                   src={media.src}
-                  autoPlay loop muted playsInline
+                  poster="/videos/tony-portrait-poster.jpg"
+                  autoPlay loop muted playsInline preload="auto"
                   className="w-full h-full object-cover"
                 />
               ) : (
