@@ -59,7 +59,7 @@ function App() {
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [heroMedia, setHeroMedia] = useState<{ type: 'image' | 'video', src: string }>({
     type: 'video',
-    src: '/videos/tony-portrait.mp4'
+    src: '/videos/tony-portrait-v2.mp4'
   });
 
   const [activeOffer, setActiveOffer] = useState<BoostOfferConfig>(() => {
