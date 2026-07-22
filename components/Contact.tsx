@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
   if (status === 'success') {
     return (
       <section id="contact" className="py-24 relative scroll-mt-20">
-        <div className="max-w-2xl mx-auto px-6 text-center">
+        <div id="audit" className="max-w-2xl mx-auto px-6 text-center">
           <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
             <div className="w-20 h-20 mx-auto mb-6 bg-[#3DC4C2]/15 border-2 border-[#3DC4C2]/40 rounded-full flex items-center justify-center">
               <Zap className="w-10 h-10 text-[#3DC4C2]" />
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-24 relative scroll-mt-20">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3DC4C2]/20 to-transparent" />
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+      <div id="audit" className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10 scroll-mt-20">
         <SectionTitle title="Décrivez votre projet" subtitle="Contact" />
         <p className="text-gray-500 text-sm mb-12 -mt-8">Réponse garantie sous 24h · Aucun engagement</p>
 
