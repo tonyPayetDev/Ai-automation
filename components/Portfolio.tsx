@@ -3,17 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionTitle } from './ui/CyberComponents';
+import { useContent } from './useContent';
 
-const projects = [
-  { id: 'ozeroz', title: 'Ozeroz', category: 'Cadeaux Personnalisés Luxe', imageUrl: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=800&auto=format&fit=crop', url: null },
-  { id: 'koytcha', title: 'Koytcha Immo', category: 'Immobilier — React', imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop', url: null },
-  { id: 'fusionia', title: 'Fusionia', category: 'Jeu & IA', imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop', url: null },
-  { id: 'cnjoi', title: 'Cnjoi.fr', category: 'Plateforme Événementielle', imageUrl: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop', url: 'https://cnjoi.fr' },
-  { id: 'inosys', title: 'Inosys', category: 'E-commerce', imageUrl: 'https://images.unsplash.com/photo-1558326567-98ae2405596b?q=80&w=800&auto=format&fit=crop', url: null },
-  { id: 'bestrun', title: 'Bestrun.fr', category: 'Association & Blog', imageUrl: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?q=80&w=800&auto=format&fit=crop', url: 'https://bestrun.fr' },
-];
-
-const Portfolio: React.FC = () => (
+const Portfolio: React.FC = () => {
+  const { featuredSites } = useContent();
+  const projects = featuredSites.map((s) => ({ id: s.id, title: s.title, category: s.category, imageUrl: s.image, url: s.url }));
+  return (
   <section id="portfolio" className="py-24 md:py-32 relative scroll-mt-20">
     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3DC4C2]/20 to-transparent" />
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -42,7 +37,7 @@ const Portfolio: React.FC = () => (
       <p className="text-center text-gray-700 text-xs mt-3 md:hidden tracking-widest">← glissez →</p>
 
       {/* Desktop grid */}
-      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -95,6 +90,7 @@ const Portfolio: React.FC = () => (
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default Portfolio;

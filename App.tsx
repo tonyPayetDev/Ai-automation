@@ -7,6 +7,9 @@ import FAQ from './components/FAQ';
 import Services from './components/Services';
 import AutomationBoost from './components/AutomationBoost';
 import Portfolio from './components/Portfolio';
+import Videos from './components/Videos';
+import LiveNow from './components/LiveNow';
+// import Testimonials from './components/Testimonials'; // en pause (placeholders)
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -59,7 +62,7 @@ function App() {
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [heroMedia, setHeroMedia] = useState<{ type: 'image' | 'video', src: string }>({
     type: 'video',
-    src: '/videos/tony-portrait-v2.mp4'
+    src: 'videos/tony-portrait-v2.mp4'
   });
 
   const [activeOffer, setActiveOffer] = useState<BoostOfferConfig>(() => {
@@ -82,12 +85,15 @@ function App() {
 
       <main>
         <Hero media={heroMedia} />
+        <LiveNow />
         <SkillsMatrix />
         <AutomationBoost config={activeOffer} />
         <SystemMonitor />
         <Process />
         <Services />
         <Portfolio />
+        <Videos />
+        {/* <Testimonials /> — en attente de 3 vrais verbatims clients avant mise en prod */}
         <Pricing />
         <FAQ />
         <Contact />
