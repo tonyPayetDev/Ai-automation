@@ -60,8 +60,13 @@ const plans = [
   },
 ];
 
+/* overflow-hidden sur la section : le halo décoratif ci-dessous fait 600px de
+   large et poussait la page à 497px sur un écran de 393 — tout le site défilait
+   latéralement sur téléphone. La section AutomationBoost, qui porte le même
+   halo, le masque déjà ainsi. Aucun effet visuel : le halo est flouté et sort
+   du cadre de toute manière. */
 const Pricing: React.FC = () => (
-  <section id="pricing" className="py-24 md:py-32 relative scroll-mt-20">
+  <section id="pricing" className="py-24 md:py-32 relative overflow-hidden scroll-mt-20">
     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3DC4C2]/20 to-transparent" />
     <div className="absolute inset-0 pointer-events-none">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#3DC4C2]/[0.04] rounded-full blur-[160px]" />
