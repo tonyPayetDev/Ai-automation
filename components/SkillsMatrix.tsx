@@ -21,7 +21,7 @@ const skillCategories = [
     title: 'IA & Automatisation',
     icon: Cpu,
     items: [
-      'Automatisations Make & n8n',
+      'Automatisations n8n',
       'Midjourney & Prompt Engineering',
       'Kling AI (Text-to-Video)',
       'ChatGPT / Claude API',

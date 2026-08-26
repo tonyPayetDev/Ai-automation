@@ -60,7 +60,7 @@ const KNOWLEDGE = {
     'Chatbots et assistants IA sur-mesure pour votre métier',
     'Formations n8n et workflows automatisés',
   ],
-  stack: ['n8n', 'Make/Zapier', 'React', 'Vue.js', 'PHP', 'Python', 'WordPress/Elementor', 'Shopify', 'ChatGPT/Claude API'],
+  stack: ['n8n', 'React', 'Vue.js', 'PHP', 'Python', 'WordPress/Elementor', 'Shopify', 'ChatGPT/Claude API'],
   guarantee: 'Satisfait ou remboursé sous 7 jours. Paiement en 2× possible. Sans abonnement caché.',
 };
 

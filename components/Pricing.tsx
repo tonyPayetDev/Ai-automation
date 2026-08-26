@@ -10,6 +10,7 @@ const plans = [
     id: '1',
     name: 'Site Vitrine Pro',
     price: '799 €',
+    capsules: ['Livré en 5 jours', 'Hébergement 1 an inclus'],
     forWho: 'Artisans · Restaurants · Indépendants',
     description: 'Votre vitrine en ligne qui attire et convertit, livrée en 5 jours.',
     features: [
@@ -26,6 +27,7 @@ const plans = [
     id: '2',
     name: 'Site + Automatisation',
     price: '1 299 €',
+    capsules: ['Formation 1 h incluse', 'Support 30 jours offert'],
     forWho: 'PME · Agences · E-commerce',
     description: 'Votre site web ET une automatisation qui vous fait gagner du temps chaque jour.',
     features: [
@@ -43,6 +45,7 @@ const plans = [
     id: '3',
     name: 'Mission Spécifique',
     price: '55 €/h',
+    capsules: ['Devis gratuit sous 24 h', 'Sans engagement'],
     forWho: 'Freelances · Startups · Toute activité',
     description: 'Un problème précis à régler ? Je m\'en occupe à la mission.',
     features: [
@@ -97,6 +100,22 @@ const Pricing: React.FC = () => (
                   {plan.price}
                 </span>
               </div>
+              {(plan as any).capsules && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {(plan as any).capsules.map((c: string) => (
+                    <span
+                      key={c}
+                      className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium tracking-wide border ${
+                        plan.recommended
+                          ? 'border-[#3DC4C2]/40 text-[#3DC4C2] bg-[#3DC4C2]/8'
+                          : 'border-white/10 text-gray-400 bg-white/[0.03]'
+                      }`}
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              )}
               <p className="text-xs text-[#3DC4C2] font-medium mb-2">Pour : {(plan as any).forWho}</p>
               <p className="text-gray-500 text-sm leading-relaxed">{plan.description}</p>
             </div>

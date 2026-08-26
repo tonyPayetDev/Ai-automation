@@ -20,7 +20,7 @@ const steps = [
     icon: Zap,
     title: 'Je construis l\'automatisation',
     duration: '48h max',
-    description: 'Je configure, teste et peaufine le workflow dans les 48h. Vous ne touchez à rien. Je gère les outils (n8n, Make, API, IA) et vous tiens informé à chaque étape.',
+    description: 'Je configure, teste et peaufine le workflow dans les 48h. Vous ne touchez à rien. Je gère les outils (n8n, API, IA) et vous tiens informé à chaque étape.',
     detail: 'Vous recevez une démo vidéo avant la mise en production.',
     color: '#26729F',
   },

@@ -5,12 +5,15 @@ export interface WorkItem { id: string; label: string; tag: string }
 export interface SiteItem { id: string; title: string; category: string; url: string; image: string }
 export interface VideoItem { id: string; title: string; subtitle?: string; src: string }
 
+export interface AgentItem { id: string; nom: string; role: string; quoi: string; enService?: boolean }
+
 export interface SiteContent {
   meta: { updated: string; cadence: string; note?: string };
   stats: StatItem[];
   currentWork: WorkItem[];
   featuredSites: SiteItem[];
   videos: VideoItem[];
+  agents?: AgentItem[];
 }
 
 // Fallback baked in so sections always render even if /content.json fails to load.
@@ -33,10 +36,10 @@ export const FALLBACK_CONTENT: SiteContent = {
     { id: 'autoboost', title: 'Automatisation Boost', category: 'SaaS — automatisation réseaux par IA', url: 'https://automatisationboost.com', image: 'https://image.thum.io/get/width/1200/crop/900/https://automatisationboost.com' },
   ],
   videos: [
-    { id: 'videoboost-luxe-01', title: 'Publicité luxe', subtitle: 'Générée par VideoBoost', src: 'https://previsualisation.automatisationboost.com/videoboost-luxe-01/video.mp4' },
-    { id: 'videoboost-star', title: 'Format signature', subtitle: 'Générée par VideoBoost', src: 'https://previsualisation.automatisationboost.com/videoboost-star/video.mp4' },
-    { id: 'essai-ego', title: 'Essai contemplatif', subtitle: 'Un seul prompt, aucun montage', src: 'https://previsualisation.automatisationboost.com/essai-ego-tom-odell/video.mp4' },
-    { id: 'prompt-reveal', title: 'Prompt reveal', subtitle: 'Keynote animée', src: 'https://previsualisation.automatisationboost.com/prompt-reveal-05/video.mp4' },
+    { id: 'videoboost-luxe-01', title: 'Publicité luxe', subtitle: 'Générée par VideoBoost', src: 'https://assets.automatisationboost.com/previsualisation/videoboost-luxe-01/video.mp4' },
+    { id: 'videoboost-star', title: 'Format signature', subtitle: 'Générée par VideoBoost', src: 'https://assets.automatisationboost.com/previsualisation/videoboost-star/video.mp4' },
+    { id: 'essai-ego', title: 'Essai contemplatif', subtitle: 'Un seul prompt, aucun montage', src: 'https://assets.automatisationboost.com/previsualisation/essai-ego-tom-odell/video.mp4' },
+    { id: 'prompt-reveal', title: 'Prompt reveal', subtitle: 'Keynote animée', src: 'https://assets.automatisationboost.com/previsualisation/prompt-reveal-05/video.mp4' },
   ],
 };
 
