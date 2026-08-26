@@ -29,10 +29,18 @@ const OUTILS: Outil[] = [
   { nom: 'Scraper', Icone: Radar },
 ];
 
-/* Centre de la boule dans le cadre, relevé sur le clip. La vidéo est en
-   object-cover : ces valeurs suivent l'image, pas la fenêtre. */
-const CX = 45;
-const CY = 61;
+/* Centre de la boule dans le cadre, relevé sur une capture du site en ligne :
+   le cadre vidéo mesurait 485 × 590 px et la boule était centrée à 407,575 —
+   soit 48 % en largeur et 50 % en hauteur. Un premier jet à (45, 61) plaçait
+   l'orbite trop bas, sur la main plutôt que sur la boule.
+
+   RAYON est en % de la LARGEUR ; comme le cadre est plus haut que large, l'axe
+   vertical est corrigé par APLATI = largeur/hauteur, sinon le cercle devient
+   un ovale étiré. La boule fait ~15 % de rayon : 21 % laisse un peu d'air. */
+const CX = 48;
+const CY = 50;
+const RAYON = 21;
+const APLATI = 0.82;
 
 const OrbiteOutils: React.FC<{ av: number }> = ({ av }) => (
   <div
@@ -51,9 +59,9 @@ const OrbiteOutils: React.FC<{ av: number }> = ({ av }) => (
          tour par outil ; le rayon s'ouvre légèrement pendant l'apparition,
          ce qui donne l'impression qu'ils sont éjectés par la boule. */
       const angle = -Math.PI / 2 + (i * Math.PI * 2) / OUTILS.length;
-      const rayon = 17 + p * 5;                 // en % de la largeur du cadre
+      const rayon = RAYON - 4 + p * 4;          // s'ouvre pendant l'apparition
       const x = CX + Math.cos(angle) * rayon;
-      const y = CY + Math.sin(angle) * rayon * 0.62;   // aplati : le cadre est vertical
+      const y = CY + Math.sin(angle) * rayon * APLATI;
 
       return (
         <div
@@ -73,8 +81,12 @@ const OrbiteOutils: React.FC<{ av: number }> = ({ av }) => (
         >
           <div
             style={{
-              width: 'clamp(22px, 3.2vw, 34px)',
-              height: 'clamp(22px, 3.2vw, 34px)',
+              /* Mesuré en ligne : la première version tombait à clamp() = 22px
+                 sur mobile, et le glyphe à l'intérieur ne faisait plus que 8px
+                 — illisible. La borne basse suit maintenant la largeur du
+                 cadre, pas une valeur fixe trop prudente. */
+              width: 'clamp(30px, 7.2vw, 46px)',
+              height: 'clamp(30px, 7.2vw, 46px)',
               borderRadius: 999,
               border: '1px solid rgba(61,196,194,.45)',
               background: 'rgba(12,13,24,.55)',
@@ -89,8 +101,8 @@ const OrbiteOutils: React.FC<{ av: number }> = ({ av }) => (
               <span
                 style={{
                   display: 'block',
-                  width: '58%',
-                  height: '58%',
+                  width: '60%',
+                  height: '60%',
                   backgroundColor: '#3DC4C2',
                   WebkitMaskImage: `url(${o.masque})`,
                   maskImage: `url(${o.masque})`,
@@ -103,12 +115,12 @@ const OrbiteOutils: React.FC<{ av: number }> = ({ av }) => (
                 }}
               />
             ) : (
-              o.Icone && <o.Icone size={14} strokeWidth={1.9} color="#3DC4C2" />
+              o.Icone && <o.Icone size={18} strokeWidth={1.9} color="#3DC4C2" />
             )}
           </div>
           <span
             style={{
-              fontSize: 'clamp(7px, .68vw, 9.5px)',
+              fontSize: 'clamp(9px, 2.4vw, 11px)',
               fontWeight: 600,
               letterSpacing: '.07em',
               color: '#CFEFEE',
