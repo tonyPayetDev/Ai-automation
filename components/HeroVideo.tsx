@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Terminal, Bot, Workflow, Radar } from 'lucide-react';
+import OrbiteOutils from './OrbiteOutils';
 
 /**
  * Vidéo d'en-tête : le clip de Tony, en boucle, dans le cadre du portrait.
@@ -28,23 +28,9 @@ import { Terminal, Bot, Workflow, Radar } from 'lucide-react';
  *    dériverait dès le premier tour.
  */
 
-/* Chaque outil entre après le précédent, dans la même apparition que le nom —
-   pas comme un second effet plaqué après coup.
- *
- * Les glyphes viennent de lucide-react, la banque libre déjà installée et
- * utilisée par dix autres composants du site. Ils remplacent quatre tracés
- * SVG écrits à la main, qui se voyaient pour ce qu'ils étaient.
- *
- * Ce sont volontairement des icônes GÉNÉRIQUES — un terminal, un robot, un
- * graphe de workflow, un radar — et non les logos de marque de Claude Code,
- * OpenAI, n8n ou d'un scraper. Redessiner un logo déposé sur une page
- * commerciale expose à un problème que personne n'a envie d'avoir. */
-const OUTILS = [
-  { nom: 'Claude Code', Icone: Terminal },
-  { nom: 'ChatGPT', Icone: Bot },
-  { nom: 'n8n', Icone: Workflow },
-  { nom: 'Scraper', Icone: Radar },
-];
+/* Les outils ne sont plus une liste posée en haut du cadre : ils tournent
+   autour de la boule et s'allument avec elle. Voir `OrbiteOutils`, qui porte
+   aussi le choix des glyphes (assets Simple Icons, CC0, servis localement). */
 
 const DEBUT = 3.3;      // la boule s'allume
 const PLEIN = 4.2;      // prénom entièrement lisible
@@ -228,47 +214,10 @@ const HeroVideo: React.FC<{ src: string; poster?: string; nom?: string; role?: s
           {role}
         </span>
 
-        <div className="flex flex-wrap items-center gap-1 sm:gap-1.5 mt-1">
-          {OUTILS.map((o, i) => {
-            /* Ils entrent SUR l'allumage de la boule, pas après.
-             *
-             * L'ancienne formule divisait par `1 - seuil`, si bien que rien
-             * n'atteignait sa pleine opacité avant `av = 1`, c'est-à-dire
-             * 4,2 s de clip : mesuré à l'écran, les puces ne devenaient
-             * lisibles qu'à 4,5 s, soit 1,2 s APRÈS le début de l'explosion.
-             * Une rampe de durée fixe les fait saturer plus tôt, et le
-             * décalage entre elles reste visible. */
-            const seuil = 0.30 + i * 0.08;
-            const p = Math.max(0, Math.min(1, (av - seuil) / 0.22));
-            return (
-              <span
-                key={o.nom}
-                title={o.nom}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 4,
-                  opacity: p,
-                  transform: `translateY(${((1 - p) * 8).toFixed(1)}px)`,
-                  border: '1px solid rgba(61,196,194,.42)',
-                  background: 'rgba(12,13,24,.62)',
-                  borderRadius: 999,
-                  padding: '2px 6px',
-                  backdropFilter: 'blur(4px)',
-                  color: '#CFEFEE',
-                  fontSize: 'clamp(8px, .76vw, 11px)',
-                  fontWeight: 600,
-                  letterSpacing: '.06em',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <o.Icone size={11} strokeWidth={1.9} color="#3DC4C2" style={{ flex: '0 0 auto' }} />
-                {o.nom}
-              </span>
-            );
-          })}
-        </div>
       </div>
+
+      {/* Les outils en orbite autour de la boule — voir OrbiteOutils. */}
+      <OrbiteOutils av={av} />
 
       <button
         type="button"
