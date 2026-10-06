@@ -517,6 +517,76 @@ h2::after{content:"";position:absolute;left:0;bottom:-1.2mm;width:5mm;height:1px
   .identite{grid-template-columns:1fr}
   .portrait{width:28mm;height:28mm;order:-1}
 }
+
+/* ── Démos : une seconde feuille, jouable sur place ──────────────────────
+   Elle vit APRÈS la feuille du CV, jamais dedans : la première page reste
+   exactement le CV A4 d'une page. À l'impression elle devient la page 2,
+   lecteurs masqués, une ligne « libellé + lien » par démo.
+   Rien ne se charge avant le geste : une vignette, puis la vidéo ou la page. */
+.feuille-demos{margin-top:0}
+.feuille-demos .dedans{padding-top:9mm}
+.demos-intro{max-width:150mm;margin:0 0 5mm;font-size:9.6pt;color:var(--corps)}
+.demos-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+@media screen and (max-width:850px){.demos-grille{grid-template-columns:repeat(2,1fr)}}
+@media screen and (max-width:560px){.demos-grille{grid-template-columns:1fr;gap:5mm}}
+.demo{display:flex;flex-direction:column;background:var(--panneau);border:1px solid var(--bord);
+  border-radius:3mm;overflow:hidden;transition:border-color .25s ease}
+.demo:hover{border-color:rgba(255,230,0,.4)}
+.demo.ouverte.page{grid-column:1/-1}
+.demo .ecran{position:relative;aspect-ratio:4/5;background:#000;overflow:hidden}
+.demo.ouverte.video .ecran,.demo.ouverte.youtube .ecran{aspect-ratio:9/16;max-height:82vh}
+.demo.ouverte.page .ecran{aspect-ratio:auto;height:78vh;min-height:480px;max-height:860px}
+.demo .ecran video,.demo .ecran iframe{position:absolute;inset:0;width:100%;height:100%;border:0;
+  background:#000;object-fit:contain}
+.demo .ecran iframe.blanc{background:#fff}
+.demo .lancer{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;margin:0;
+  background:#000;cursor:pointer;display:block;text-align:left;font:inherit}
+.demo .lancer img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;
+  opacity:.82;transition:opacity .3s ease}
+.demo .lancer:hover img{opacity:1}
+.demo .lancer::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,var(--noir) 0,rgba(8,8,10,.15) 45%,transparent 70%)}
+.demo .lancer span{position:absolute;z-index:1;left:3.4mm;bottom:3.4mm;display:inline-flex;
+  align-items:center;gap:2mm;min-height:44px;padding:0 4.4mm;border-radius:99px;
+  background:var(--jaune);color:#111;font-weight:700;font-size:9.4pt;
+  box-shadow:0 6px 18px -6px rgba(0,0,0,.8)}
+.demo .lancer:focus-visible{outline:2px solid var(--jaune);outline-offset:-3px}
+.demo .txt{display:flex;flex-direction:column;gap:1.4mm;flex:1;padding:3.6mm 3.8mm 4mm}
+.demo .badge{font-size:7.4pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--violet)}
+.demo h3{margin:0;font-size:11pt;line-height:1.25;font-weight:600;color:var(--blanc)}
+.demo p{margin:0;font-size:9pt;color:var(--corps)}
+.demo .liens{margin-top:auto;display:flex;flex-wrap:wrap;gap:0 4mm}
+.demo .liens a{display:inline-flex;align-items:center;min-height:44px;font-size:8.8pt;font-weight:500;
+  color:var(--jaune);text-decoration:underline;text-decoration-color:rgba(255,230,0,.45);
+  text-underline-offset:3px}
+.demo .liens a[hidden]{display:none}
+.demo .imprime{display:none}
+
+.demos-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-top:7mm}
+@media screen and (max-width:720px){.demos-actions{grid-template-columns:1fr}}
+.demos-actions a{display:flex;align-items:center;justify-content:center;gap:2mm;min-height:56px;
+  padding:3mm 4mm;border-radius:2.4mm;text-align:center;text-decoration:none;font-weight:700;
+  font-size:10.4pt;line-height:1.25;border:1px solid var(--bord);transition:background .16s,border-color .16s,color .16s}
+.demos-actions a.audit{background:var(--jaune);border-color:var(--jaune);color:#111}
+.demos-actions a.audit:hover{background:#fff;border-color:#fff}
+.demos-actions a.wa{background:#1f7a4c;border-color:#2fa768;color:#f1fff8}
+.demos-actions a.wa:hover{background:#2fa768}
+.demos-actions a.seul{background:rgba(168,85,247,.14);border-color:rgba(168,85,247,.55);color:#e2ccff}
+.demos-actions a.seul:hover{border-color:var(--violet);background:rgba(168,85,247,.24)}
+.mesure{margin:7mm 0 0;font-size:8pt;color:var(--attenue)}
+
+@media print{
+  .feuille-demos{break-before:page;page-break-before:always;min-height:296mm}
+  .demos-intro{font-size:8.8pt;margin-bottom:3mm}
+  .demos-grille{grid-template-columns:1fr 1fr;gap:2.4mm}
+  .demo{border-radius:2mm}
+  .demo .ecran,.demo .liens,.demos-actions,.mesure{display:none!important}
+  .demo .txt{padding:2.4mm 3mm}
+  .demo h3{font-size:9.4pt}
+  .demo p{font-size:8pt}
+  .demo .imprime{display:block;font-size:7.6pt;color:var(--jaune);word-break:break-all}
+}
 </style>
 </head>
 <body>
@@ -810,6 +880,114 @@ h2::after{content:"";position:absolute;left:0;bottom:-1.2mm;width:5mm;height:1px
   </div>
 </div>
 
+<!-- Démos : seconde feuille. Les cartes sont écrites en HTML (lisibles sans
+     JavaScript, imprimables) ; le script ne fait que remplacer la vignette
+     par le lecteur au moment du geste. -->
+<section class="feuille feuille-demos" id="demos" aria-labelledby="demos-titre">
+  <div class="dedans">
+    <h2 id="demos-titre">Démos — à essayer ici</h2>
+    <p class="demos-intro">Plutôt que de longues explications, voici ce que je construis, en vrai.
+      Touchez une carte : la vidéo se lance ou la démo s’ouvre sur place.</p>
+
+    <div class="demos-grille">
+
+      <article class="demo video" data-demo="journal-ia" data-src="https://assets.automatisationboost.com/previsualisation/journal-ia-2026-10-06-bn/video-v5.mp4">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-journal-ia"><img src="assets/demos/journal-ia.jpg" alt="" width="360" height="640" loading="lazy" decoding="async"><span>&#9654; Lancer la vidéo</span></button></div>
+        <div class="txt">
+          <span class="badge">Vidéo · tourne chaque matin</span>
+          <h3>Une vidéo d’actualité prête chaque matin, sans moi</h3>
+          <p>Une automatisation rassemble l’actualité, écrit le texte, monte la vidéo et prépare la page qui l’accompagne. Voici l’édition d’aujourd’hui.</p>
+          <div class="liens"><a href="https://automatisationboost.com/ressources/journal-ia-2026-10-06.html" target="_blank" rel="noopener" data-demo-lien="journal-ia-page" data-suivi="demo-journal-ia-page">Voir la page publiée ce matin &#8599;</a></div>
+          <span class="imprime">previsualisation.automatisationboost.com/journal-ia-2026-10-06-bn/</span>
+        </div>
+      </article>
+
+      <article class="demo page" data-demo="foodboost-editeur" data-src="https://resto.automatisationboost.com/foodboost-editeur/?client=arbradelis">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-foodboost-editeur"><img src="assets/demos/foodboost-editeur.jpg" alt="" width="360" height="380" loading="lazy" decoding="async"><span>&#9758; Essayer ici</span></button></div>
+        <div class="txt">
+          <span class="badge">Démo à essayer</span>
+          <h3>Vos photos deviennent des publications prêtes</h3>
+          <p>À partir des photos d’un restaurant, l’outil propose les visuels et les textes. Vous choisissez, il programme.</p>
+          <div class="liens"><a hidden href="https://resto.automatisationboost.com/foodboost-editeur/?client=arbradelis" target="_blank" rel="noopener">Ouvrir en plein écran &#8599;</a></div>
+          <span class="imprime">resto.automatisationboost.com/foodboost-editeur/</span>
+        </div>
+      </article>
+
+      <article class="demo page" data-demo="feed-exemple" data-src="https://resto.automatisationboost.com/demo/arbradelis/">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-feed-exemple"><img src="assets/demos/feed-demo.jpg" alt="" width="360" height="360" loading="lazy" decoding="async"><span>&#9758; Essayer ici</span></button></div>
+        <div class="txt">
+          <span class="badge">Exemple réel</span>
+          <h3>Le compte Instagram d’un restaurant, avant même d’avoir posté</h3>
+          <p>Un aperçu complet du compte, construit automatiquement à partir de ses propres photos.</p>
+          <div class="liens"><a hidden href="https://resto.automatisationboost.com/demo/arbradelis/" target="_blank" rel="noopener">Ouvrir en plein écran &#8599;</a></div>
+          <span class="imprime">resto.automatisationboost.com/demo/</span>
+        </div>
+      </article>
+
+      <article class="demo page" data-demo="studio-video" data-src="https://previsualisation.automatisationboost.com/befresh-studio/">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-studio-video"><img src="assets/demos/befresh-studio.jpg" alt="" width="360" height="480" loading="lazy" decoding="async"><span>&#9758; Essayer ici</span></button></div>
+        <div class="txt">
+          <span class="badge">Démo à essayer</span>
+          <h3>Un studio vidéo aux couleurs de la marque</h3>
+          <p>On choisit un angle, on ajuste le texte, la vidéo se prépare aux couleurs de l’enseigne. Conçu pour un bar à jus.</p>
+          <div class="liens"><a hidden href="https://previsualisation.automatisationboost.com/befresh-studio/" target="_blank" rel="noopener">Ouvrir en plein écran &#8599;</a></div>
+          <span class="imprime">previsualisation.automatisationboost.com — studio vidéo d’un bar à jus</span>
+        </div>
+      </article>
+
+      <article class="demo page" data-demo="refonte-immo" data-src="https://previsualisation.automatisationboost.com/koytcha-refonte-v5/">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-refonte-immo"><img src="assets/demos/refonte-immo.jpg" alt="" width="360" height="517" loading="lazy" decoding="async"><span>&#9758; Essayer ici</span></button></div>
+        <div class="txt">
+          <span class="badge">Prototype</span>
+          <h3>Prototype de refonte pour une agence immobilière</h3>
+          <p>Un site haut de gamme pensé d’abord pour le téléphone : recherche de biens, annonces mises en avant, contact en un geste.</p>
+          <div class="liens"><a hidden href="https://previsualisation.automatisationboost.com/koytcha-refonte-v5/" target="_blank" rel="noopener">Ouvrir en plein écran &#8599;</a></div>
+          <span class="imprime">previsualisation.automatisationboost.com — refonte d’une agence immobilière</span>
+        </div>
+      </article>
+
+      <article class="demo youtube" data-demo="video-4h-0" data-src="https://www.youtube-nocookie.com/embed/GD2ujCF2IiM?autoplay=1&amp;playsinline=1&amp;rel=0&amp;enablejsapi=1">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-video-4h-0"><img src="assets/demos/video-4h.jpg" alt="" width="360" height="640" loading="lazy" decoding="async"><span>&#9654; Lancer la vidéo</span></button></div>
+        <div class="txt">
+          <span class="badge">Vidéo · 1 min</span>
+          <h3>4 heures de montage par vidéo → 0</h3>
+          <p>Le système qui prépare et publie mes vidéos pendant que je fais autre chose.</p>
+          <span class="imprime">youtube.com/watch?v=GD2ujCF2IiM</span>
+        </div>
+      </article>
+
+      <article class="demo video" data-demo="audit-clients" data-src="https://assets.automatisationboost.com/previsualisation/split-preuve-09-audit-deux-minutes/video.mp4">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-audit-clients"><img src="assets/demos/09-audit-deux-minutes.jpg" alt="" width="360" height="640" loading="lazy" decoding="async"><span>&#9654; Lancer la vidéo</span></button></div>
+        <div class="txt">
+          <span class="badge">Vidéo · 30 s</span>
+          <h3>Savoir où votre entreprise perd des clients</h3>
+          <p>Quelques questions, et un audit écrit qui montre où les demandes se perdent — sans appel commercial.</p>
+          <span class="imprime">previsualisation.automatisationboost.com/split-preuve-09-audit-deux-minutes/</span>
+        </div>
+      </article>
+
+      <article class="demo video" data-demo="site-vers-feed" data-src="https://assets.automatisationboost.com/previsualisation/split-preuve-17-site-devient-feed/video.mp4">
+        <div class="ecran"><button type="button" class="lancer" data-suivi="demo-site-vers-feed"><img src="assets/demos/17-site-devient-feed.jpg" alt="" width="360" height="640" loading="lazy" decoding="async"><span>&#9654; Lancer la vidéo</span></button></div>
+        <div class="txt">
+          <span class="badge">Vidéo · 30 s</span>
+          <h3>Votre site devient votre fil Instagram</h3>
+          <p>Le site existant sert de matière : photos et textes sont repris et transformés en publications cohérentes.</p>
+          <span class="imprime">previsualisation.automatisationboost.com/split-preuve-17-site-devient-feed/</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="demos-actions">
+      <a class="audit" href="https://tony.automatisationboost.com/#audit" data-suivi="audit-demos">Réserver l’audit gratuit</a>
+      <a class="wa" href="https://wa.me/262692417749?text=Bonjour%20Tony%2C%20j%27ai%20vu%20votre%20CV%20interactif" target="_blank" rel="noopener" data-suivi="whatsapp-demos">Écrire sur WhatsApp</a>
+      <a class="seul" href="https://tony.automatisationboost.com/#audit" data-suivi="audit-seul-demos">Voir ce qui peut tourner seul chez moi</a>
+    </div>
+
+    <p class="mesure">Cette page mesure quels éléments vous intéressent (aucun cookie, aucune donnée personnelle).</p>
+  </div>
+</section>
+
 <!-- GSAP est servi depuis le dossier, jamais depuis un CDN : le CDN est bloqué
      ici, et un CV qui perd ses animations parce qu'un tiers est injoignable est
      un CV cassé. -->
@@ -945,7 +1123,38 @@ h2::after{content:"";position:absolute;left:0;bottom:-1.2mm;width:5mm;height:1px
      des cinquante ne sert a rien. Chaque destinataire recoit donc son lien :
      /cv/?r=<jeton>. Le jeton n'est pas une donnee personnelle — c'est une
      etiquette d'envoi que Tony seul sait rattacher a une entreprise. */
-  var dest = new URLSearchParams(location.search).get('r') || '';
+  var params = new URLSearchParams(location.search);
+  var dest = params.get('r') || '';
+
+  /* Les emails « dirigeants » portent ?id=<n>&v=<version> (numéro de prospect,
+     aucune donnée personnelle). Validation stricte, sinon rien. L'ancien jeton
+     ?r= continue de fonctionner tel quel ; à défaut de jeton, l'id en tient lieu
+     pour le journal des clics. */
+  var lead = null;
+  try {
+    var pid = params.get('id') || '', pv = params.get('v') || '';
+    if (!navigator.webdriver && /^[0-9]{1,3}$/.test(pid) && /^[a-z]{3,12}$/.test(pv)) {
+      lead = { id: pid, v: pv };
+      if (!dest) dest = 'id' + pid + '-' + pv;
+    }
+  } catch (e) {}
+
+  /* Les événements d'intérêt : une fois par session et par élément, vers le
+     webhook du suivi des emails (sendBeacon, sinon fetch keepalive en GET). */
+  var INTERET = 'https://n7n.automatisationboost.com/webhook/track-dirigeants';
+  var dejaVu = {};
+  window.cvSignaler = function (evt, element) {
+    if (!lead) return;
+    var el = String(element || 'page').toLowerCase().replace(/[^a-z0-9-]/g, '-').slice(0, 40) || 'page';
+    var cle = 'interet:' + evt + ':' + el;
+    if (dejaVu[cle]) return;
+    dejaVu[cle] = 1;
+    try { if (sessionStorage.getItem(cle)) return; sessionStorage.setItem(cle, '1'); } catch (e) {}
+    var u = INTERET + '?event=' + evt + '&id=' + lead.id + '&secteur=' + encodeURIComponent(lead.v + '|' + el);
+    try { if (navigator.sendBeacon && navigator.sendBeacon(u)) return; } catch (e) {}
+    try { fetch(u, { method: 'GET', mode: 'no-cors', keepalive: true, credentials: 'omit' }).catch(function(){}); } catch (e) {}
+  };
+  var signaler = window.cvSignaler;
 
   var envoyer = function (charge) {
     try {
@@ -966,21 +1175,48 @@ h2::after{content:"";position:absolute;left:0;bottom:-1.2mm;width:5mm;height:1px
                 source: document.referrer || '', date: new Date().toISOString() });
     }
   } catch (e) {}
+  signaler('page_vue', 'page');
 
   /* Profondeur de lecture : atteindre le bas d'un CV, c'est un interet reel.
-     Une seule remontee, au premier passage. */
+     Une seule remontee, au premier passage. Les paliers 50 % et 90 % partent
+     en plus vers le suivi d'intérêt quand la visite vient d'un email. */
   try {
     var fond = false;
     window.addEventListener('scroll', function () {
-      if (fond) return;
       var h = document.documentElement;
-      if ((h.scrollTop + window.innerHeight) / h.scrollHeight > 0.85) {
+      var r = (h.scrollTop + window.innerHeight) / h.scrollHeight;
+      if (r >= 0.5) signaler('scroll_50', 'page');
+      if (r >= 0.9) signaler('scroll_90', 'page');
+      if (fond) return;
+      if (r > 0.85) {
         fond = true;
         envoyer({ quoi: 'lu-jusquau-bout', page: location.pathname,
                   date: new Date().toISOString() });
       }
     }, { passive: true });
   } catch (e) {}
+
+  /* Temps réellement passé : seules les secondes où l'onglet est visible comptent. */
+  if (lead) {
+    var secondes = 0;
+    var minuteur = setInterval(function () {
+      if (document.visibilityState !== 'visible') return;
+      secondes++;
+      if (secondes === 30) signaler('temps_30s', 'page');
+      if (secondes >= 90) { signaler('temps_90s', 'page'); clearInterval(minuteur); }
+    }, 1000);
+  }
+
+  /* Appels à l'action : WhatsApp où qu'il soit, et l'audit (le formulaire est
+     sur l'accueil, la page n'a donc pas d'événement « formulaire vu »). */
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var ou = a.closest('#demos') ? 'demos' : 'cv';
+    if (/wa\.me\//.test(href)) signaler('cta_whatsapp', ou);
+    else if (/#audit$/.test(href)) signaler('cta_audit', ou);
+  }, true);
 
   /* Les clics passent par le meme envoi que l'ouverture, sinon ils partaient
      sans le jeton et on retombait sur « quelqu'un a clique », sans savoir qui. */
@@ -1094,6 +1330,81 @@ h2::after{content:"";position:absolute;left:0;bottom:-1.2mm;width:5mm;height:1px
   }
 
   direEtat();
+})();
+</script>
+
+<script>
+/* Les démos : la vignette est remplacée par le lecteur au geste, jamais avant.
+   Mesure (si la visite vient d'un email) : démo ouverte au clic, lue au
+   démarrage de la vidéo (ou au chargement de la page de démo), finie à 75 %. */
+(function () {
+  var signaler = window.cvSignaler || function () {};
+  var cartes = document.querySelectorAll('#demos .demo');
+
+  var lecteurVideo = function (carte, ecran, slug) {
+    var v = document.createElement('video');
+    v.src = carte.dataset.src;
+    v.poster = carte.dataset.poster || '';
+    v.controls = true; v.playsInline = true; v.setAttribute('playsinline', '');
+    v.preload = 'none';
+    v.addEventListener('play', function () { signaler('demo_lue', slug); });
+    v.addEventListener('timeupdate', function () {
+      if (v.duration && v.currentTime / v.duration >= 0.75) signaler('demo_fin', slug);
+    });
+    v.addEventListener('ended', function () { signaler('demo_fin', slug); });
+    ecran.appendChild(v);
+    var p = v.play(); if (p && p.catch) p.catch(function () {});
+  };
+
+  var lecteurPage = function (carte, ecran, slug, titre, youtube) {
+    var f = document.createElement('iframe');
+    f.src = carte.dataset.src;
+    f.title = titre;
+    f.loading = 'lazy';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    if (youtube) {
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.addEventListener('load', function () {
+        try { f.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: slug }), '*'); } catch (e) {}
+      });
+    } else {
+      f.className = 'blanc';
+      f.addEventListener('load', function () { signaler('demo_lue', slug); });
+    }
+    ecran.appendChild(f);
+  };
+
+  /* Le lecteur YouTube annonce son état par postMessage une fois écouté. */
+  window.addEventListener('message', function (e) {
+    if (!/^https:\/\/(www\.)?youtube(-nocookie)?\.com$/.test(String(e.origin))) return;
+    var d = e.data;
+    try { if (typeof d === 'string') d = JSON.parse(d); } catch (x) { return; }
+    var info = d && d.info;
+    if (!info) return;
+    if (info.playerState === 1) signaler('demo_lue', 'video-4h-0');
+    if (info.playerState === 0 || (info.duration && info.currentTime / info.duration >= 0.75)) signaler('demo_fin', 'video-4h-0');
+  });
+
+  Array.prototype.forEach.call(cartes, function (carte) {
+    var slug = carte.dataset.demo;
+    var bouton = carte.querySelector('.lancer');
+    var titre = carte.querySelector('h3').textContent;
+    carte.dataset.poster = bouton.querySelector('img').getAttribute('src');
+    bouton.setAttribute('aria-label', bouton.textContent.replace(/^\W+/, '').trim() + ' : ' + titre);
+    bouton.addEventListener('click', function () {
+      signaler('demo_ouverte', slug);
+      var ecran = bouton.parentNode;
+      bouton.remove();
+      carte.classList.add('ouverte');
+      if (carte.classList.contains('video')) lecteurVideo(carte, ecran, slug);
+      else lecteurPage(carte, ecran, slug, titre, carte.classList.contains('youtube'));
+      var plein = carte.querySelector('.liens a[hidden]');
+      if (plein) plein.hidden = false;
+    });
+    var extra = carte.querySelector('[data-demo-lien]');
+    if (extra) extra.addEventListener('click', function () { signaler('demo_ouverte', extra.dataset.demoLien); });
+  });
 })();
 </script>
 </body>
