@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SkillsMatrix from './components/SkillsMatrix';
@@ -9,6 +9,8 @@ import AutomationBoost from './components/AutomationBoost';
 import Portfolio from './components/Portfolio';
 import Agents from './components/Agents';
 import Videos from './components/Videos';
+import Demos from './components/Demos';
+import { demarrerMesure } from './components/interet';
 import LiveNow from './components/LiveNow';
 // import Testimonials from './components/Testimonials'; // en pause (placeholders)
 import Pricing from './components/Pricing';
@@ -71,6 +73,8 @@ function App() {
     return saved ? JSON.parse(saved) : DEFAULT_OFFER;
   });
 
+  useEffect(() => { demarrerMesure(); }, []);
+
   const handleUpdateHero = (type: 'image' | 'video', src: string) => {
     setHeroMedia({ type, src });
   };
@@ -86,6 +90,7 @@ function App() {
 
       <main>
         <Hero media={heroMedia} />
+        <Demos />
         <LiveNow />
         <SkillsMatrix />
         <AutomationBoost config={activeOffer} />

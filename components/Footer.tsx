@@ -85,7 +85,10 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
-          <p>© 2025 Tony Payet. Tous droits réservés.</p>
+          <div className="text-center md:text-left">
+            <p>© 2025 Tony Payet. Tous droits réservés.</p>
+            <p className="mt-1 text-gray-400">Cette page mesure quels éléments vous intéressent (aucun cookie, aucune donnée personnelle).</p>
+          </div>
           <div className="flex items-center gap-4">
             <span className="text-[#3DC4C2]/40 font-medium">Automatisation · IA · Web</span>
             <button
