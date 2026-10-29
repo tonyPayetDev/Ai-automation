@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Tony Payet — développeur & spécialiste IA et automatisation. Audit gratuit, services, contact." />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0a0a0c" />
+<link rel="canonical" href="https://tony.automatisationboost.com/carte" />
+<title>Tony Payet — carte de visite</title>
+<style>
+/* Mini-carte digitale : fond noir mat, accents jaune néon et violet électrique, mobile first. */
+:root { --noir:#0a0a0c; --carte:#121216; --trait:#25252e; --texte:#f3f3f7; --doux:#9b98a8; --or:#f5c518; --violet:#8b5cf6; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; background: var(--noir); color: var(--texte); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+body { display: flex; justify-content: center; padding: max(20px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom)); }
+.card { width: 100%; max-width: 380px; text-align: center; animation: rise .5s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.photo { position: relative; width: 132px; height: 132px; margin: 8px auto 18px; border-radius: 50%; padding: 3px;
+  background: conic-gradient(from 200deg, var(--or), var(--violet), var(--or)); box-shadow: 0 0 26px rgba(245,197,24,.25); }
+.photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: var(--carte); }
+h1 { font-size: 30px; letter-spacing: -0.02em; line-height: 1.15; }
+.role { margin-top: 6px; color: var(--or); font-size: 15px; font-weight: 600; }
+.pitch { margin: 16px auto 26px; color: var(--doux); font-size: 16px; max-width: 32ch; }
+.actions { display: grid; gap: 12px; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 14px 18px; border-radius: 14px;
+  font: 600 16px/1.2 system-ui, sans-serif; color: var(--texte); background: var(--carte); border: 1px solid var(--trait); text-decoration: none; cursor: pointer;
+  transition: transform .15s ease, border-color .2s, box-shadow .2s; -webkit-tap-highlight-color: transparent; }
+.btn:active { transform: scale(.98); }
+.btn:focus-visible { outline: 2px solid var(--or); outline-offset: 3px; }
+.btn.main { color: #0a0a0c; background: var(--or); border-color: var(--or); box-shadow: 0 0 22px rgba(245,197,24,.35); }
+.btn.main:hover { box-shadow: 0 0 30px rgba(245,197,24,.55); }
+.btn.alt { border-color: rgba(139,92,246,.7); box-shadow: 0 0 18px rgba(139,92,246,.25); }
+.btn.alt:hover { border-color: var(--violet); }
+.btn.ghost:hover { border-color: var(--or); }
+.btn .ico { width: 18px; height: 18px; flex: none; }
+.foot { margin-top: 26px; color: var(--doux); font-size: 13px; }
+.foot a { color: var(--doux); }
+.msg { min-height: 20px; margin-top: 10px; font-size: 13px; color: var(--doux); }
+.msg.err { color: #ff8a80; }
+@media (prefers-reduced-motion: reduce) { .card { animation: none; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="photo"><img src="tony.jpg" width="132" height="132" alt="Tony Payet" /></div>
+  <h1>Tony Payet</h1>
+  <p class="role">Développeur &amp; spécialiste IA / Automatisation</p>
+  <p class="pitch">J'aide les entreprises à gagner du temps en automatisant leurs tâches répétitives.</p>
+
+  <nav class="actions" aria-label="Actions">
+    <a class="btn main" href="https://automatisationboost.com/audit.html?utm_source=carte&amp;utm_medium=digital-card" id="audit">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      Faire mon audit gratuit
+    </a>
+    <a class="btn alt" href="https://tony.automatisationboost.com" id="site">Découvrir mes services</a>
+    <button class="btn ghost" type="button" id="vcf">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+      Enregistrer mon contact
+    </button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </nav>
+
+  <p class="foot">Pas de formulaire ici : aucune donnée n'est collectée sur cette page.</p>
+</main>
+
+<script>
+(function () {
+  // Coordonnées : uniquement celles déjà publiées sur le site. Ajouter une ligne ici = l'ajouter à la fiche.
+  var CONTACT = {
+    prenom: "Tony", nom: "Payet", titre: "Développeur & spécialiste IA / Automatisation",
+    organisation: "AutomatisationBoost",
+    email: "tony.payet.professionnel@gmail.com",
+    tel: "+262692417749",
+    site: "https://tony.automatisationboost.com"
+  };
+  function esc(s) { return String(s).replace(/[\\,;]/g, function (c) { return "\\" + c; }); }
+  function vcard() {
+    var L = ["BEGIN:VCARD", "VERSION:3.0",
+      "N:" + esc(CONTACT.nom) + ";" + esc(CONTACT.prenom) + ";;;",
+      "FN:" + esc(CONTACT.prenom + " " + CONTACT.nom),
+      "TITLE:" + esc(CONTACT.titre),
+      "ORG:" + esc(CONTACT.organisation)];
+    if (CONTACT.email) L.push("EMAIL;TYPE=WORK,INTERNET:" + CONTACT.email);
+    if (CONTACT.tel) L.push("TEL;TYPE=CELL,WORK:" + CONTACT.tel);
+    if (CONTACT.site) L.push("URL:" + CONTACT.site);
+    L.push("END:VCARD");
+    return L.join("\r\n") + "\r\n";
+  }
+  var msg = document.getElementById("msg");
+  document.getElementById("vcf").addEventListener("click", function () {
+    try {
+      var blob = new Blob([vcard()], { type: "text/vcard;charset=utf-8" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = "tony-payet.vcf";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+      msg.className = "msg"; msg.textContent = "Fiche téléchargée : ouvre-la pour l'ajouter à tes contacts.";
+    } catch (e) {
+      msg.className = "msg err"; msg.textContent = "Le téléchargement n'a pas marché. Réessaie ou copie les coordonnées du site.";
+    }
+  });
+})();
+</script>
+</body>
+</html>
